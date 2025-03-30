@@ -1,1 +1,36 @@
 // _mixins.scss: Funciones reutilizables como botones, sombras, etc.
+
+.btn,
+.btn-enviar,
+.explorar-catalogo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secundario);
+  color: var(--blanco);
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1.2rem 2.4rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  gap: 1rem;
+}
+
+.btn:hover,
+.btn-enviar:hover,
+.explorar-catalogo:hover {
+  background-color: #cf7c00;
+  transform: scale(1.05);
+}
+
+/* Efecto hover: cambia color y escala */
+.contenedor-cta a:hover,
+.catalogo-producto a:hover,
+.inspiracion-producto a:hover {
+  background-color: var(--secundario);
+  color: var(--blanco);
+  border-bottom-right-radius: 1rem;
+}

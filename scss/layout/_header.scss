@@ -32,18 +32,17 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  a {
+    text-decoration: none;
+    color: $color-primario;
+    font-weight: 600;
+    padding: 10px;
+    transition: color 0.3s;
+    &:hover {
+      color: $color-secundario; /* Color destacado */
+    }
+  }
 }
-.nav-links a {
-  text-decoration: none;
-  color: $color-primario;
-  font-weight: 600;
-  padding: 10px;
-  transition: color 0.3s;
-}
-.nav-links a:hover {
-  color: $color-secundario; /* Color destacado */
-}
-
 /* Redes sociales */
 .social-icons {
   background-color: $color-primario;
@@ -52,7 +51,7 @@
   padding: 0.1rem 2rem;
   border-radius: 1rem;
   border-style: 0.1rem solid $color-negro;
-}
-.social-icons a:hover {
-  color: $color-secundario;
+  a:hover {
+    color: $color-secundario;
+  }
 }

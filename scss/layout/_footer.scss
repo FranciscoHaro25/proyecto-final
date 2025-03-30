@@ -1,1 +1,85 @@
 // _footer.scss: Estilos del pie de página.
+
+@use "../abstracts/variables" as *;
+
+/* FOOTER */
+footer {
+  background: $color-negro;
+  color: $color-blanco;
+  padding: 4rem 0 4rem;
+}
+
+/* Contenedor principal del footer */
+/* 
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+*/
+
+/* Secciones del footer */
+.footer-section {
+  width: 30%;
+  padding: 10px;
+}
+
+/* Títulos de cada sección */
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Enlaces rápidos */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #ff9900;
+}
+
+/* Estilo de Contacto */
+.footer-section p {
+  margin: 5px 0;
+}
+
+/* Iconos de redes sociales */
+.social-icons a {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 22px;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff9900; /* Color al hacer hover */
+}
+
+/* Sección inferior del footer */
+.footer-bottom {
+  text-align: center;
+  padding: 2rem 0 3rem 0;
+  background: #252423;
+  font-size: 14px;
+  color: #767676;
+}
+
+.logo-footer {
+  display: flex;
+  justify-content: center;
+  padding: 0 0 5rem 0;
+}

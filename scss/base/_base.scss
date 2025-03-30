@@ -65,3 +65,22 @@ p {
 .text-bold {
   font-weight: 700;
 }
+
+/* Contenedor general */
+.contenedor {
+  max-width: 120rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Estilos de imagenes generales */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease-in-out;
+  }
+}
