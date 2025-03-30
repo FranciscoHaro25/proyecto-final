@@ -168,8 +168,8 @@ img a {
 .social-icons {
   background-color: #281101;
   display: flex;
-  gap: 2rem;
-  padding: 0.1rem 2rem;
+  gap: 3rem;
+  padding: 0.5rem 2rem;
   border-radius: 1rem;
   border-style: 0.1rem solid #333;
 }
@@ -177,85 +177,71 @@ img a {
   color: #ff9900;
 }
 
+/* Menu sanduche */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 3.2rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .menu-toggle {
+    display: block;
+    align-self: flex-end;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .nav-links.nav-visible {
+    display: flex;
+  }
+  .nav-links li {
+    width: 100%;
+    text-align: left;
+  }
+  .nav-links a {
+    padding: 1rem 0;
+    display: block;
+    width: 100%;
+  }
+  .social-icons {
+    justify-content: center;
+    width: 100%;
+    margin-top: 5rem;
+  }
+}
 /* FOOTER */
 footer {
   background: #333;
   color: #ffffff;
   padding: 4rem 0 4rem;
 }
-
-/* Contenedor principal del footer */
-/* 
-.footer-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-*/
-/* Secciones del footer */
-.footer-section {
-  width: 30%;
-  padding: 10px;
-}
-
-/* Títulos de cada sección */
-.footer-section h3 {
-  margin-bottom: 15px;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-/* Enlaces rápidos */
-.footer-section ul {
-  list-style: none;
+footer ul {
+  list-style: circle;
   padding: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 8px;
-}
-
-.footer-section ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-section ul li a:hover {
-  color: #ff9900;
-}
-
-/* Estilo de Contacto */
-.footer-section p {
-  margin: 5px 0;
-}
-
-/* Iconos de redes sociales */
-.social-icons a {
-  display: inline-block;
-  color: #ffffff;
-  font-size: 22px;
-  margin-right: 10px;
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #ff9900; /* Color al hacer hover */
-}
-
-/* Sección inferior del footer */
-.footer-bottom {
-  text-align: center;
-  padding: 2rem 0 3rem 0;
-  background: #252423;
-  font-size: 14px;
-  color: #767676;
 }
 
 .logo-footer {
   display: flex;
   justify-content: center;
-  padding: 0 0 5rem 0;
+  padding: 0 0 6rem 0;
 }
 
 /* Estilos del icono SVG */
@@ -868,56 +854,6 @@ footer {
   }
   .descripcion {
     flex: 1;
-  }
-}
-/* NAVBAR */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 3.2rem;
-  color: var(--primario);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.menu-toggle:hover {
-  transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  .menu-toggle {
-    display: block;
-    align-self: flex-end;
-  }
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  .nav-links.nav-visible {
-    display: flex;
-  }
-  .nav-links li {
-    width: 100%;
-    text-align: left;
-  }
-  .nav-links a {
-    padding: 1rem 0;
-    display: block;
-    width: 100%;
-  }
-  .social-icons {
-    justify-content: center;
-    width: 100%;
-    margin-top: 5rem;
   }
 }
 
