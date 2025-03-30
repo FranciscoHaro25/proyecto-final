@@ -1,15 +1,21 @@
-html {
-  box-sizing: border-box;
-  font-size: 62.5%; /* 1rem = 10px */
-}
+@use "abstracts/variables";
+@use "abstracts/mixins";
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@use "base/reset";
+@use "base/base";
+@use "base/typography";
+
+@use "layout/header";
+@use "layout/footer";
+@use "layout/grid";
+
+@use "components/button";
+
+@use "pages/home";
+@use "pages/catalogue";
+@use "pages/inspiration";
+@use "pages/about";
+@use "pages/contact";
 
 .btn,
 .btn-enviar,
@@ -35,50 +41,6 @@ html {
 .explorar-catalogo:hover {
   background-color: #cf7c00;
   transform: scale(1.05);
-}
-
-:root {
-  --primario: #281101;
-  --secundario: #ff9900;
-  --gris: #555;
-  --blanco: #ffffff;
-  --negro: #333;
-  --grisClaro: #f1f1f1;
-
-  --fuentePrincipal: "Raleway", serif;
-  --fuenteSecundaria: "Playfair Display", serif;
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway&display=swap");
-
-body {
-  font-family: var(--fuentePrincipal);
-  font-size: 1.6rem;
-  line-height: 1.6;
-  background-color: var(--blanco);
-  color: var(--negro);
-}
-
-/* GLOBALES */
-h1,
-h2,
-h3 {
-  font-family: var(--fuenteSecundaria);
-  margin-bottom: 1rem;
-}
-
-p {
-  margin: 0;
-}
-
-h1 {
-  font-size: 4.8rem;
-}
-h2 {
-  font-size: 3.6rem;
-}
-h3 {
-  font-size: 2.4rem;
 }
 
 .contenedor {
@@ -141,61 +103,6 @@ a {
 /* UTILIDADES */
 .text-center {
   text-align: center;
-}
-
-/* HEADER */
-.contenedor-encabezado {
-  background: var(--grisClaro);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
-}
-/* Logo */
-.logo img {
-  height: 6rem;
-  transition: transform 0.3s ease-in-out;
-}
-.logo img:hover {
-  transform: scale(1.1);
-}
-
-/* Enlaces de navegación */
-.nav-links {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--primario);
-  font-weight: 600;
-  padding: 10px;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: var(--secundario); /* Color destacado */
-}
-/* Redes sociales */
-.social-icons {
-  background-color: var(--primario);
-  display: flex;
-  gap: 2rem;
-  padding: 0.1rem 2rem;
-  border-radius: 1rem;
-  border-style: 0.1rem solid #333;
-}
-
-.social-icons a:hover {
-  color: var(--secundario);
 }
 
 /* SECCIÓN PRINCIPAL */

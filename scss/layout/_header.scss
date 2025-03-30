@@ -1,0 +1,58 @@
+// _header.scss: Estilos del encabezado / menú.
+
+@use "../abstracts/variables" as *;
+
+/* Header */
+.contenedor-encabezado {
+  background: $color-gris-claro;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+/* Logo */
+.logo img {
+  height: 6rem;
+  transition: transform 0.3s ease-in-out;
+}
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Enlaces de navegación */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: $color-primario;
+  font-weight: 600;
+  padding: 10px;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: $color-secundario; /* Color destacado */
+}
+
+/* Redes sociales */
+.social-icons {
+  background-color: $color-primario;
+  display: flex;
+  gap: 2rem;
+  padding: 0.1rem 2rem;
+  border-radius: 1rem;
+  border-style: 0.1rem solid $color-negro;
+}
+.social-icons a:hover {
+  color: $color-secundario;
+}

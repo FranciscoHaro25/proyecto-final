@@ -1,0 +1,67 @@
+// _base.scss: Define estilos generales para body, html, p, h1, etc.
+
+@use "../abstracts/variables" as *;
+
+/* Estilos generales de html */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos globales de tipografía */
+body {
+  color: $color-negro;
+  background-color: $color-blanco;
+  font-family: $fuente-principal;
+  font-size: 1.6rem; // Equivale a 16px si base 10px
+  line-height: 1.6;
+}
+
+/* 4. Encabezados */
+h1,
+h2,
+h3 {
+  font-family: $fuente-secundaria;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 4.8rem;
+}
+
+h2 {
+  font-size: 3.6rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+/* Parrafos */
+p {
+  margin: 0 0 1.6rem 0;
+  font-weight: 400;
+  color: $color-gris; // Gris suave
+}
+
+/* Clases utilitarias opcionales */
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-bold {
+  font-weight: 700;
+}
