@@ -9,12 +9,65 @@ footer {
   padding: 4rem 0 4rem;
   ul {
     list-style: circle;
-    padding: 0;
   }
 }
+
+/* Logo footer */
 
 .logo-footer {
   display: flex;
   justify-content: center;
-  padding: 0 0 6rem 0;
+  padding: 0 0 3rem 0;
+  img {
+    height: 6rem;
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+/* Enlaces rápidos */
+
+.enlaces-hover li {
+  color: $color-gris-claro;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  transform-origin: left; // 👈 esto hace que el "scale" se origine desde la izquierda
+  &:hover {
+    color: $color-secundario;
+    transform: scaleX(1.1) scaleY(1.1); // solo crece en ancho hacia la derecha
+  }
+  a {
+    color: $color-gris-claro;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    transform-origin: left; // 👈 esto hace que el "scale" se origine desde la izquierda
+    &:hover {
+      color: $color-secundario;
+      transform: scaleX(1.1) scaleY(1.1); // solo crece en ancho hacia la derecha
+    }
+  }
+}
+
+/* Redes sociales */
+.social a {
+  color: $color-blanco;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    color: $color-secundario;
+    transform: scale(1.3);
+  }
+}
+
+/* Derechos de autor */
+
+.linea-color {
+  padding: 2rem 2rem;
+  border-top: 0.5px solid $color-secundario;
+  .texto-footer {
+    color: $color-secundario;
+  }
+  .texto-footer {
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
 }

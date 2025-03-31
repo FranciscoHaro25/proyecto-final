@@ -12,11 +12,10 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 2rem 0;
   width: 100%;
   /* Logo */
-  .logo img {
+  .logo-header img {
     height: 6rem;
     transition: transform 0.3s ease-in-out;
     &:hover {
@@ -31,6 +30,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  margin: 0;
   a {
     text-decoration: none;
     color: $color-primario;
@@ -49,9 +49,13 @@
   gap: 3rem;
   padding: 0.5rem 2rem;
   border-radius: 1rem;
-  // border-style: 0.1rem solid $color-negro;
-  a:hover {
-    color: $color-secundario;
+  a {
+    color: $color-blanco;
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+      color: $color-secundario;
+      transform: scale(1.3);
+    }
   }
 }
 
