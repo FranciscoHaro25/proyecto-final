@@ -30,6 +30,12 @@
       rel="stylesheet"
     />
 
+    <!-- Iportar iconos de RemixIcon -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
     <!-- Cargar Font Awesome 6.4.2 desde CDNJS para utilizar todos los íconos -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>   
     
@@ -37,40 +43,41 @@
     <link rel="stylesheet" href="./assets/css/normalize.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     
-    
-   
   </head>
   <body>
-     <!-- NAVBAR -->
-    <header>
-      <div class="contenedor-encabezado">
-        <nav class="navbar contenedor">
+
+    <!-- NAVBAR -->
+    <header class="header">
+      <nav clas>
+        <div class="nav contenedor">
+
           <!-- Logo -->
-          <a href="./index.html" class="logo-header">
+          <a href="./index.html" class="nav-logo">
             <img src="./assets/img/logo-original.svg" alt="Logo CasaForm" />
           </a>
-          <!-- Menu sanduche revisarlo -->
-          <!-- <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-            <i class="fa-solid fa-bars"></i>
-          </button> -->
- 
+
+          <div class="nav-toggle" id="nav__toggle">
+            <i class="ri-menu-line nav-burger"></i>
+            <i class="ri-close-line nav-close"></i>
+          </div>
+
           <!-- Menú de Navegación -->
           <ul class="nav-links">
-            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./index.html" class="active">Inicio</a></li>
             <li><a href="./pages/catalogo.html">Catálogo</a></li>
             <li><a href="./pages/inspiracion.html">Inspiración</a></li>
             <li><a href="./pages/sobre-nosotros.html">Sobre Nosotros</a></li>
             <li><a href="./pages/contacto.html">Contacto</a></li>
           </ul>
- 
+
           <!-- Redes Sociales -->
-          <div class="social-icons">
+          <div class="contenedor-icons">
             <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
             <a href="https://instagram.com/tu-tienda" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://twitter.com/tu-tienda" target="_blank"><i class="fa-brands fa-twitter"></i></a>
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </header>
 
     <!-- SECCION HERO -->
@@ -348,21 +355,21 @@
             />
           </a>
 
-           <!-- Contacto -->
-           <div class="form-contacto">
-             <h5 class="titulo-contacto">Envíanos un mensaje ahora</h5>
-             <form class="formulario-contacto" novalidate>
-               <div class="form-grupo">
-                 <label for="nombre">Nombre</label>
-                 <input type="text" id="nombre" required />
-               </div>
-               <div class="form-grupo">
-                 <label for="mensaje">Mensaje</label>
-                 <textarea id="mensaje" rows="3" required></textarea>
-               </div>
-               <button type="submit" class="btn-enviar">Enviar</button>
-             </form>
-           </div>
+          <!-- Contacto -->
+          <div class="form-contacto">
+            <h5 class="titulo-contacto">Envíanos un mensaje ahora</h5>
+            <form class="formulario-contacto" novalidate>
+              <div class="form-grupo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" required />
+              </div>
+              <div class="form-grupo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn-enviar">Enviar</button>
+            </form>
+          </div>
         </div>
         
       </div>

@@ -3,24 +3,35 @@
 @use "../abstracts/variables" as *;
 
 /* Header */
-.contenedor-encabezado {
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: $color-gris-claro;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: $z-fixed;
 }
 
 /* Navbar */
-.navbar {
+.nav {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 0;
+  align-items: center;
+  height: 11rem;
   width: 100%;
   /* Logo */
-  .logo-header img {
+  .nav-logo img {
     height: 6rem;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out 0.2s;
+    transform-origin: left;
     &:hover {
-      transform: scale(1.1);
+      transform: scaleX(1.1) scaleY(1.1);
     }
+  }
+  .nav-burger,
+  .nav-close {
+    color: $color-secundario;
   }
 }
 
@@ -29,25 +40,32 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 2rem;
   margin: 0;
   a {
     text-decoration: none;
     color: $color-primario;
     font-weight: 600;
-    padding: 10px;
+    padding: 1rem;
     transition: color 0.3s;
     &:hover {
       color: $color-secundario; /* Color destacado */
     }
+    &.active {
+      color: #ff9900;
+      border-bottom: 2px solid #ff9900;
+      padding-bottom: 5px;
+    }
   }
 }
 /* Redes sociales */
-.social-icons {
+.contenedor-icons {
   background-color: $color-primario;
   display: flex;
+  height: 4rem;
+  align-items: center;
   gap: 3rem;
-  padding: 0.5rem 2rem;
+  padding: 0.1rem 2.5rem;
   border-radius: 1rem;
   a {
     color: $color-blanco;
@@ -59,60 +77,14 @@
   }
 }
 
-/* Menu sanduche */
-
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 3.2rem;
-  color: $color-blanco;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.menu-toggle:hover {
-  transform: scale(1.1);
-}
-
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .menu-toggle {
-    display: block;
-    align-self: flex-end;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .nav-links.nav-visible {
-    display: flex;
-  }
-
-  .nav-links li {
-    width: 100%;
-    text-align: left;
-  }
-
-  .nav-links a {
-    padding: 1rem 0;
-    display: block;
-    width: 100%;
-  }
-
-  .social-icons {
-    justify-content: center;
-    width: 100%;
-    margin-top: 5rem;
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem;
+    .nav-logo img {
+      height: 5rem;
+    }
   }
 }
