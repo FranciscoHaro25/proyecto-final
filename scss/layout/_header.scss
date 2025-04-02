@@ -7,11 +7,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 8rem;
+  height: 10rem;
   padding: 0 4rem;
   background-color: $color-gris-claro;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $z-fixed;
 
   .nav__contenedor {
     display: flex;
@@ -33,7 +39,7 @@
 
     .nav-links {
       display: flex;
-      gap: 2.5rem;
+      gap: 4rem;
       list-style: none;
       flex-grow: 1;
       justify-content: center;
@@ -46,8 +52,6 @@
         transition: color 0.3s, border-bottom 0.3s;
         &:hover {
           color: $color-secundario;
-          border-bottom: 2px solid $color-secundario;
-          padding-bottom: 3px;
         }
         &.active {
           color: $color-secundario;
@@ -61,7 +65,7 @@
       display: flex;
       align-items: center;
       gap: 2rem;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 2rem;
       background-color: $color-primario;
       border-radius: 1rem;
 
@@ -76,6 +80,7 @@
       }
     }
 
+    // Estilo base del botón hamburguesa (en escritorio no visible)
     .nav-toggle {
       display: none;
     }
@@ -96,29 +101,39 @@
         height: 4rem;
       }
 
+      // --- ANIMACIÓN HAMBURGUESA A X ---
       .nav-toggle {
-        display: block;
-        font-size: 2.8rem;
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        width: 30px;
+        height: 25px;
         cursor: pointer;
         background: none;
         border: none;
         z-index: $z-fixed + 1;
 
-        .nav-burger {
-          display: inline;
+        span {
+          display: block;
+          height: 3px;
+          width: 100%;
+          background-color: $color-primario;
+          border-radius: 2px;
+          transition: all 0.3s ease-in-out;
         }
 
-        .nav-close {
-          display: none;
+        &.show-icon span:nth-child(1) {
+          transform: rotate(45deg) translateY(8px);
         }
 
-        &.show-icon {
-          .nav-burger {
-            display: none;
-          }
-          .nav-close {
-            display: inline;
-          }
+        &.show-icon span:nth-child(2) {
+          opacity: 0;
+        }
+
+        &.show-icon span:nth-child(3) {
+          transform: rotate(-45deg) translateY(-8px);
         }
       }
 
