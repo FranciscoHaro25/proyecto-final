@@ -1,2 +1,55 @@
 // _button.scss: Estilos de botones.
 // Puedes tener otros como _card.scss, _form.scss, _modal.scss.
+
+@use "../abstracts/variables" as *;
+
+.btn,
+.btn-enviar,
+.explorar-catalogo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-secundario;
+  color: var(--blanco);
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1.2rem 2.4rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  gap: 1rem;
+  box-shadow: 0 6px 12px rgba(255, 153, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+// Hover: efecto de elevación y cambio de color
+.btn:hover,
+.btn-enviar:hover,
+.explorar-catalogo:hover {
+  background-color: #cf7c00;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 16px rgba(207, 124, 0, 0.3);
+}
+
+// Efecto de "ripple" al hacer clic (opcional visual extra)
+.btn::after,
+.btn-enviar::after,
+.explorar-catalogo::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
