@@ -1,52 +1,137 @@
-// _button.scss: Estilos de botones.
-// Puedes tener otros como _card.scss, _form.scss, _modal.scss.
-
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
-.btn,
-.btn-enviar,
-.explorar-catalogo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: $color-secundario;
-  color: var(--blanco);
-  font-size: 1.6rem;
-  font-weight: 600;
-  padding: 1.2rem 2.4rem;
+// Botón base: estilo general para todos los botones
+.btn {
+  @include button-base($color-secundario, $color-blanco);
+  box-shadow: 0 6px 12px rgba($color-secundario, 0.2);
+
+  &:hover {
+    background-color: darken($color-secundario, 10%);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 16px rgba($color-secundario, 0.3);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+  }
+
+  // Estilos para íconos dentro del botón
+  i,
+  svg {
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    pointer-events: none;
+    vertical-align: middle;
+  }
+
+  &.icon-left i {
+    margin-right: 0.8rem;
+  }
+
+  &.icon-right i {
+    margin-left: 0.8rem;
+  }
+
+  &:hover i,
+  &:hover svg {
+    transform: scale(1.3);
+    transform: rotate(-10deg) scale(1.2);
+  }
+}
+
+// Botón secundario
+.btn--secundario {
+  @include button-base($color-gris-claro, $color-primario);
+  box-shadow: 0 6px 12px rgba($color-gris-claro, 0.2);
+
+  &:hover {
+    background-color: darken($color-gris-claro, 8%);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 16px rgba($color-gris-claro, 0.3);
+  }
+}
+
+// Botón delineado (outlined)
+.btn--outlined {
+  @include button-base(transparent, $color-primario);
+  border: 2px solid $color-primario;
+  background-color: transparent;
+  box-shadow: none;
+
+  &:hover {
+    background-color: $color-secundario;
+    color: $color-blanco;
+    transform: translateY(-3px) scale(1.03);
+  }
+}
+
+// Botón solo con ícono
+.btn--icon-only {
+  @include button-icon-only();
+
+  // Estilos para íconos dentro del botón
+  i,
+  svg {
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    pointer-events: none;
+    vertical-align: middle;
+  }
+
+  // Efecto de rotación suave al pasar el mouse
+  .btn:hover i,
+  .btn:hover svg {
+    transform: rotate(50deg) scale(1.15);
+  }
+
+  &:hover i,
+  &:hover svg {
+    transform: rotate(20deg) scale(1.2);
+  }
+}
+
+// Botón estilo ghost
+.btn--ghost {
+  @include button-base(transparent, $color-primario);
+  border: 2px solid $color-primario;
+  background-color: transparent;
+  box-shadow: none;
+
+  &:hover {
+    background-color: rgba($color-primario, 0.05);
+    transform: scale(1.02);
+  }
+}
+
+// Botón con fondo gradiente para CTA
+.btn--gradient {
+  @include button-base(transparent, $color-blanco);
+  background-image: linear-gradient(
+    135deg,
+    $color-primario 0%,
+    $color-secundario 100%
+  );
   border: none;
-  border-radius: 0.8rem;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease,
-    box-shadow 0.3s ease;
-  gap: 1rem;
-  box-shadow: 0 6px 12px rgba(255, 153, 0, 0.2);
-  position: relative;
-  overflow: hidden;
+  box-shadow: 0 6px 14px rgba($color-primario, 0.3);
+
+  &:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 20px rgba($color-secundario, 0.4);
+  }
 }
 
-// Hover: efecto de elevación y cambio de color
-.btn:hover,
-.btn-enviar:hover,
-.explorar-catalogo:hover {
-  background-color: #cf7c00;
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 10px 16px rgba(207, 124, 0, 0.3);
-}
-
-// Efecto de "ripple" al hacer clic (opcional visual extra)
-.btn::after,
-.btn-enviar::after,
-.explorar-catalogo::after {
-  content: "";
-  position: absolute;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  transform: scale(0);
-  animation: ripple 0.6s linear;
-}
-
+// Ripple animation
 @keyframes ripple {
   to {
     transform: scale(4);

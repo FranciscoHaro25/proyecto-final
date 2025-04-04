@@ -87,6 +87,208 @@ img a {
   transition: all 0.3s ease-in-out;
 }
 
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1.2rem 2.4rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #ff9900;
+  color: #ffffff;
+  box-shadow: 0 6px 12px rgba(255, 153, 0, 0.2);
+}
+.btn:hover {
+  background-color: rgb(204, 122.4, 0);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 16px rgba(255, 153, 0, 0.3);
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+.btn i,
+.btn svg {
+  font-size: 1.8rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  pointer-events: none;
+  vertical-align: middle;
+}
+.btn.icon-left i {
+  margin-right: 0.8rem;
+}
+.btn.icon-right i {
+  margin-left: 0.8rem;
+}
+.btn:hover i, .btn:hover svg {
+  transform: scale(1.3);
+  transform: rotate(-10deg) scale(1.2);
+}
+
+.btn--secundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1.2rem 2.4rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  color: #281101;
+  box-shadow: 0 6px 12px rgba(241, 241, 241, 0.2);
+}
+.btn--secundario:hover {
+  background-color: rgb(220.6, 220.6, 220.6);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 16px rgba(241, 241, 241, 0.3);
+}
+
+.btn--outlined {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1.2rem 2.4rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  color: #281101;
+  border: 2px solid #281101;
+  background-color: transparent;
+  box-shadow: none;
+}
+.btn--outlined:hover {
+  background-color: #ff9900;
+  color: #ffffff;
+  transform: translateY(-3px) scale(1.03);
+}
+
+.btn--icon-only {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: #281101;
+  color: #ffffff;
+  border-radius: 50%;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn--icon-only:hover {
+  background-color: black;
+  transform: scale(1.1);
+}
+.btn--icon-only i,
+.btn--icon-only svg {
+  pointer-events: none;
+}
+.btn--icon-only i,
+.btn--icon-only svg {
+  font-size: 1.8rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  pointer-events: none;
+  vertical-align: middle;
+}
+.btn--icon-only .btn:hover i,
+.btn--icon-only .btn:hover svg {
+  transform: rotate(50deg) scale(1.15);
+}
+.btn--icon-only:hover i, .btn--icon-only:hover svg {
+  transform: rotate(20deg) scale(1.2);
+}
+
+.btn--ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1.2rem 2.4rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  color: #281101;
+  border: 2px solid #281101;
+  background-color: transparent;
+  box-shadow: none;
+}
+.btn--ghost:hover {
+  background-color: rgba(40, 17, 1, 0.05);
+  transform: scale(1.02);
+}
+
+.btn--gradient {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1.2rem 2.4rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  color: #ffffff;
+  background-image: linear-gradient(135deg, #281101 0%, #ff9900 100%);
+  border: none;
+  box-shadow: 0 6px 14px rgba(40, 17, 1, 0.3);
+}
+.btn--gradient:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 20px rgba(255, 153, 0, 0.4);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
 .nav {
   display: flex;
   justify-content: space-between;
@@ -302,53 +504,6 @@ footer ul {
   line-height: 1.6;
 }
 
-.btn,
-.btn-enviar,
-.explorar-catalogo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ff9900;
-  color: var(--blanco);
-  font-size: 1.6rem;
-  font-weight: 600;
-  padding: 1.2rem 2.4rem;
-  border: none;
-  border-radius: 0.8rem;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  gap: 1rem;
-  box-shadow: 0 6px 12px rgba(255, 153, 0, 0.2);
-  position: relative;
-  overflow: hidden;
-}
-
-.btn:hover,
-.btn-enviar:hover,
-.explorar-catalogo:hover {
-  background-color: #cf7c00;
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 10px 16px rgba(207, 124, 0, 0.3);
-}
-
-.btn::after,
-.btn-enviar::after,
-.explorar-catalogo::after {
-  content: "";
-  position: absolute;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  transform: scale(0);
-  animation: ripple 0.6s linear;
-}
-
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
 .hero {
   background-image: url(../img/imagenes/imagen-principal.jpg);
   background-repeat: no-repeat;

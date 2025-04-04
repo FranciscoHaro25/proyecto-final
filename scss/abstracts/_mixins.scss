@@ -1,5 +1,6 @@
 // _mixins.scss: Funciones reutilizables como botones, sombras, etc.
 
+@use "variables" as *;
 // abstracts/_mixins.scss
 
 @mixin hero-bg($img-path, $height: 50rem) {
@@ -13,37 +14,57 @@
   width: 100%;
 }
 
-// .btn,
-// .btn-enviar,
-// .explorar-catalogo {
-//   display: inline-flex;
-//   align-items: center;
-//   justify-content: center;
-//   background-color: var(--secundario);
-//   color: var(--blanco);
-//   font-size: 1.6rem;
-//   font-weight: 600;
-//   padding: 1.2rem 2.4rem;
-//   border: none;
-//   border-radius: 0.8rem;
-//   cursor: pointer;
-//   text-decoration: none;
-//   transition: background-color 0.3s, transform 0.3s;
-//   gap: 1rem;
-// }
+@mixin button-base($bg-color, $text-color) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1.2rem 2.4rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: $bg-color;
+  color: $text-color;
+}
 
-// .btn:hover,
-// .btn-enviar:hover,
-// .explorar-catalogo:hover {
-//   background-color: #cf7c00;
-//   transform: scale(1.05);
-// }
+// Mixin para botones de ícono solamente (circulares y accesibles)
+// Ideal para UI minimalista o paneles de acción
+// @param $size - Tamaño del botón (ancho/alto)
+// @param $bg-color - Color de fondo
+// @param $icon-color - Color del ícono
 
-// /* Efecto hover: cambia color y escala */
-// .contenedor-cta a:hover,
-// .catalogo-producto a:hover,
-// .inspiracion-producto a:hover {
-//   background-color: var(--secundario);
-//   color: var(--blanco);
-//   border-bottom-right-radius: 1rem;
-// }
+@mixin button-icon-only(
+  $size: 4rem,
+  $bg-color: $color-primario,
+  $icon-color: $color-blanco
+) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $size;
+  height: $size;
+  background-color: $bg-color;
+  color: $icon-color;
+  border-radius: 50%;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+    transform: scale(1.1);
+  }
+
+  i,
+  svg {
+    pointer-events: none;
+  }
+}
