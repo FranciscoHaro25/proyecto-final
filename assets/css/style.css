@@ -98,13 +98,19 @@ img a {
   border-radius: 0.8rem;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  line-height: 1.2;
   gap: 1rem;
   position: relative;
   overflow: hidden;
   background-color: #ff9900;
   color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.2s ease;
   box-shadow: 0 6px 12px rgba(255, 153, 0, 0.2);
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 .btn:hover {
   background-color: rgb(204, 122.4, 0);
@@ -131,10 +137,12 @@ img a {
   pointer-events: none;
   vertical-align: middle;
 }
-.btn.icon-left i {
+.btn.icon-left i,
+.btn.icon-left svg {
   margin-right: 0.8rem;
 }
-.btn.icon-right i {
+.btn.icon-right i,
+.btn.icon-right svg {
   margin-left: 0.8rem;
 }
 .btn:hover i, .btn:hover svg {
@@ -153,13 +161,19 @@ img a {
   border-radius: 0.8rem;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  line-height: 1.2;
   gap: 1rem;
   position: relative;
   overflow: hidden;
   background-color: #f1f1f1;
   color: #281101;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.2s ease;
   box-shadow: 0 6px 12px rgba(241, 241, 241, 0.2);
+}
+.btn--secundario:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 .btn--secundario:hover {
   background-color: rgb(220.6, 220.6, 220.6);
@@ -178,15 +192,21 @@ img a {
   border-radius: 0.8rem;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  line-height: 1.2;
   gap: 1rem;
   position: relative;
   overflow: hidden;
   background-color: transparent;
   color: #281101;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.2s ease;
   border: 2px solid #281101;
   background-color: transparent;
   box-shadow: none;
+}
+.btn--outlined:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 .btn--outlined:hover {
   background-color: #ff9900;
@@ -196,17 +216,19 @@ img a {
 
 .btn--icon-only {
   display: inline-flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 4rem;
   height: 4rem;
   background-color: #281101;
   color: #ffffff;
-  border-radius: 50%;
   border: none;
+  border-radius: 50%;
   font-size: 2rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  line-height: 1;
+  padding: 0;
 }
 .btn--icon-only:hover {
   background-color: black;
@@ -215,20 +237,37 @@ img a {
 .btn--icon-only i,
 .btn--icon-only svg {
   pointer-events: none;
+  transition: transform 0.15s ease;
 }
 .btn--icon-only i,
 .btn--icon-only svg {
   font-size: 1.8rem;
-  transition: transform 0.3s ease, color 0.3s ease;
+  pointer-events: none;
+  vertical-align: middle;
+  transition: color 0.15s ease, transform 0.2s ease;
+}
+.btn--icon-only:hover i,
+.btn--icon-only:hover svg {
+  transform: rotate(15deg) scale(1.2);
+}
+.btn--icon-only:focus-visible {
+  outline: 2px solid rgba(40, 17, 1, 0.5);
+  outline-offset: 4px;
+}
+.btn--icon-only i,
+.btn--icon-only svg {
+  font-size: 1.8rem;
+  transition: color 0.15s ease, transform 0.2s ease;
   pointer-events: none;
   vertical-align: middle;
 }
-.btn--icon-only .btn:hover i,
-.btn--icon-only .btn:hover svg {
-  transform: rotate(50deg) scale(1.15);
+.btn--icon-only:hover i,
+.btn--icon-only:hover svg {
+  transform: rotate(15deg) scale(1.2);
 }
-.btn--icon-only:hover i, .btn--icon-only:hover svg {
-  transform: rotate(20deg) scale(1.2);
+.btn--icon-only:focus-visible {
+  outline: 2px solid rgba(40, 17, 1, 0.5);
+  outline-offset: 4px;
 }
 
 .btn--ghost {
@@ -242,15 +281,21 @@ img a {
   border-radius: 0.8rem;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  line-height: 1.2;
   gap: 1rem;
   position: relative;
   overflow: hidden;
   background-color: transparent;
   color: #281101;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.2s ease;
   border: 2px solid #281101;
   background-color: transparent;
   box-shadow: none;
+}
+.btn--ghost:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 .btn--ghost:hover {
   background-color: rgba(40, 17, 1, 0.05);
@@ -268,15 +313,21 @@ img a {
   border-radius: 0.8rem;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  line-height: 1.2;
   gap: 1rem;
   position: relative;
   overflow: hidden;
   background-color: transparent;
   color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.2s ease;
   background-image: linear-gradient(135deg, #281101 0%, #ff9900 100%);
   border: none;
   box-shadow: 0 6px 14px rgba(40, 17, 1, 0.3);
+}
+.btn--gradient:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 .btn--gradient:hover {
   transform: translateY(-3px) scale(1.05);

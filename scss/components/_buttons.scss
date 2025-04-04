@@ -35,12 +35,12 @@
     vertical-align: middle;
   }
 
-  &.icon-left i {
-    margin-right: 0.8rem;
+  &.icon-left {
+    @include icon-spacing(left);
   }
 
-  &.icon-right i {
-    margin-left: 0.8rem;
+  &.icon-right {
+    @include icon-spacing(right);
   }
 
   &:hover i,
@@ -79,25 +79,27 @@
 // Botón solo con ícono
 .btn--icon-only {
   @include button-icon-only();
+  @include icono-btn-estilos();
 
   // Estilos para íconos dentro del botón
   i,
   svg {
     font-size: 1.8rem;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: color 0.15s ease, transform 0.2s ease;
     pointer-events: none;
     vertical-align: middle;
   }
 
-  // Efecto de rotación suave al pasar el mouse
-  .btn:hover i,
-  .btn:hover svg {
-    transform: rotate(50deg) scale(1.15);
+  &:hover {
+    i,
+    svg {
+      transform: rotate(15deg) scale(1.2);
+    }
   }
 
-  &:hover i,
-  &:hover svg {
-    transform: rotate(20deg) scale(1.2);
+  &:focus-visible {
+    outline: 2px solid rgba($color-primario, 0.5);
+    outline-offset: 4px;
   }
 }
 

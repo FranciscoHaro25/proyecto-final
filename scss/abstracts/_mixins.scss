@@ -25,13 +25,20 @@
   border-radius: 0.8rem;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease,
-    box-shadow 0.3s ease;
+  line-height: 1.2;
   gap: 1rem;
   position: relative;
   overflow: hidden;
   background-color: $bg-color;
   color: $text-color;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease, color 0.2s ease;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 }
 
 // Mixin para botones de ícono solamente (circulares y accesibles)
@@ -46,17 +53,19 @@
   $icon-color: $color-blanco
 ) {
   display: inline-flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: $size;
   height: $size;
   background-color: $bg-color;
   color: $icon-color;
-  border-radius: 50%;
   border: none;
+  border-radius: 50%;
   font-size: 2rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  line-height: 1;
+  padding: 0;
 
   &:hover {
     background-color: darken($bg-color, 10%);
@@ -66,5 +75,49 @@
   i,
   svg {
     pointer-events: none;
+    transition: transform 0.15s ease;
+  }
+}
+
+// Mixin para estilos de íconos en botones
+@mixin icono-btn-estilos(
+  $font-size: 1.8rem,
+  $rotate: 15deg,
+  $scale: 1.2,
+  $transition-duration: 0.2s
+) {
+  i,
+  svg {
+    font-size: $font-size;
+    pointer-events: none;
+    vertical-align: middle;
+    transition: color 0.15s ease, transform $transition-duration ease;
+  }
+
+  &:hover {
+    i,
+    svg {
+      transform: rotate($rotate) scale($scale);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba($color-primario, 0.5);
+    outline-offset: 4px;
+  }
+}
+
+// Mixin para control de espaciado entre ícono y texto
+@mixin icon-spacing($side: right, $space: 0.8rem) {
+  @if $side == left {
+    i,
+    svg {
+      margin-right: $space;
+    }
+  } @else if $side == right {
+    i,
+    svg {
+      margin-left: $space;
+    }
   }
 }
