@@ -4,41 +4,6 @@
 /* Colores */
 /* Variables de tipografía */
 /* z index */
-.btn,
-.btn-enviar,
-.explorar-catalogo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--secundario);
-  color: var(--blanco);
-  font-size: 1.6rem;
-  font-weight: 600;
-  padding: 1.2rem 2.4rem;
-  border: none;
-  border-radius: 0.8rem;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.3s;
-  gap: 1rem;
-}
-
-.btn:hover,
-.btn-enviar:hover,
-.explorar-catalogo:hover {
-  background-color: #cf7c00;
-  transform: scale(1.05);
-}
-
-/* Efecto hover: cambia color y escala */
-.contenedor-cta a:hover,
-.catalogo-producto a:hover,
-.inspiracion-producto a:hover {
-  background-color: var(--secundario);
-  color: var(--blanco);
-  border-bottom-right-radius: 1rem;
-}
-
 /* Estilos generales de html */
 html {
   box-sizing: border-box;
@@ -352,7 +317,8 @@ footer ul {
   border-radius: 0.8rem;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
   gap: 1rem;
   box-shadow: 0 6px 12px rgba(255, 153, 0, 0.2);
   position: relative;
@@ -384,7 +350,6 @@ footer ul {
     opacity: 0;
   }
 }
-/* SECCIÓN PRINCIPAL */
 .hero {
   background-image: url(../img/imagenes/imagen-principal.jpg);
   background-repeat: no-repeat;
@@ -402,12 +367,41 @@ footer ul {
   gap: 3rem;
   text-align: center;
 }
-
-.descripcion h1 {
+.contenedor-principal .descripcion h1 {
+  font-size: 4.8rem;
+  font-weight: bold;
   line-height: 1.3;
   margin-bottom: 2rem;
 }
+.contenedor-principal .descripcion p {
+  font-size: 1.8rem;
+  max-width: 60ch;
+  margin: 0 auto;
+}
+.contenedor-principal .descripcion .btn {
+  margin-top: 2rem;
+}
 
+@media (max-width: 768px) {
+  .hero {
+    background-image: url(../img/imagenes/imagen-principal.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 35rem;
+    width: 100%;
+  }
+  .contenedor-principal {
+    padding: 0 2rem;
+    margin: 10rem auto 4rem;
+  }
+  .descripcion h1 {
+    font-size: 3.2rem;
+  }
+  .descripcion p {
+    font-size: 1.6rem;
+  }
+}
 /* Estilos del icono SVG */
 .icono-svg {
   width: 2.5rem;
