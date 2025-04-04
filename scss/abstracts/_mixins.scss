@@ -1,6 +1,7 @@
 // _mixins.scss: Funciones reutilizables como botones, sombras, etc.
 
 @use "variables" as *;
+@use "sass:color";
 // abstracts/_mixins.scss
 
 @mixin hero-bg($img-path, $height: 50rem) {
@@ -68,7 +69,7 @@
   padding: 0;
 
   &:hover {
-    background-color: darken($bg-color, 10%);
+    background-color: color.adjust($color-gris-claro, $lightness: 10%);
     transform: scale(1.1);
   }
 

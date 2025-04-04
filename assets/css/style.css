@@ -113,7 +113,7 @@ img a {
   pointer-events: none;
 }
 .btn:hover {
-  background-color: rgb(204, 122.4, 0);
+  background-color: rgb(220.6, 220.6, 220.6);
   transform: translateY(-3px) scale(1.03);
   box-shadow: 0 10px 16px rgba(255, 153, 0, 0.3);
 }
@@ -231,7 +231,7 @@ img a {
   padding: 0;
 }
 .btn--icon-only:hover {
-  background-color: black;
+  background-color: hsl(0, 0%, 104.5098039216%);
   transform: scale(1.1);
 }
 .btn--icon-only i,
