@@ -1,6 +1,7 @@
 // _header.scss: Estilos del encabezado / menú.
 
 @use "../abstracts/variables" as *;
+@use "../abstracts/zindex" as *;
 
 // ----- DESKTOP -----
 .nav {

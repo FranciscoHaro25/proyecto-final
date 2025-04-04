@@ -1,21 +1,54 @@
+// =====================================================
+// ABSTRACTS: variables, mixins, funciones reutilizables
+// =====================================================
 @use "abstracts/variables";
 @use "abstracts/mixins";
+@use "abstracts/functions";
+@use "abstracts/zindex";
 
+// ==================================
+// BASE: reset, tipografía, body, etc.
+// ==================================
 @use "base/reset";
-@use "base/base";
 @use "base/typography";
+@use "base/base";
 
+// ==========================================
+// LAYOUT: header, footer, grid, navegación
+// ==========================================
 @use "layout/header";
 @use "layout/footer";
+@use "layout/navigation";
 @use "layout/grid";
 
-@use "components/button";
+// ==========================================
+// COMPONENTS: botones, cards, sliders, etc.
+// ==========================================
+@use "components/buttons";
+@use "components/card";
+@use "components/form";
+@use "components/modal";
+@use "components/slider";
 
+// ==========================================
+// PAGES: estilos únicos por cada página
+// ==========================================
 @use "pages/home";
+@use "pages/contact";
 @use "pages/catalogue";
 @use "pages/inspiration";
 @use "pages/about";
-@use "pages/contact";
+
+// ==========================================
+// THEMES: modos de color o estilos globales
+// ==========================================
+@use "themes/dark";
+@use "themes/light";
+
+// ==========================================
+// VENDORS: librerías externas (ej: AOS, Bootstrap)
+// ==========================================
+@use "vendors/aos";
 
 /* Estilos del icono SVG */
 .icono-svg {
