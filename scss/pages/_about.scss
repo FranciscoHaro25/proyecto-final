@@ -1,1 +1,45 @@
 // _about.scss: Página “Nosotros”.
+
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+@use "../components/buttons" as *;
+
+/* SOBRE NOSOTROS */
+.sobre-nosotros-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 5rem auto;
+  gap: 5rem;
+}
+.sobre-nosotros img {
+  height: 60rem;
+  width: 100%;
+  object-fit: cover;
+}
+.sobre-nosotros a {
+  background-color: #f1f1f1;
+  text-align: center;
+  display: block;
+  padding: 1.5rem;
+  font-size: 2rem;
+}
+.sobre-nosotros a:hover {
+  background-color: #ff9900;
+  color: #ffffff;
+  border-bottom-right-radius: 1rem;
+}
+
+.contenedor-grid-valores {
+  display: flex;
+  gap: 5rem;
+}
+.contenedor-valores {
+  background-color: #333;
+  color: #ddd;
+  padding: 6rem;
+  margin: 5rem auto;
+  border-radius: 2rem;
+}
+.valor {
+  color: #ff9900;
+}
