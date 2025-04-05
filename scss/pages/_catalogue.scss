@@ -3,6 +3,28 @@
 @use "../components/buttons" as *;
 
 // Contenedor principal del catálogo
+/* CATEGORIA */
+.catalog-grid {
+  margin: 5rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.catalogo-producto img {
+  height: 35rem;
+  width: 100%;
+  object-fit: cover;
+}
+.catalogo-producto a {
+  background-color: #f1f1f1;
+  text-align: center;
+  display: block;
+  padding: 1.5rem;
+  font-size: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
 .contenedor-catalogo {
   @include buscador-catalogo;
   h2 {
@@ -25,5 +47,25 @@
       margin-top: 6rem;
       font-size: 2.4rem;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .listado-categorias {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .catalog-grid,
+  .inspiracion-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-nosotros-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contenedor-grid-valores {
+    flex-direction: column;
+    gap: 2rem;
   }
 }
