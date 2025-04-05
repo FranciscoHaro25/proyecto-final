@@ -849,7 +849,6 @@ footer ul {
 }
 
 /* CONTACTO */
-/* Estilos del formulario */
 .contact-form {
   max-width: 60rem;
   margin: 4rem auto;
@@ -858,23 +857,17 @@ footer ul {
   border-radius: 1rem;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-/* Títulos */
 .contact-form h2 {
   text-align: center;
   margin-bottom: 1.5rem;
   color: #333;
 }
-
-/* Estilos de los labels */
 .contact-form label {
   font-weight: 600;
   color: #333;
   display: block;
   margin: 10px 0 5px;
 }
-
-/* Campos de entrada */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -885,15 +878,11 @@ footer ul {
   outline: none;
   transition: border-color 0.3s ease-in-out;
 }
-
-/* Efecto de foco */
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #ff9900;
   box-shadow: 0px 0px 6px rgba(236, 106, 55, 0.3);
 }
-
-/* Botón de envío */
 .contact-form button {
   display: block;
   width: 100%;
@@ -908,8 +897,6 @@ footer ul {
   margin-top: 15px;
   transition: background 0.3s ease-in-out;
 }
-
-/* Efecto hover en el botón */
 .contact-form button:hover {
   background: #cf7c00;
 }
@@ -1082,26 +1069,6 @@ footer ul {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
-
-.contenedor-inspitacion {
-  margin-top: 5rem;
-}
-
-.inspiracion-producto img {
-  height: 45rem;
-  width: 100%;
-  object-fit: cover;
-}
-
-.inspiracion-producto a {
-  background-color: #f1f1f1;
-  text-align: center;
-  display: block;
-  padding: 1.5rem;
-  font-size: 2rem;
-  transition: all 0.3s ease-in-out;
-}
-
 .inspiracion-grid a {
   background-color: #f1f1f1;
   text-align: center;
@@ -1110,13 +1077,30 @@ footer ul {
   font-size: 2rem;
 }
 
-.catalogo-producto a:hover {
+.contenedor-inspiracion {
+  margin-top: 5rem;
+}
+
+.inspiracion-producto img {
+  height: 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+.inspiracion-producto a {
+  background-color: #f1f1f1;
+  text-align: center;
+  display: block;
+  padding: 1.5rem;
+  font-size: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+.inspiracion-producto a:hover {
   background-color: #ff9900;
   color: #ffffff;
   border-bottom-right-radius: 1rem;
 }
 
-.inspiracion-producto a:hover {
+.catalogo-producto a:hover {
   background-color: #ff9900;
   color: #ffffff;
   border-bottom-right-radius: 1rem;
@@ -1168,7 +1152,6 @@ footer ul {
   width: 100%;
   object-fit: cover;
 }
-
 .sobre-nosotros a {
   background-color: #f1f1f1;
   text-align: center;
@@ -1176,7 +1159,6 @@ footer ul {
   padding: 1.5rem;
   font-size: 2rem;
 }
-
 .sobre-nosotros a:hover {
   background-color: #ff9900;
   color: #ffffff;
@@ -1186,6 +1168,12 @@ footer ul {
 .contenedor-grid-valores {
   display: flex;
   gap: 5rem;
+}
+@media (max-width: 768px) {
+  .contenedor-grid-valores {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 
 .contenedor-valores {
@@ -1200,6 +1188,20 @@ footer ul {
   color: #ff9900;
 }
 
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @media (max-width: 1024px) {
   .hero {
     height: 35rem;
@@ -1236,10 +1238,6 @@ footer ul {
   .sobre-nosotros-grid {
     grid-template-columns: 1fr;
   }
-  .contenedor-grid-valores {
-    flex-direction: column;
-    gap: 2rem;
-  }
 }
 @media (max-width: 480px) {
   .listado-categorias {
@@ -1258,29 +1256,13 @@ footer ul {
     height: 120px;
   }
 }
-.fade-in {
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 @media (min-width: 1024px) {
   .contenedor-principal {
     flex-direction: row-reverse;
     justify-content: space-between;
     text-align: left;
   }
-  .hero {
-    flex: 1;
-  }
+  .hero,
   .descripcion {
     flex: 1;
   }

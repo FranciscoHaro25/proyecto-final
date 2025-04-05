@@ -10,39 +10,49 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+
+  a {
+    background-color: #f1f1f1;
+    text-align: center;
+    display: block;
+    padding: 1.5rem;
+    font-size: 2rem;
+  }
 }
-.contenedor-inspitacion {
+
+.contenedor-inspiracion {
   margin-top: 5rem;
 }
-.inspiracion-producto img {
-  height: 45rem;
-  width: 100%;
-  object-fit: cover;
+
+.inspiracion-producto {
+  img {
+    height: 45rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  a {
+    background-color: #f1f1f1;
+    text-align: center;
+    display: block;
+    padding: 1.5rem;
+    font-size: 2rem;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #ff9900;
+      color: #ffffff;
+      border-bottom-right-radius: 1rem;
+    }
+  }
 }
-.inspiracion-producto a {
-  background-color: #f1f1f1;
-  text-align: center;
-  display: block;
-  padding: 1.5rem;
-  font-size: 2rem;
-  transition: all 0.3s ease-in-out;
-}
-.inspiracion-grid a {
-  background-color: #f1f1f1;
-  text-align: center;
-  display: block;
-  padding: 1.5rem;
-  font-size: 2rem;
-}
-.catalogo-producto a:hover {
-  background-color: #ff9900;
-  color: #ffffff;
-  border-bottom-right-radius: 1rem;
-}
-.inspiracion-producto a:hover {
-  background-color: #ff9900;
-  color: #ffffff;
-  border-bottom-right-radius: 1rem;
+
+.catalogo-producto {
+  a:hover {
+    background-color: #ff9900;
+    color: #ffffff;
+    border-bottom-right-radius: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -80,8 +90,10 @@
     display: none;
   }
 
-  .testimonio-img img {
-    width: 120px;
-    height: 120px;
+  .testimonio-img {
+    img {
+      width: 120px;
+      height: 120px;
+    }
   }
 }

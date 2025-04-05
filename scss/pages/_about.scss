@@ -10,28 +10,39 @@
   margin: 5rem auto;
   gap: 5rem;
 }
-.sobre-nosotros img {
-  height: 60rem;
-  width: 100%;
-  object-fit: cover;
-}
-.sobre-nosotros a {
-  background-color: #f1f1f1;
-  text-align: center;
-  display: block;
-  padding: 1.5rem;
-  font-size: 2rem;
-}
-.sobre-nosotros a:hover {
-  background-color: #ff9900;
-  color: #ffffff;
-  border-bottom-right-radius: 1rem;
+
+.sobre-nosotros {
+  img {
+    height: 60rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  a {
+    background-color: #f1f1f1;
+    text-align: center;
+    display: block;
+    padding: 1.5rem;
+    font-size: 2rem;
+
+    &:hover {
+      background-color: #ff9900;
+      color: #ffffff;
+      border-bottom-right-radius: 1rem;
+    }
+  }
 }
 
 .contenedor-grid-valores {
   display: flex;
   gap: 5rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
+
 .contenedor-valores {
   background-color: #333;
   color: #ddd;
@@ -39,10 +50,28 @@
   margin: 5rem auto;
   border-radius: 2rem;
 }
+
 .valor {
   color: #ff9900;
 }
 
+// Animación
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Media Queries
 @media (max-width: 1024px) {
   .hero {
     height: 35rem;
@@ -87,11 +116,6 @@
   .sobre-nosotros-grid {
     grid-template-columns: 1fr;
   }
-
-  .contenedor-grid-valores {
-    flex-direction: column;
-    gap: 2rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -109,24 +133,11 @@
     display: none;
   }
 
-  .testimonio-img img {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-.fade-in {
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  .testimonio-img {
+    img {
+      width: 120px;
+      height: 120px;
+    }
   }
 }
 
@@ -136,9 +147,8 @@
     justify-content: space-between;
     text-align: left;
   }
-  .hero {
-    flex: 1;
-  }
+
+  .hero,
   .descripcion {
     flex: 1;
   }
