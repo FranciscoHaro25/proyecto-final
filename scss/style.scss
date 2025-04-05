@@ -51,127 +51,50 @@
 // ==========================================
 @use "vendors/aos";
 
-/* Estilos del icono SVG */
-.icono-svg {
-  width: 2.5rem;
-  height: 2.5rem;
-  transition: transform 0.3s ease-in-out;
-}
+// /* Animación del icono en hover */
+// .btn-circular:hover .icono-carrusel-svg {
+//   transform: rotate(-10deg) scale(1.1); /* Rotación ligera y escala */
+// }
 
-/* Estilos del icono SVG */
-.icono-carrusel-svg {
-  width: 5rem;
-  height: 5rem;
-  transition: transform 0.3s ease-in-out;
-}
+// /* Icono dentro del botón */
+// .btn2 i {
+//   font-size: 3rem;
+//   transition: transform 0.3s ease-in-out;
+// }
 
-/* Animación del icono en hover */
-.btn-circular:hover .icono-carrusel-svg {
-  transform: rotate(-10deg) scale(1.1); /* Rotación ligera y escala */
-}
+// /* Efecto hover en el icono: pequeño desplazamiento */
+// .btn2:hover i {
+//   transform: translateX(5rem); /* Mueve la flecha a la derecha */
+// }
 
-/* Icono dentro del botón */
-.btn2 i {
-  font-size: 3rem;
-  transition: transform 0.3s ease-in-out;
-}
+// .explorar-catalogo {
+//   background-color: var(--secundario);
+//   padding: 1rem 2rem;
+//   border-radius: 0.5rem;
+//   display: inline-flex;
+//   align-items: center;
+//   gap: 1rem;
+//   color: var(--blanco);
+//   font-weight: 600;
+//   transition: background-color 0.3s ease, transform 0.3s ease;
+// }
 
-/* Efecto hover en el icono: pequeño desplazamiento */
-.btn2:hover i {
-  transform: translateX(5rem); /* Mueve la flecha a la derecha */
-}
+// .explorar-catalogo:hover {
+//   background-color: #282117;
+//   transform: scale(1.05);
+// }
 
-.card {
-  border: none;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
+// .explorar-catalogo .icono-svg {
+//   width: 2rem;
+//   height: 2rem;
+//   transition: transform 0.3s ease;
+// }
 
-/* Efecto hover */
-.testimonio:hover {
-  transform: scale(1.05);
-}
-
-.explorar-catalogo {
-  background-color: var(--secundario);
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  color: var(--blanco);
-  font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.explorar-catalogo:hover {
-  background-color: #e08600;
-  transform: scale(1.05);
-}
-
-.explorar-catalogo .icono-svg {
-  width: 2rem;
-  height: 2rem;
-  transition: transform 0.3s ease;
-}
-
-.explorar-catalogo:hover .icono-svg {
-  transform: rotate(-10deg) scale(1.2);
-}
+// .explorar-catalogo:hover .icono-svg {
+//   transform: rotate(-10deg) scale(1.2);
+// }
 
 /* ****************************************************** */
-
-/* CATÁLOGO */
-/* Contenedor del buscador */
-.contenedor-catalogo {
-  margin: 5rem auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.search-container {
-  display: flex;
-  align-items: center;
-  background: #f5f5f5;
-  border-radius: 25px;
-  padding: 8px 15px;
-  max-width: 300px;
-  border: 2px solid #ddd;
-  transition: all 0.3s ease-in-out;
-  margin-top: 5rem;
-}
-
-/* Input de búsqueda */
-.search-input {
-  border: none;
-  outline: none;
-  background: transparent;
-  flex: 1;
-  font-size: 16px;
-  padding: 5px;
-  color: #333;
-}
-
-/* Botón del icono */
-.search-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #777;
-  font-size: 18px;
-  transition: color 0.3s ease-in-out;
-}
-
-/* Efecto hover en el icono */
-.search-btn:hover {
-  color: #ec6a37;
-}
-
-/* Efecto cuando el input está activo */
-.search-container:focus-within {
-  border-color: #ec6a37;
-  box-shadow: 0 0 8px rgba(236, 106, 55, 0.3);
-}
 
 /* CATEGORIA */
 .catalog-grid {
