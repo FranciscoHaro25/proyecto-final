@@ -200,10 +200,10 @@
     align-items: center;
     background-color: $color-gris-claro;
     border-radius: 25px;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 4rem;
     max-width: 30rem;
     border: 2px solid $color-borde;
-    margin-top: 5rem;
+    margin: 2rem 0 5rem;
     transition: all 0.3s ease-in-out;
 
     &:focus-within {
