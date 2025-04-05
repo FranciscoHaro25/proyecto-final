@@ -1166,46 +1166,94 @@ footer ul {
 /* SOBRE NOSOTROS */
 .sobre-nosotros-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+  gap: 4rem;
   margin: 5rem auto;
-  gap: 5rem;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+@media (max-width: 768px) {
+  .sobre-nosotros-grid {
+    gap: 3rem;
+  }
+}
+@media (max-width: 480px) {
+  .sobre-nosotros-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
 }
 
-.sobre-nosotros img {
-  height: 60rem;
+.sobre-nosotros__imagen {
+  height: auto;
+  max-height: 60rem;
   width: 100%;
   object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
 }
-
-.sobre-nosotros a {
+.sobre-nosotros__imagen:hover {
+  transform: scale(1.02);
+}
+.sobre-nosotros__enlace {
   background-color: #f1f1f1;
   text-align: center;
   display: block;
   padding: 1.5rem;
   font-size: 2rem;
+  color: #281101;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+  border-top: 1px solid #ccc;
 }
-
-.sobre-nosotros a:hover {
+.sobre-nosotros__enlace:hover {
   background-color: #ff9900;
-  color: #ffffff;
+  color: #fff;
   border-bottom-right-radius: 1rem;
 }
 
 .contenedor-grid-valores {
   display: flex;
-  gap: 5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+@media (max-width: 768px) {
+  .contenedor-grid-valores {
+    gap: 3rem;
+  }
 }
 
 .contenedor-valores {
-  background-color: #333;
-  color: #ddd;
-  padding: 6rem;
-  margin: 5rem auto;
-  border-radius: 2rem;
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+  padding: 4rem;
+  border-radius: 1.5rem;
+  max-width: 550px;
+  width: 100%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contenedor-valores:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 .valor {
   color: #ff9900;
+  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .valor {
+    font-size: 2rem;
+  }
 }
 
 /* ****************************************************** */
