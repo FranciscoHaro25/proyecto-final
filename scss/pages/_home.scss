@@ -4,9 +4,8 @@
 @use "../abstracts/mixins" as *;
 @use "../components/buttons" as *;
 
-// =========================================
+// =================================>>>>
 // SECCIÓN HERO (principal de inicio)
-// =========================================
 
 .hero {
   @include hero-bg("../img/imagenes/imagen-principal.jpg", 50rem);
@@ -40,9 +39,7 @@
   }
 }
 
-// =========================================
 // RESPONSIVE
-// =========================================
 
 @media (max-width: 768px) {
   .hero {
@@ -61,6 +58,65 @@
 
     p {
       font-size: 1.6rem;
+    }
+  }
+}
+// <<<<=================================
+
+// ====================================>>>>
+// CATEGORÍAS
+
+.contenedor-categoria {
+  h2 {
+    font-size: 3.2rem;
+    margin: 6rem 0 2rem;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+    max-width: 60ch;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .listado-categorias {
+    @include categoria-card-grid;
+
+    .categoria {
+      @include categoria-card(
+        $img-height: 32rem
+      ); // Altura por defecto en desktop
+    }
+  }
+}
+
+// RESPONSIVE
+@media (max-width: 768px) {
+  .contenedor-categoria {
+    h2 {
+      font-size: 2.8rem;
+      margin: 3rem 0;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
+
+    .listado-categorias {
+      gap: 2rem;
+
+      .categoria {
+        @include categoria-card($img-height: 25rem); // Altura menor en móvil
+      }
     }
   }
 }

@@ -1,9 +1,12 @@
-// _mixins.scss: Funciones reutilizables como botones, sombras, etc.
-
+// _mixins.scss: Mixins reutilizables para botones, imágenes de fondo e íconos
+@use "../abstracts/variables" as *;
 @use "variables" as *;
 @use "sass:color";
-// abstracts/_mixins.scss
 
+// =====================================
+// Hero Background
+// Uso: @include hero-bg("ruta.jpg", altura);
+// =====================================
 @mixin hero-bg($img-path, $height: 50rem) {
   background: {
     image: url(#{$img-path});
@@ -15,6 +18,10 @@
   width: 100%;
 }
 
+// =====================================
+// Botón base
+// Uso: @include button-base(color-fondo, color-texto);
+// =====================================
 @mixin button-base($bg-color, $text-color) {
   display: inline-flex;
   align-items: center;
@@ -42,12 +49,10 @@
   }
 }
 
-// Mixin para botones de ícono solamente (circulares y accesibles)
-// Ideal para UI minimalista o paneles de acción
-// @param $size - Tamaño del botón (ancho/alto)
-// @param $bg-color - Color de fondo
-// @param $icon-color - Color del ícono
-
+// =====================================
+// Botón solo ícono (modo circular)
+// Uso: @include button-icon-only();
+// =====================================
 @mixin button-icon-only(
   $size: 4rem,
   $bg-color: $color-primario,
@@ -64,12 +69,11 @@
   border-radius: 50%;
   font-size: 2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  line-height: 1;
   padding: 0;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 
   &:hover {
-    background-color: color.adjust($color-gris-claro, $lightness: 10%);
+    background-color: color.adjust($bg-color, $lightness: -10%);
     transform: scale(1.1);
   }
 
@@ -80,7 +84,10 @@
   }
 }
 
-// Mixin para estilos de íconos en botones
+// =====================================
+// Estilos para íconos animados dentro de botones
+// Uso: @include icono-btn-estilos();
+// =====================================
 @mixin icono-btn-estilos(
   $font-size: 1.8rem,
   $rotate: 15deg,
@@ -90,9 +97,9 @@
   i,
   svg {
     font-size: $font-size;
-    pointer-events: none;
     vertical-align: middle;
-    transition: color 0.15s ease, transform $transition-duration ease;
+    pointer-events: none;
+    transition: color 0.2s ease, transform $transition-duration ease;
   }
 
   &:hover {
@@ -108,7 +115,10 @@
   }
 }
 
-// Mixin para control de espaciado entre ícono y texto
+// =====================================
+// Espaciado entre ícono y texto
+// Uso: @include icon-spacing(right, 0.8rem);
+// =====================================
 @mixin icon-spacing($side: right, $space: 0.8rem) {
   @if $side == left {
     i,
@@ -119,6 +129,59 @@
     i,
     svg {
       margin-left: $space;
+    }
+  }
+}
+
+// =====================================
+// Grid de categorías
+// =====================================
+
+@mixin categoria-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+// Tarjeta de categoría individual
+@mixin categoria-card($img-height: 30rem) {
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  img {
+    width: 100%;
+    height: $img-height;
+    object-fit: cover;
+    border-bottom: 4px solid transparent;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+    border-color: $color-secundario;
+  }
+
+  .nombre-link {
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: $color-gris-claro;
+    color: $color-primario;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease,
+      border-radius 0.3s ease;
+
+    &:hover {
+      background-color: $color-secundario;
+      color: $color-blanco;
+      border-bottom-right-radius: 2rem;
     }
   }
 }
