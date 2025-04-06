@@ -16,6 +16,13 @@
   margin: 5rem auto;
   padding-top: 10rem;
 
+  .encabezado {
+    margin-top: 4rem;
+    h2 {
+      text-align: center;
+    }
+  }
+
   @include respond("tablet") {
     grid-template-columns: 1fr;
   }
@@ -60,15 +67,17 @@
 }
 
 .contenedor-valores {
-  background-color: $color-negro;
-  color: $color-gris-claro;
+  background-color: $color-primario;
+  // color: $color-gris-claro;
   padding: 6rem;
   margin: 5rem auto;
   border-radius: 2rem;
-}
-
-.valor {
-  color: $color-secundario;
+  .valor {
+    color: $color-secundario;
+  }
+  p {
+    color: $color-gris-claro;
+  }
 }
 
 // ------------------------------

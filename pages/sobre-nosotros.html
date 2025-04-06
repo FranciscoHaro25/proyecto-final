@@ -96,8 +96,8 @@
       class="contenedor sobre-nosotros-grid"
       aria-labelledby="titulo-nosotros"
     >
-      <div>
-        <h1 id="titulo-nosotros">Sobre Nosotros</h1>
+      <div class="encabezado">
+        <h2 id="titulo-nosotros">Sobre Nosotros</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit
           phasellus mollis sit aliquam sit nullam. Lorem ipsum dolor sit amet,
@@ -105,22 +105,26 @@
           egestas.
         </p>
       </div>
-      <div class="sobre-nosotros">
+
+      <figure class="sobre-nosotros">
         <img
           src="../assets/img/imagenes/sobre-nosotros-equipo.jpg"
           alt="Imagen de nuestro equipo de trabajo"
         />
-        <a class="nombre-link" href="#">Nuestro Equipo</a>
-      </div>
+        <figcaption>
+          <a class="nombre-link" href="#">Nuestro Equipo</a>
+        </figcaption>
+      </figure>
     </main>
 
-    <!-- SECTION MISION / VISIÓN -->
+    <!-- SECTION MISIÓN / VISIÓN -->
     <section class="contenedor" aria-labelledby="titulo-valores">
       <header class="text-center">
         <h2 id="titulo-valores">Valores Corporativos</h2>
       </header>
+
       <div class="contenedor-grid-valores">
-        <div class="contenedor-valores">
+        <article class="contenedor-valores">
           <h3 class="valor">Misión</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit
@@ -128,8 +132,9 @@
             consectetur adipiscing elit id venenatis pretium risus euismod
             dictum egestas.
           </p>
-        </div>
-        <div class="contenedor-valores">
+        </article>
+
+        <article class="contenedor-valores">
           <h3 class="valor">Visión</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit
@@ -137,7 +142,7 @@
             consectetur adipiscing elit id venenatis pretium risus euismod
             dictum egestas.
           </p>
-        </div>
+        </article>
       </div>
     </section>
 

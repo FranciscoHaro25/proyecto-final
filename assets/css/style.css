@@ -1269,6 +1269,12 @@ button[type=submit]:hover {
   margin: 5rem auto;
   padding-top: 10rem;
 }
+.sobre-nosotros-grid .encabezado {
+  margin-top: 4rem;
+}
+.sobre-nosotros-grid .encabezado h2 {
+  text-align: center;
+}
 @media (max-width: 768px) {
   .sobre-nosotros-grid {
     grid-template-columns: 1fr;
@@ -1305,15 +1311,16 @@ button[type=submit]:hover {
 }
 
 .contenedor-valores {
-  background-color: #333;
-  color: #f1f1f1;
+  background-color: #281101;
   padding: 6rem;
   margin: 5rem auto;
   border-radius: 2rem;
 }
-
-.valor {
+.contenedor-valores .valor {
   color: #ff9900;
+}
+.contenedor-valores p {
+  color: #f1f1f1;
 }
 
 .fade-in {
