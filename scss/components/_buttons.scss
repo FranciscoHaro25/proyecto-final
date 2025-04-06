@@ -1,7 +1,14 @@
+// =============================================
+// _buttons.scss: Estilos reutilizables para botones
+// =============================================
+
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 @use "sass:color"; // ✅ Importar módulo Sass nativo
 
+// ------------------------------
+// Estilo base para todos los botones
+// ------------------------------
 .btn {
   @include button-base($color-secundario, $color-blanco);
   box-shadow: 0 6px 12px rgba($color-secundario, 0.2);
@@ -13,6 +20,7 @@
   }
 
   &::after {
+    // Efecto ripple
     content: "";
     position: absolute;
     top: 50%;
@@ -26,7 +34,6 @@
     pointer-events: none;
   }
 
-  // Estilos para íconos dentro del botón
   i,
   svg {
     font-size: 1.8rem;
@@ -45,12 +52,13 @@
 
   &:hover i,
   &:hover svg {
-    transform: scale(1.3);
-    transform: rotate(-10deg) scale(1.2);
+    transform: rotate(-10deg) scale(1.2); // ✅ Ajuste: solo una transformación válida
   }
 }
 
+// ------------------------------
 // Botón secundario
+// ------------------------------
 .btn--secundario {
   @include button-base($color-gris-claro, $color-primario);
   box-shadow: 0 6px 12px rgba($color-gris-claro, 0.2);
@@ -62,7 +70,9 @@
   }
 }
 
+// ------------------------------
 // Botón delineado (outlined)
+// ------------------------------
 .btn--outlined {
   @include button-base(transparent, $color-primario);
   border: 2px solid $color-primario;
@@ -76,12 +86,13 @@
   }
 }
 
+// ------------------------------
 // Botón solo con ícono
+// ------------------------------
 .btn--icon-only {
   @include button-icon-only();
   @include icono-btn-estilos();
 
-  // Estilos para íconos dentro del botón
   i,
   svg {
     font-size: 1.8rem;
@@ -103,7 +114,9 @@
   }
 }
 
+// ------------------------------
 // Botón estilo ghost
+// ------------------------------
 .btn--ghost {
   @include button-base(transparent, $color-primario);
   border: 2px solid $color-primario;
@@ -116,7 +129,9 @@
   }
 }
 
+// ------------------------------
 // Botón con fondo gradiente para CTA
+// ------------------------------
 .btn--gradient {
   @include button-base(transparent, $color-blanco);
   background-image: linear-gradient(
@@ -133,7 +148,9 @@
   }
 }
 
-// Ripple animation
+// ------------------------------
+// Animación ripple
+// ------------------------------
 @keyframes ripple {
   to {
     transform: scale(4);
