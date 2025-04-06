@@ -94,20 +94,47 @@
 }
 
 // ------------------------------
-// 4. Responsive con media query (tablet y móviles)
+// 4. Responsive con media queries (tablet y móvil)
 // ------------------------------
+
 @include respond("tablet") {
   .catalogo {
     padding: 4rem 1.5rem;
   }
 
-  .catalogo-grid {
-    gap: 2rem;
+  .catalogo-header {
+    h2 {
+      font-size: 2.8rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
   }
 
-  .catalogo-producto {
-    img {
+  .catalogo-grid {
+    gap: 2rem;
+
+    .catalogo-producto img {
       height: 20rem;
+    }
+  }
+
+  .contacto.contacto--alt-bg {
+    padding: 4rem 2rem;
+
+    .contact-form {
+      gap: 1.5rem;
+
+      input,
+      textarea {
+        font-size: 1.4rem;
+      }
+
+      button {
+        font-size: 1.4rem;
+        padding: 1rem 2rem;
+      }
     }
   }
 }
@@ -116,11 +143,12 @@
   .catalogo-buscador {
     flex-direction: column;
     align-items: stretch;
+    gap: 1rem;
 
     .search-input,
     .search-btn {
-      border-radius: 0;
       width: 100%;
+      border-radius: 0;
     }
 
     .search-input {
@@ -129,6 +157,27 @@
 
     .search-btn {
       border-radius: 0 0 0.8rem 0.8rem;
+    }
+  }
+
+  .catalogo-producto .nombre-link {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+
+  .contacto.contacto--alt-bg {
+    .contact-form {
+      padding: 2rem 1.5rem;
+
+      input,
+      textarea {
+        font-size: 1.3rem;
+      }
+
+      button {
+        font-size: 1.4rem;
+        width: 100%;
+      }
     }
   }
 }

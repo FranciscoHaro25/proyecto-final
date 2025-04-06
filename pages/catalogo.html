@@ -37,6 +37,12 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- Animate On Scroll -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
+
     <!-- Hojas de Estilo Personalizadas -->
     <link rel="stylesheet" href="../assets/css/normalize.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
@@ -95,7 +101,6 @@
 
     <!-- ========== MAIN CONTENT ========== -->
     <main class="catalogo contenedor" aria-labelledby="catalogo-titulo">
-      <!-- Título del catálogo -->
       <header class="catalogo-header text-center">
         <h2 id="catalogo-titulo">Catálogo de Productos</h2>
         <p>
@@ -103,7 +108,7 @@
         </p>
       </header>
 
-      <!-- Buscador de productos -->
+      <!-- Buscador -->
       <div class="catalogo-buscador search-container">
         <label for="buscar" class="visually-hidden">Buscar productos</label>
         <input
@@ -117,86 +122,87 @@
         </button>
       </div>
 
-      <!-- Rejilla de productos -->
+      <!-- Productos -->
       <div class="catalogo-grid">
-        <article class="catalogo-producto">
+        <!-- Cada artículo tiene animación AOS -->
+        <article class="catalogo-producto" data-aos="fade-up">
           <img
             src="../assets/img/imagenes/catalogo-sofa-modular.jpg"
             alt="Sofá Modular"
           />
           <a href="#" class="nombre-link btn">Sofá Modular</a>
         </article>
-        <article class="catalogo-producto">
+        <article class="catalogo-producto" data-aos="fade-up">
           <img
             src="../assets/img/imagenes/catalogo-sofa-chesterfield.jpg"
             alt="Sofá Chesterfield"
           />
           <a href="#" class="nombre-link btn">Sofá Chesterfield</a>
         </article>
-        <article class="catalogo-producto">
+        <article class="catalogo-producto" data-aos="fade-up">
           <img
             src="../assets/img/imagenes/catalogo-mesa-comedor.jpg"
             alt="Mesa Comedor"
           />
           <a href="#" class="nombre-link btn">Mesa Comedor</a>
         </article>
-        <article class="catalogo-producto">
+        <article class="catalogo-producto" data-aos="fade-up">
           <img
             src="../assets/img/imagenes/catalogo-mesa-ratona.jpg"
             alt="Mesa Ratona"
           />
           <a href="#" class="nombre-link btn">Mesa Ratona</a>
         </article>
-        <article class="catalogo-producto">
+        <article class="catalogo-producto" data-aos="fade-up">
           <img
             src="../assets/img/imagenes/catalogo-silla-ergonomica.jpg"
             alt="Silla Ergonómica"
           />
           <a href="#" class="nombre-link btn">Silla Ergonómica</a>
         </article>
-        <article class="catalogo-producto">
+        <article class="catalogo-producto" data-aos="fade-up">
           <img
             src="../assets/img/imagenes/catalogo-silla-1.jpg"
             alt="Set de Sillas"
           />
           <a href="#" class="nombre-link btn">Set de Sillas</a>
         </article>
-        <article class="catalogo-producto">
+        <article class="catalogo-producto" data-aos="fade-up">
           <img
             src="../assets/img/imagenes/catalogo-cama.jpg"
             alt="Cama King Size"
           />
           <a href="#" class="nombre-link btn">Cama King Size</a>
         </article>
-        <article class="catalogo-producto">
+        <article class="catalogo-producto" data-aos="fade-up">
           <img
             src="../assets/img/imagenes/catalogo-cama-flotante.jpg"
             alt="Cama Flotante"
           />
           <a href="#" class="nombre-link btn">Cama Flotante</a>
         </article>
-        <article class="catalogo-producto">
+        <article class="catalogo-producto" data-aos="fade-up">
           <img
             src="../assets/img/imagenes/catalogo-mueble-tv-flotante.jpg"
             alt="Mueble de TV Flotante"
           />
           <a href="#" class="nombre-link btn">Mueble de TV Flotante</a>
         </article>
-        <article class="catalogo-producto">
+        <article class="catalogo-producto" data-aos="fade-up">
           <img
             src="../assets/img/imagenes/catalogo-librero.jpg"
             alt="Librero"
           />
           <a href="#" class="nombre-link btn">Librero</a>
         </article>
-        <article class="catalogo-producto">
+        <article class="catalogo-producto" data-aos="fade-up">
           <img
             src="../assets/img/imagenes/catalogo-estanteria.jpg"
             alt="Estantería"
           />
           <a href="#" class="nombre-link btn">Estantería</a>
         </article>
-        <article class="catalogo-producto">
+        <article class="catalogo-producto" data-aos="fade-up">
           <img
             src="../assets/img/imagenes/catalogo-escritorio.jpg"
             alt="Escritorio"
@@ -206,7 +212,7 @@
       </div>
     </main>
 
-    <!-- ========== FORMULARIO DE CONTACTO EN CATÁLOGO ========== -->
+    <!-- FORMULARIO DE CONTACTO -->
     <section
       class="contacto contacto--alt-bg"
       aria-labelledby="formulario-catalogo"
@@ -217,7 +223,6 @@
       <p class="text-center">
         Envíanos un mensaje y te asesoramos personalmente.
       </p>
-
       <form class="contact-form" novalidate>
         <div>
           <label for="nombre">Nombre</label>
@@ -226,7 +231,6 @@
             Por favor, introduce tu nombre.
           </p>
         </div>
-
         <div>
           <label for="email">Correo electrónico</label>
           <input type="email" id="email" name="email" required />
@@ -234,7 +238,6 @@
             El correo ingresado no es válido.
           </p>
         </div>
-
         <div>
           <label for="producto">Producto de interés</label>
           <input
@@ -244,7 +247,6 @@
             placeholder="Ej: Sofá Modular"
           />
         </div>
-
         <div>
           <label for="mensaje">Mensaje</label>
           <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
@@ -252,21 +254,111 @@
             Este campo es obligatorio.
           </p>
         </div>
-
         <button type="submit" aria-label="Enviar formulario de contacto">
           Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
         </button>
       </form>
     </section>
 
-    <!-- ========== FOOTER ========== -->
+    <!-- ======================================== -->
+    <!--               FOOTER                     -->
+    <!-- ======================================== -->
     <footer>
       <div>
-        <!-- Contenido del footer como en el original -->
+        <div class="row justify-content-between contenedor">
+          <!-- Logo -->
+          <div class="logo-footer">
+            <a href="../index.html" class="logo-footer">
+              <img src="../assets/img/logo-amarillo.svg" alt="Logo CasaForm" />
+            </a>
+          </div>
+
+          <!-- Datos de contacto -->
+          <div class="col-md-4 mb-4">
+            <h3 class="text-uppercase fw-bold mb-4">Contacto</h3>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="https://www.google.com/maps?q=Calle+Ejemplo+123,+Ciudad"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <i class="fa-solid fa-map-marker-alt me-2"></i> Dirección:
+                  Calle Ejemplo 123, Ciudad
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="tel:+1234567890"
+                  class="text-decoration-none text-light"
+                >
+                  <i class="fa-solid fa-phone me-2"></i> Teléfono: +123 456 7890
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:contacto@tumuebles.com"
+                  class="text-decoration-none text-light"
+                >
+                  <i class="fa-solid fa-envelope me-2"></i> Email:
+                  contacto@tumuebles.com
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Enlaces útiles -->
+          <div class="col-md-4 mb-4 enlaces-hover">
+            <h3 class="text-uppercase fw-bold mb-4">Enlaces Rápidos</h3>
+            <ul>
+              <li><a href="./index.html">Inicio</a></li>
+              <li><a href="./pages/catalogo.html">Catálogo</a></li>
+              <li><a href="./pages/inspiracion.html">Inspiración</a></li>
+              <li><a href="./pages/sobre-nosotros.html">Sobre Nosotros</a></li>
+              <li><a href="./pages/contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+
+          <!-- Redes Sociales -->
+          <div class="col-md-4 mb-4">
+            <h3 class="text-uppercase fw-bold mb-4">Síguenos</h3>
+            <div class="d-flex gap-4 fs-4 social">
+              <a href="https://facebook.com/tu-tienda" target="_blank"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="https://instagram.com/tu-tienda" target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://twitter.com/tu-tienda" target="_blank"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a href="https://linkedin.com/company/tu-tienda" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="https://youtube.com/tu-tienda" target="_blank"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Créditos -->
+        <div class="linea-color text-center mt-4 pt-4">
+          <p class="mb-1 texto-footer">
+            &copy; 2025 | Todos los Derechos Reservados | CasaForm
+          </p>
+          <small>Términos y Condiciones | Política de Privacidad</small>
+        </div>
       </div>
     </footer>
 
-    <!-- Scripts JS -->
-    <script src="../assets/js/script.js"></script>
+    <!-- JS principal -->
+    <script src="./assets/js/script.js"></script>
+
+    <!-- JS de animación al hacer scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

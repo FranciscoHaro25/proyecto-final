@@ -1165,11 +1165,31 @@ button[type=submit]:hover {
   .catalogo {
     padding: 4rem 1.5rem;
   }
+  .catalogo-header h2 {
+    font-size: 2.8rem;
+  }
+  .catalogo-header p {
+    font-size: 1.4rem;
+  }
   .catalogo-grid {
     gap: 2rem;
   }
-  .catalogo-producto img {
+  .catalogo-grid .catalogo-producto img {
     height: 20rem;
+  }
+  .contacto.contacto--alt-bg {
+    padding: 4rem 2rem;
+  }
+  .contacto.contacto--alt-bg .contact-form {
+    gap: 1.5rem;
+  }
+  .contacto.contacto--alt-bg .contact-form input,
+  .contacto.contacto--alt-bg .contact-form textarea {
+    font-size: 1.4rem;
+  }
+  .contacto.contacto--alt-bg .contact-form button {
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
   }
 }
 .contenedor-inspitacion {
