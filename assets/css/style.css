@@ -880,21 +880,16 @@ button[type=submit]:hover {
   overflow: hidden;
   max-width: 800px;
   margin: 0 auto;
-  align-items: center;
 }
 .testimonios-carrusel .slider .slides {
   display: flex;
   transition: transform 0.6s ease-in-out;
-  justify-content: center;
 }
 .testimonios-carrusel .slider .slide {
-  background-color: #ffffff;
-  min-width: 50%;
+  min-width: 100%;
   display: none;
   flex-direction: column;
   align-items: center;
-  padding: 10rem;
-  border-radius: 3rem;
 }
 .testimonios-carrusel .slider .slide.active {
   display: flex;
