@@ -11,7 +11,7 @@
 
 .hero {
   position: relative;
-  height: 70rem; // Más altura para mayor visibilidad
+  height: 75rem; // Más altura para mayor visibilidad
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,7 @@
     position: relative;
     z-index: 2;
     max-width: 80rem;
-    padding: 2rem;
+    padding-top: 25rem;
 
     h1 {
       font-size: 5.2rem;
@@ -39,6 +39,7 @@
       max-width: 65ch;
       margin: 0 auto 2.5rem;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      color: #919191;
     }
 
     .btn {
@@ -59,7 +60,7 @@
 @media (max-width: 768px) {
   .hero {
     height: 55rem;
-    padding-top: 15rem;
+    padding-top: 0;
 
     .hero-contenido {
       h1 {

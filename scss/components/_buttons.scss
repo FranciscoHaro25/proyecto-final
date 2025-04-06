@@ -74,8 +74,8 @@
 // Botón delineado (outlined)
 // ------------------------------
 .btn--outlined {
-  @include button-base(transparent, $color-primario);
-  border: 2px solid $color-primario;
+  @include button-base(transparent, $color-secundario);
+  border: 2px solid $color-gris-claro;
   background-color: transparent;
   box-shadow: none;
 

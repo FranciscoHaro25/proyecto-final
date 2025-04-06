@@ -241,9 +241,9 @@ textarea {
   position: relative;
   overflow: hidden;
   background-color: transparent;
-  color: #281101;
+  color: #ff9900;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.2s ease;
-  border: 2px solid #281101;
+  border: 2px solid #f1f1f1;
   background-color: transparent;
   box-shadow: none;
 }
@@ -702,7 +702,7 @@ button[type=submit]:hover {
 }
 .hero {
   position: relative;
-  height: 70rem;
+  height: 75rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -715,7 +715,7 @@ button[type=submit]:hover {
   position: relative;
   z-index: 2;
   max-width: 80rem;
-  padding: 2rem;
+  padding-top: 25rem;
 }
 .hero .hero-contenido h1 {
   font-size: 5.2rem;
@@ -728,6 +728,7 @@ button[type=submit]:hover {
   max-width: 65ch;
   margin: 0 auto 2.5rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: #919191;
 }
 .hero .hero-contenido .btn {
   font-size: 1.6rem;
@@ -743,7 +744,7 @@ button[type=submit]:hover {
 @media (max-width: 768px) {
   .hero {
     height: 55rem;
-    padding-top: 15rem;
+    padding-top: 0;
   }
   .hero .hero-contenido h1 {
     font-size: 3.4rem;
