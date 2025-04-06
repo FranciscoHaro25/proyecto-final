@@ -1,6 +1,21 @@
-// _typography: Define la tipografía usada en el proyecto.
+// =============================================
+// _typography.scss: Definición de tipografía base
+// =============================================
+
 @use "../abstracts/variables" as *;
 
-/* Importar fuentes desde Google Fonts */
+// ------------------------------------------------------
+// ASIGNACIÓN DE FUENTES SEGÚN ELEMENTOS
+// ------------------------------------------------------
 
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:wght@400;600;700&display=swap");
+// Tipografía principal para el cuerpo del sitio
+body {
+  font-family: $fuente-principal;
+}
+
+// Tipografía secundaria para títulos
+h1,
+h2,
+h3 {
+  font-family: $fuente-secundaria;
+}

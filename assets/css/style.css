@@ -1,6 +1,4 @@
 @charset "UTF-8";
-/* Importar fuentes desde Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:wght@400;600;700&display=swap");
 @media (max-width: 576px) {
   .hide-on-mobile {
     display: none !important;
@@ -14,6 +12,16 @@
   .show-on-desktop {
     display: block !important;
   }
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
 }
 
 html {
