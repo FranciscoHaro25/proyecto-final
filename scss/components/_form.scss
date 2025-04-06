@@ -1,71 +1,105 @@
-// =============================================
-// _form.scss: Estilos de formularios reutilizables con validación
-// =============================================
+// ===========================================================
+// _form.scss: Estilos para formularios y elementos interactivos
+// ===========================================================
 
-@use "sass:color"; // ✅ Módulo Sass nativo para manipular colores
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
+@use "sass:color"; // Importa módulo oficial de color
 
 // ------------------------------
-// Formulario general
+// Estilos base del formulario
 // ------------------------------
+.form-contacto,
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: 3rem;
+  padding: 4rem 3rem;
   background-color: $color-gris-claro;
   border-radius: 1rem;
-  box-shadow: 0 6px 12px rgba($color-negro, 0.1);
+  box-shadow: 0 4px 12px rgba($color-primario, 0.1);
+  max-width: 60rem;
+  margin: 4rem auto;
+}
 
-  label {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-    color: $color-primario;
+// ------------------------------
+// Estilos para campos del formulario
+// ------------------------------
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  border: 1px solid $color-borde;
+  border-radius: 0.6rem;
+  font-size: 1.6rem;
+  font-family: $fuente-principal;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $color-secundario;
+    box-shadow: 0 0 8px rgba($color-secundario, 0.3);
   }
+}
 
-  input,
-  textarea {
-    width: 100%;
-    padding: 1.2rem;
-    font-size: 1.6rem;
-    border: 1px solid $color-borde;
-    border-radius: 0.5rem;
-    background-color: #fff;
-    font-family: $fuente-principal;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+// ------------------------------
+// Etiquetas
+// ------------------------------
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: $color-primario;
+  font-size: 1.4rem;
+}
 
-    &:focus {
-      border-color: $color-secundario;
-      outline: none;
-      box-shadow: 0 0 0 3px rgba($color-secundario, 0.15);
-    }
+// ------------------------------
+// Botón de envío
+// ------------------------------
+button[type="submit"] {
+  @include button-base($color-secundario, $color-blanco);
+  width: fit-content;
+  align-self: flex-start;
+  transition: background-color 0.3s ease;
 
-    &.is-invalid {
-      border-color: red;
-      background-color: color.scale($color-secundario, $lightness: 75%);
-    }
+  &:hover {
+    background-color: color.adjust($color-secundario, $lightness: -5%);
   }
+}
 
-  // Mensaje de error
-  .error-message {
-    color: red;
+// ------------------------------
+// Estados de validación
+// ------------------------------
+.is-invalid {
+  border-color: red;
+  background-color: rgba(255, 0, 0, 0.05);
+}
+
+.error-message {
+  color: red;
+  font-size: 1.3rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+// ------------------------------
+// Responsive: Tablet hacia abajo
+// ------------------------------
+@include respond("tablet") {
+  .form-contacto,
+  .contact-form {
+    padding: 2.5rem 2rem;
     font-size: 1.4rem;
-    margin-top: -1.2rem;
-    margin-bottom: 1rem;
-  }
 
-  // Estilos del botón
-  button[type="submit"] {
-    @include button-base($color-primario, $color-blanco);
-    @include icono-btn-estilos();
-    text-transform: uppercase;
+    input,
+    textarea,
+    select {
+      font-size: 1.4rem;
+    }
 
-    &:hover {
-      background-color: color.adjust($color-primario, $lightness: -5%);
+    button[type="submit"] {
+      width: 100%;
+      text-align: center;
     }
   }
 }

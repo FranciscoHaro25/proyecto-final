@@ -225,6 +225,14 @@
   }
 }
 
+@mixin respond($breakpoint) {
+  @if $breakpoint == "tablet" {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
 // ========================
 // MEDIA QUERIES
 // ========================
