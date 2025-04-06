@@ -1,15 +1,64 @@
-// _variables.scss: Colores, tipografías, tamaños, z-index, etc.
-
-/* Colores */
+// ========================
+// PALETA DE COLORES
+// ========================
 $color-primario: #281101;
 $color-secundario: #ff9900;
 $color-gris: #555;
+$color-gris-claro: #f1f1f1;
 $color-blanco: #ffffff;
 $color-negro: #333;
-$color-gris-claro: #f1f1f1;
-$color-texto: #333;
 $color-borde: #ddd;
+$color-texto: $color-negro;
 
-/* Variables de tipografía */
+// ========================
+// TIPOGRAFÍA
+// ========================
 $fuente-principal: "Raleway", sans-serif;
 $fuente-secundaria: "Playfair Display", serif;
+
+// Tamaños de fuente base
+$font-size-base: 1.6rem; // 16px
+$font-size-sm: 1.4rem;
+$font-size-md: 1.8rem;
+$font-size-lg: 2.4rem;
+$font-size-xl: 3.6rem;
+
+// ========================
+// ESPACIADOS
+// ========================
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+$spacing-xl: 6rem;
+
+// ========================
+// BORDES Y RADIOS
+// ========================
+$border-radius-sm: 0.4rem;
+$border-radius-md: 0.8rem;
+$border-radius-lg: 1.6rem;
+
+// ========================
+// SOMBRAS
+// ========================
+$box-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+$box-shadow-lg: 0 6px 16px rgba(0, 0, 0, 0.2);
+
+// ========================
+// Z-INDEX
+// ========================
+$z-navbar: 1000;
+$z-modal: 1050;
+$z-dropdown: 1100;
+$z-tooltip: 1200;
+
+// ========================
+// BREAKPOINTS RESPONSIVE
+// ========================
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1440px;
