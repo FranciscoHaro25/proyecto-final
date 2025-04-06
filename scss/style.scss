@@ -1,52 +1,53 @@
+// =====================================
+// IMPORTS INTERNOS Y EXTERNOS
+// Deben estar siempre al principio del archivo
+// =====================================
 @use "sass:color";
-// =====================================================
-// ABSTRACTS: variables, mixins, funciones reutilizables
-// =====================================================
-@use "abstracts/variables";
-@use "abstracts/mixins";
-@use "abstracts/functions";
-@use "abstracts/zindex";
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+@use "abstracts/functions" as *;
+@use "abstracts/zindex" as *;
 
-// ==================================
-// BASE: reset, tipografía, body, etc.
-// ==================================
+// =====================================
+// BASE: Reset general, tipografías, estructura básica
+// =====================================
 @use "base/reset";
 @use "base/typography";
 @use "base/base";
 
-// ==========================================
-// LAYOUT: header, footer, grid, navegación
-// ==========================================
+// =====================================
+// LAYOUT: Estructura general del sitio
+// =====================================
 @use "layout/header";
 @use "layout/footer";
 @use "layout/navigation";
 @use "layout/grid";
 
-// ==========================================
-// COMPONENTS: botones, cards, sliders, etc.
-// ==========================================
+// =====================================
+// COMPONENTS: Elementos reutilizables
+// =====================================
 @use "components/buttons";
 @use "components/card";
 @use "components/form";
 @use "components/modal";
 @use "components/slider";
 
-// ==========================================
-// PAGES: estilos únicos por cada página
-// ==========================================
+// =====================================
+// PAGES: Estilos únicos por página
+// =====================================
 @use "pages/home";
 @use "pages/contact";
 @use "pages/catalogue";
 @use "pages/inspiration";
 @use "pages/about";
 
-// ==========================================
-// THEMES: modos de color o estilos globales
-// ==========================================
+// =====================================
+// THEMES: Temas claros, oscuros, etc.
+// =====================================
 @use "themes/dark";
 @use "themes/light";
 
-// ==========================================
-// VENDORS: librerías externas (ej: AOS, Bootstrap)
-// ==========================================
-@use "vendors/aos";
+// =====================================
+// VENDORS: Librerías externas como AOS o Bootstrap
+// =====================================
+@use "vendors/aos"; // Solo si modificas su comportamiento vía SCSS
