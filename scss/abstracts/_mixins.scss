@@ -264,291 +264,61 @@
   }
 }
 
-// @use "../abstracts/variables" as *;
-// @use "variables" as *;
-// @use "sass:color";
+// ========================
+// GRID RESPONSIVE O HELPERS
+// ========================
 
-// // =====================================
-// // Hero Background
-// // Uso: @include hero-bg("ruta.jpg", altura);
-// // =====================================
-// @mixin hero-bg($img-path, $height: 50rem) {
-//   background: {
-//     image: url(#{$img-path});
-//     repeat: no-repeat;
-//     size: cover;
-//     position: center center;
-//   }
-//   height: $height;
-//   width: 100%;
-// }
+// Mixin para media queries
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == xxl {
+    @media (max-width: 1400px) {
+      @content;
+    }
+  }
+}
 
-// // =====================================
-// // Botón base
-// // Uso: @include button-base(color-fondo, color-texto);
-// // =====================================
-// @mixin button-base($bg-color, $text-color) {
-//   display: inline-flex;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: 1.6rem;
-//   font-weight: 600;
-//   padding: 1.2rem 2.4rem;
-//   border: none;
-//   border-radius: 0.8rem;
-//   cursor: pointer;
-//   text-decoration: none;
-//   line-height: 1.2;
-//   gap: 1rem;
-//   position: relative;
-//   overflow: hidden;
-//   background-color: $bg-color;
-//   color: $text-color;
-//   transition: background-color 0.3s ease, transform 0.3s ease,
-//     box-shadow 0.3s ease, color 0.2s ease;
+// Helpers para visibilidad responsive
+.hide-on-mobile {
+  @include respond-to(sm) {
+    display: none !important;
+  }
+}
 
-//   &:disabled {
-//     opacity: 0.6;
-//     cursor: not-allowed;
-//     pointer-events: none;
-//   }
-// }
+.show-on-desktop {
+  display: none;
 
-// // =====================================
-// // Botón solo ícono (modo circular)
-// // Uso: @include button-icon-only();
-// // =====================================
-// @mixin button-icon-only(
-//   $size: 4rem,
-//   $bg-color: $color-primario,
-//   $icon-color: $color-blanco
-// ) {
-//   display: inline-flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: $size;
-//   height: $size;
-//   background-color: $bg-color;
-//   color: $icon-color;
-//   border: none;
-//   border-radius: 50%;
-//   font-size: 2rem;
-//   cursor: pointer;
-//   padding: 0;
-//   transition: background-color 0.3s ease, transform 0.3s ease;
+  @include respond-to(md) {
+    display: block !important;
+  }
+}
 
-//   &:hover {
-//     background-color: color.adjust($bg-color, $lightness: -10%);
-//     transform: scale(1.1);
-//   }
+// Mixin para grid responsive
+@mixin grid-responsive($columns: 3, $gap: 2rem) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat($columns, 1fr);
 
-//   i,
-//   svg {
-//     pointer-events: none;
-//     transition: transform 0.15s ease;
-//   }
-// }
+  @include respond-to(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-// // =====================================
-// // Estilos para íconos animados dentro de botones
-// // Uso: @include icono-btn-estilos();
-// // =====================================
-// @mixin icono-btn-estilos(
-//   $font-size: 1.8rem,
-//   $rotate: 15deg,
-//   $scale: 1.2,
-//   $transition-duration: 0.2s
-// ) {
-//   i,
-//   svg {
-//     font-size: $font-size;
-//     vertical-align: middle;
-//     pointer-events: none;
-//     transition: color 0.2s ease, transform $transition-duration ease;
-//   }
-
-//   &:hover {
-//     i,
-//     svg {
-//       transform: rotate($rotate) scale($scale);
-//     }
-//   }
-
-//   &:focus-visible {
-//     outline: 2px solid rgba($color-primario, 0.5);
-//     outline-offset: 4px;
-//   }
-// }
-
-// // =====================================
-// // Espaciado entre ícono y texto
-// // Uso: @include icon-spacing(right, 0.8rem);
-// // =====================================
-// @mixin icon-spacing($side: right, $space: 0.8rem) {
-//   @if $side == left {
-//     i,
-//     svg {
-//       margin-right: $space;
-//     }
-//   } @else if $side == right {
-//     i,
-//     svg {
-//       margin-left: $space;
-//     }
-//   }
-// }
-
-// // =====================================
-// // Grid de categorías
-// // =====================================
-
-// @mixin categoria-card-grid {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-//   gap: 3rem;
-//   margin-top: 3rem;
-// }
-
-// // Tarjeta de categoría individual
-// @mixin categoria-card($img-height: 30rem) {
-//   overflow: hidden;
-//   border-radius: 1rem;
-//   background-color: #fff;
-//   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-//   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-
-//   img {
-//     width: 100%;
-//     height: $img-height;
-//     object-fit: cover;
-//     border-bottom: 4px solid transparent;
-//     transition: transform 0.4s ease, border-color 0.4s ease;
-//   }
-
-//   &:hover img {
-//     transform: scale(1.1);
-//     border-color: $color-secundario;
-//   }
-
-//   .nombre-link {
-//     display: block;
-//     text-align: center;
-//     padding: 2rem;
-//     font-size: 2rem;
-//     font-weight: bold;
-//     background-color: $color-gris-claro;
-//     color: $color-primario;
-//     border-top: 1px solid #ddd;
-//     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-//     transition: background-color 0.3s ease, color 0.3s ease,
-//       border-radius 0.3s ease;
-
-//     &:hover {
-//       background-color: $color-secundario;
-//       color: $color-blanco;
-//       border-bottom-right-radius: 2rem;
-//     }
-//   }
-// }
-
-// // =====================================
-// // Mixin para contenedor de búsqueda de catálogo
-// // Uso: @include buscador-catalogo();
-// // =====================================
-// @mixin buscador-catalogo {
-//   margin: 5rem auto;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-
-//   .search-container {
-//     display: flex;
-//     align-items: center;
-//     background-color: $color-gris-claro;
-//     border-radius: 25px;
-//     padding: 0.8rem 1.5rem;
-//     max-width: 30rem;
-//     border: 2px solid $color-borde;
-//     margin-top: 5rem;
-//     transition: all 0.3s ease-in-out;
-
-//     &:focus-within {
-//       border-color: $color-secundario;
-//       box-shadow: 0 0 8px rgba($color-secundario, 0.3);
-//     }
-
-//     .search-input {
-//       border: none;
-//       outline: none;
-//       background: transparent;
-//       flex: 1;
-//       font-size: 1.6rem;
-//       padding: 0.5rem;
-//       color: $color-texto;
-//     }
-
-//     .search-btn {
-//       background: none;
-//       border: none;
-//       cursor: pointer;
-//       color: $color-gris;
-//       font-size: 1.8rem;
-//       transition: color 0.3s ease-in-out;
-
-//       &:hover {
-//         color: $color-secundario;
-//       }
-//     }
-//   }
-// }
-
-// // =====================================
-// // Mixin para contenedor de búsqueda de catálogo
-// // Uso: @include buscador-catalogo();
-// // =====================================
-// @mixin buscador-catalogo {
-//   margin: 5rem auto;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-
-//   .search-container {
-//     display: flex;
-//     align-items: center;
-//     background-color: $color-gris-claro;
-//     border-radius: 25px;
-//     padding: 0.8rem 1.5rem;
-//     max-width: 30rem;
-//     border: 2px solid $color-borde;
-//     margin-top: 5rem;
-//     transition: all 0.3s ease-in-out;
-
-//     &:focus-within {
-//       border-color: $color-secundario;
-//       box-shadow: 0 0 8px rgba($color-secundario, 0.3);
-//     }
-
-//     .search-input {
-//       border: none;
-//       outline: none;
-//       background: transparent;
-//       flex: 1;
-//       font-size: 1.6rem;
-//       padding: 0.5rem;
-//       color: $color-texto;
-//     }
-
-//     .search-btn {
-//       background: none;
-//       border: none;
-//       cursor: pointer;
-//       color: $color-gris;
-//       font-size: 1.8rem;
-//       transition: color 0.3s ease-in-out;
-
-//       &:hover {
-//         color: $color-secundario;
-//       }
-//     }
-//   }
-// }
+  @include respond-to(sm) {
+    grid-template-columns: 1fr;
+  }
+}
