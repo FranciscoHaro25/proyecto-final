@@ -1092,7 +1092,8 @@ button[type=submit]:hover {
   }
 }
 .catalogo {
-  padding: 6rem 0;
+  padding: 8rem 0 6rem;
+  margin-top: 6rem;
 }
 .catalogo-header {
   margin-bottom: 4rem;
