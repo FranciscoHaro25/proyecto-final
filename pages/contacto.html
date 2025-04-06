@@ -41,12 +41,10 @@
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
-    
     <!-- HEADER -->
     <header class="header" role="banner">
       <nav class="nav" role="navigation" aria-label="Menú principal">
         <div class="contenedor nav__contenedor">
-
           <!-- Logo -->
           <a href="../index.html" class="nav-logo" aria-label="Inicio CasaForm">
             <img src="../assets/img/logo-original.svg" alt="Logo CasaForm" />
@@ -54,17 +52,17 @@
 
           <!-- Botón hamburguesa -->
           <!-- Botón hamburguesa con 3 barras -->
-            <button
+          <button
             class="nav-toggle"
             id="nav__toggle"
             aria-label="Abrir menú"
             aria-expanded="false"
             aria-controls="nav-links"
-            >
+          >
             <span></span>
             <span></span>
             <span></span>
-            </button>
+          </button>
 
           <!-- Menú de navegación -->
           <ul class="nav-links" id="nav-links">
@@ -72,142 +70,205 @@
             <li><a href="../pages/catalogo.html">Catálogo</a></li>
             <li><a href="../pages/inspiracion.html">Inspiración</a></li>
             <li><a href="../pages/sobre-nosotros.html">Sobre Nosotros</a></li>
-            <li><a href="../pages/contacto.html" class="active">Contacto</a></li>
+            <li>
+              <a href="../pages/contacto.html" class="active">Contacto</a>
+            </li>
           </ul>
 
           <!-- Redes Sociales -->
           <div class="contenedor-icons" aria-label="Redes sociales">
-            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              aria-label="Facebook"
+            >
               <i class="fa-brands fa-facebook" aria-hidden="true"></i>
             </a>
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              aria-label="Instagram"
+            >
               <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </a>
             <a href="https://twitter.com" target="_blank" aria-label="Twitter">
               <i class="fa-brands fa-twitter" aria-hidden="true"></i>
             </a>
           </div>
-
         </div>
       </nav>
     </header>
-    
 
     <!-- CONTACTO -->
     <main>
-      <form class="contact-form">
-        <h2>Contáctanos</h2>
+      <section>
+        <form class="contact-form">
+          <h2>Contáctanos</h2>
 
-        <label for="name">Nombre</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Tu nombre"
-          required
-        />
+          <label for="name">Nombre</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Tu nombre"
+            required
+          />
 
-        <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="correo@ejemplo.com"
-          required
-        />
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="correo@ejemplo.com"
+            required
+          />
 
-        <label for="phone">Teléfono</label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          placeholder="+123 456 7890"
-          required
-        />
+          <label for="phone">Teléfono</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+123 456 7890"
+            required
+          />
 
-        <label for="company">Compañía</label>
-        <input
-          type="text"
-          id="company"
-          name="company"
-          placeholder="Nombre de la empresa"
-        />
+          <label for="company">Compañía</label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            placeholder="Nombre de la empresa"
+          />
 
-        <label for="message">Mensaje</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          placeholder="Escribe tu mensaje aquí..."
-          required
-        ></textarea>
+          <label for="message">Mensaje</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Escribe tu mensaje aquí..."
+            required
+          ></textarea>
 
-        <button type="submit">Enviar Mensaje</button>
-      </form>
+          <button type="submit">Enviar Mensaje</button>
+        </form>
+      </section>
     </main>
 
     <!-- FOOTER -->
     <footer>
       <div>
         <div class="row justify-content-between contenedor">
-    
           <!-- Logo -->
           <div class="logo-footer">
             <a href="../index.html" class="logo-footer">
               <img src="../assets/img/logo-amarillo.svg" alt="Logo CasaForm" />
             </a>
           </div>
-    
+
           <!-- Contacto -->
-      <div class="col-md-4 mb-4">
-        <h3 class="text-uppercase fw-bold mb-4">Contacto</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2">
-              <a href="https://www.google.com/maps?q=Calle+Ejemplo+123,+Ciudad" target="_blank" class="text-decoration-none text-light">
-                <i class="fa-solid fa-map-marker-alt me-2"></i> Dirección: Calle Ejemplo 123, Ciudad
-              </a>
-            </li>
-            <li class="mb-2">
-              <a href="tel:+1234567890" class="text-decoration-none text-light">
-                <i class="fa-solid fa-phone me-2"></i> Teléfono: +123 456 7890
-              </a>
-            </li>
-            <li>
-              <a href="mailto:contacto@tumuebles.com" class="text-decoration-none text-light">
-                <i class="fa-solid fa-envelope me-2"></i> Email: contacto@tumuebles.com
-              </a>
-            </li>
-          </ul>
-      </div>
-    
+          <div class="col-md-4 mb-4">
+            <h3 class="text-uppercase fw-bold mb-4">Contacto</h3>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="https://www.google.com/maps?q=Calle+Ejemplo+123,+Ciudad"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <i class="fa-solid fa-map-marker-alt me-2"></i> Dirección:
+                  Calle Ejemplo 123, Ciudad
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="tel:+1234567890"
+                  class="text-decoration-none text-light"
+                >
+                  <i class="fa-solid fa-phone me-2"></i> Teléfono: +123 456 7890
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:contacto@tumuebles.com"
+                  class="text-decoration-none text-light"
+                >
+                  <i class="fa-solid fa-envelope me-2"></i> Email:
+                  contacto@tumuebles.com
+                </a>
+              </li>
+            </ul>
+          </div>
+
           <!-- Enlaces Rápidos -->
           <div class="col-md-4 mb-4 enlaces-hover">
             <h3 class="text-uppercase fw-bold mb-4">Enlaces Rápidos</h3>
             <ul>
-              <li><a href="../index.html" class="text-decoration-none d-block mb-2">Inicio</a></li>
-              <li><a href="../pages/catalogo.html" class="text-decoration-none d-block mb-2">Catálogo</a></li>
-              <li><a href="../pages/inspiracion.html" class="text-decoration-none d-block mb-2">Inspiración</a></li>
-              <li><a href="../pages/sobre-nosotros.html" class="text-decoration-none d-block mb-2">Sobre Nosotros</a></li>
-              <li><a href="../pages/contacto.html" class="text-decoration-none d-block">Contacto</a></li>
+              <li>
+                <a
+                  href="../index.html"
+                  class="text-decoration-none d-block mb-2"
+                  >Inicio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../pages/catalogo.html"
+                  class="text-decoration-none d-block mb-2"
+                  >Catálogo</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../pages/inspiracion.html"
+                  class="text-decoration-none d-block mb-2"
+                  >Inspiración</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../pages/sobre-nosotros.html"
+                  class="text-decoration-none d-block mb-2"
+                  >Sobre Nosotros</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../pages/contacto.html"
+                  class="text-decoration-none d-block"
+                  >Contacto</a
+                >
+              </li>
             </ul>
           </div>
-    
+
           <!-- Redes Sociales -->
           <div class="col-md-4 mb-4">
             <h3 class="text-uppercase fw-bold mb-4">Síguenos</h3>
             <div class="d-flex gap-4 fs-4 social">
-              <a href="https://facebook.com/tu-tienda" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-              <a href="https://instagram.com/tu-tienda" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-              <a href="https://twitter.com/tu-tienda" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-              <a href="https://linkedin.com/company/tu-tienda" target="_blank" ><i class="fa-brands fa-linkedin"></i></a>
-              <a href="https://youtube.com/tu-tienda" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://facebook.com/tu-tienda" target="_blank"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="https://instagram.com/tu-tienda" target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://twitter.com/tu-tienda" target="_blank"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a href="https://linkedin.com/company/tu-tienda" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="https://youtube.com/tu-tienda" target="_blank"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
             </div>
           </div>
         </div>
-    
+
         <!-- Derechos de Autor -->
         <div class="linea-color text-center mt-4 pt-4">
-          <p class="mb-1 texto-footer">&copy; 2025 | Todos los Derechos Reservados | CasaForm</p>
+          <p class="mb-1 texto-footer">
+            &copy; 2025 | Todos los Derechos Reservados | CasaForm
+          </p>
           <small>Términos y Condiciones | Política de Privacidad</small>
         </div>
       </div>

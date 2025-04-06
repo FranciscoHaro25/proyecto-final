@@ -32,27 +32,28 @@
 
     <!-- Iportar iconos de RemixIcon -->
     <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
 
     <!-- Cargar Font Awesome 6.4.2 desde CDNJS para utilizar todos los íconos -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>   
-    
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- Hojas de Estilo CSS -->
     <link rel="stylesheet" href="./assets/css/normalize.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    
+
     <!-- Animate On Scroll CSS -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" /> -->
   </head>
   <body>
-      
     <!-- HEADER -->
     <header class="header" role="banner">
       <nav class="nav" role="navigation" aria-label="Menú principal">
         <div class="contenedor nav__contenedor">
-
           <!-- Logo -->
           <a href="./index.html" class="nav-logo" aria-label="Inicio CasaForm">
             <img src="./assets/img/logo-original.svg" alt="Logo CasaForm" />
@@ -60,17 +61,17 @@
 
           <!-- Botón hamburguesa -->
           <!-- Botón hamburguesa con 3 barras -->
-            <button
+          <button
             class="nav-toggle"
             id="nav__toggle"
             aria-label="Abrir menú"
             aria-expanded="false"
             aria-controls="nav-links"
-            >
+          >
             <span></span>
             <span></span>
             <span></span>
-            </button>
+          </button>
 
           <!-- Menú de navegación -->
           <ul class="nav-links" id="nav-links">
@@ -83,23 +84,30 @@
 
           <!-- Redes Sociales -->
           <div class="contenedor-icons" aria-label="Redes sociales">
-            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              aria-label="Facebook"
+            >
               <i class="fa-brands fa-facebook" aria-hidden="true"></i>
             </a>
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              aria-label="Instagram"
+            >
               <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </a>
             <a href="https://twitter.com" target="_blank" aria-label="Twitter">
               <i class="fa-brands fa-twitter" aria-hidden="true"></i>
             </a>
           </div>
-
         </div>
       </nav>
     </header>
 
     <!-- SECCION HERO -->
-    <section class="contenedor-principal contenedor">
+    <main class="contenedor-principal contenedor">
       <div class="hero"></div>
       <div class="descripcion">
         <h1>Muebles que transforman tu hogar</h1>
@@ -112,45 +120,81 @@
           <i class="ri-contract-right-line"></i>
         </a>
       </div>
-    </section>
+    </main>
 
     <!-- SECCIÓN CATEGORÍAS -->
-    <section class="contenedor-categoria contenedor" aria-labelledby="titulo-categorias">
+    <section
+      class="contenedor-categoria contenedor"
+      aria-labelledby="titulo-categorias"
+    >
       <header class="text-center">
         <h2 id="titulo-categorias">Categorías</h2>
         <h3>Encuentra el Mueble Perfecto para tu hogar</h3>
         <p>
-          Descubre nuestras selecciones exclusivas para cada espacio. Diseños que combinan funcionalidad y estilo.
+          Descubre nuestras selecciones exclusivas para cada espacio. Diseños
+          que combinan funcionalidad y estilo.
         </p>
       </header>
 
       <div class="listado-categorias">
         <article class="categoria">
-          <img src="./assets/img/imagenes/categoria-oficina.jpg" alt="Muebles de Oficina" />
-          <a class="nombre-link btn" href="#" aria-label="Explorar muebles de oficina">Oficina</a>
+          <img
+            src="./assets/img/imagenes/categoria-oficina.jpg"
+            alt="Muebles de Oficina"
+          />
+          <a
+            class="nombre-link btn"
+            href="#"
+            aria-label="Explorar muebles de oficina"
+            >Oficina</a
+          >
         </article>
 
         <article class="categoria">
-          <img src="./assets/img/imagenes/categoria-hogar.jpg" alt="Muebles para el Hogar" />
-          <a class="nombre-link btn" href="#" aria-label="Explorar muebles para el hogar">Hogar</a>
+          <img
+            src="./assets/img/imagenes/categoria-hogar.jpg"
+            alt="Muebles para el Hogar"
+          />
+          <a
+            class="nombre-link btn"
+            href="#"
+            aria-label="Explorar muebles para el hogar"
+            >Hogar</a
+          >
         </article>
 
         <article class="categoria">
-          <img src="./assets/img/imagenes/categoria-cocina.jpg" alt="Muebles de Cocina" />
-          <a class="nombre-link btn" href="#" aria-label="Explorar muebles de cocina">Cocina</a>
+          <img
+            src="./assets/img/imagenes/categoria-cocina.jpg"
+            alt="Muebles de Cocina"
+          />
+          <a
+            class="nombre-link btn"
+            href="#"
+            aria-label="Explorar muebles de cocina"
+            >Cocina</a
+          >
         </article>
       </div>
     </section>
 
-      
     <!-- TESTIMONIOS con Bootstrap Carousel -->
-    <section class="contenedor-testimonio container py-5" role="region" aria-labelledby="testimonios-titulo">
+    <section
+      class="contenedor-testimonio container py-5"
+      role="region"
+      aria-labelledby="testimonios-titulo"
+    >
       <header class="text-center mb-5">
         <h2 id="testimonios-titulo" class="mb-2">Testimonios de Clientes</h2>
         <h3 class="text-muted">Lo que Dicen Nuestros Clientes</h3>
       </header>
 
-      <div id="testimoniosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+      <div
+        id="testimoniosCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="4000"
+      >
         <div class="carousel-inner">
           <!-- SLIDE 1 -->
           <div class="carousel-item active">
@@ -166,7 +210,11 @@
                   <figcaption>
                     <h5>Samuel López</h5>
                     <p class="text-muted">
-                      <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Madrid, España
+                      <i
+                        class="fa-solid fa-location-dot"
+                        aria-hidden="true"
+                      ></i>
+                      Madrid, España
                     </p>
                     <div class="text-warning mb-2" aria-label="4.5 estrellas">
                       <i class="fa-solid fa-star"></i>
@@ -193,7 +241,11 @@
                   <figcaption>
                     <h5>María Cortez</h5>
                     <p class="text-muted">
-                      <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Madrid, España
+                      <i
+                        class="fa-solid fa-location-dot"
+                        aria-hidden="true"
+                      ></i>
+                      Madrid, España
                     </p>
                     <div class="text-warning mb-2" aria-label="4.5 estrellas">
                       <i class="fa-solid fa-star"></i>
@@ -203,7 +255,8 @@
                       <i class="fa-solid fa-star-half-alt"></i>
                     </div>
                     <blockquote class="fst-italic">
-                      "Una experiencia maravillosa. Todo llegó a tiempo y se ve genial."
+                      "Una experiencia maravillosa. Todo llegó a tiempo y se ve
+                      genial."
                     </blockquote>
                   </figcaption>
                 </figure>
@@ -220,7 +273,11 @@
                   <figcaption>
                     <h5>Darío Saltos</h5>
                     <p class="text-muted">
-                      <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Madrid, España
+                      <i
+                        class="fa-solid fa-location-dot"
+                        aria-hidden="true"
+                      ></i>
+                      Madrid, España
                     </p>
                     <div class="text-warning mb-2" aria-label="4.5 estrellas">
                       <i class="fa-solid fa-star"></i>
@@ -261,12 +318,15 @@
       </div>
     </section>
 
-
     <!-- SECCIÓN CTA: Llamado a la acción y contacto -->
-  
+
     <section class="contenedor-cta contenedor">
       <div class="cta-grid">
-        <figure class="call-to-action" role="img" aria-label="Imagen decorativa de llamada a la acción"></figure>
+        <figure
+          class="call-to-action"
+          role="img"
+          aria-label="Imagen decorativa de llamada a la acción"
+        ></figure>
         <div class="contenido-cta">
           <header>
             <h2>¿Listo para transformar tu hogar?</h2>
@@ -283,7 +343,9 @@
 
           <!-- Contacto -->
           <section class="form-contacto" aria-labelledby="contacto-titulo">
-            <h5 class="titulo-contacto" id="contacto-titulo">Envíanos un mensaje ahora</h5>
+            <h5 class="titulo-contacto" id="contacto-titulo">
+              Envíanos un mensaje ahora
+            </h5>
             <form class="formulario-contacto" novalidate>
               <div class="form-grupo">
                 <label for="nombre">Nombre</label>
@@ -293,21 +355,20 @@
                 <label for="mensaje">Mensaje</label>
                 <textarea id="mensaje" rows="3" required></textarea>
               </div>
-              <button type="submit" class="btn btn--outlined">Enviar
+              <button type="submit" class="btn btn--outlined">
+                Enviar
                 <i class="ri-send-plane-fill"></i>
               </button>
             </form>
           </section>
         </div>
-        
       </div>
     </section>
-    
+
     <!-- FOOTER -->
     <footer>
       <div>
         <div class="row justify-content-between contenedor">
-
           <!-- Logo -->
           <div class="logo-footer">
             <a href="../index.html" class="logo-footer">
@@ -317,35 +378,75 @@
 
           <!-- Contacto -->
           <div class="col-md-4 mb-4">
-            <h3 class="text-uppercase fw-bold mb-4">Contacto</h5>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a href="https://www.google.com/maps?q=Calle+Ejemplo+123,+Ciudad" target="_blank" class="text-decoration-none text-light">
-                    <i class="fa-solid fa-map-marker-alt me-2"></i> Dirección: Calle Ejemplo 123, Ciudad
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a href="tel:+1234567890" class="text-decoration-none text-light">
-                    <i class="fa-solid fa-phone me-2"></i> Teléfono: +123 456 7890
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:contacto@tumuebles.com" class="text-decoration-none text-light">
-                    <i class="fa-solid fa-envelope me-2"></i> Email: contacto@tumuebles.com
-                  </a>
-                </li>
-              </ul>
+            <h3 class="text-uppercase fw-bold mb-4">Contacto</h3>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="https://www.google.com/maps?q=Calle+Ejemplo+123,+Ciudad"
+                  target="_blank"
+                  class="text-decoration-none text-light"
+                >
+                  <i class="fa-solid fa-map-marker-alt me-2"></i> Dirección:
+                  Calle Ejemplo 123, Ciudad
+                </a>
+              </li>
+              <li class="mb-2">
+                <a
+                  href="tel:+1234567890"
+                  class="text-decoration-none text-light"
+                >
+                  <i class="fa-solid fa-phone me-2"></i> Teléfono: +123 456 7890
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:contacto@tumuebles.com"
+                  class="text-decoration-none text-light"
+                >
+                  <i class="fa-solid fa-envelope me-2"></i> Email:
+                  contacto@tumuebles.com
+                </a>
+              </li>
+            </ul>
           </div>
 
           <!-- Enlaces Rápidos -->
           <div class="col-md-4 mb-4 enlaces-hover">
             <h3 class="text-uppercase fw-bold mb-4">Enlaces Rápidos</h3>
             <ul>
-              <li><a href="./index.html" class="text-decoration-none d-block mb-2">Inicio</a></li>
-              <li><a href="./pages/catalogo.html" class="text-decoration-none d-block mb-2">Catálogo</a></li>
-              <li><a href="./pages/inspiracion.html" class="text-decoration-none d-block mb-2">Inspiración</a></li>
-              <li><a href="./pages/sobre-nosotros.html" class="text-decoration-none d-block mb-2">Sobre Nosotros</a></li>
-              <li><a href="./pages/contacto.html" class="text-decoration-none d-block">Contacto</a></li>
+              <li>
+                <a href="./index.html" class="text-decoration-none d-block mb-2"
+                  >Inicio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./pages/catalogo.html"
+                  class="text-decoration-none d-block mb-2"
+                  >Catálogo</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./pages/inspiracion.html"
+                  class="text-decoration-none d-block mb-2"
+                  >Inspiración</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./pages/sobre-nosotros.html"
+                  class="text-decoration-none d-block mb-2"
+                  >Sobre Nosotros</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./pages/contacto.html"
+                  class="text-decoration-none d-block"
+                  >Contacto</a
+                >
+              </li>
             </ul>
           </div>
 
@@ -353,18 +454,30 @@
           <div class="col-md-4 mb-4">
             <h3 class="text-uppercase fw-bold mb-4">Síguenos</h3>
             <div class="d-flex gap-4 fs-4 social">
-              <a href="https://facebook.com/tu-tienda" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-              <a href="https://instagram.com/tu-tienda" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-              <a href="https://twitter.com/tu-tienda" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-              <a href="https://linkedin.com/company/tu-tienda" target="_blank" ><i class="fa-brands fa-linkedin"></i></a>
-              <a href="https://youtube.com/tu-tienda" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://facebook.com/tu-tienda" target="_blank"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="https://instagram.com/tu-tienda" target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://twitter.com/tu-tienda" target="_blank"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a href="https://linkedin.com/company/tu-tienda" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="https://youtube.com/tu-tienda" target="_blank"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
             </div>
           </div>
         </div>
 
         <!-- Derechos de Autor -->
         <div class="linea-color text-center mt-4 pt-4">
-          <p class="mb-1 texto-footer">&copy; 2025 | Todos los Derechos Reservados | CasaForm</p>
+          <p class="mb-1 texto-footer">
+            &copy; 2025 | Todos los Derechos Reservados | CasaForm
+          </p>
           <small>Términos y Condiciones | Política de Privacidad</small>
         </div>
       </div>
@@ -377,6 +490,5 @@
     <script>
       AOS.init();
     </script>
-
   </body>
 </html>
