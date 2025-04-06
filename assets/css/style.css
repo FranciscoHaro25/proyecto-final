@@ -859,71 +859,66 @@ button[type=submit]:hover {
     border-bottom-right-radius: 2rem;
   }
 }
-.contenedor-testimonio {
-  margin-top: 6rem;
+.testimonios {
+  padding: 8rem 2rem;
+  background-color: #f1f1f1;
+  text-align: center;
 }
-.contenedor-testimonio header h2 {
+.testimonios .testimonios-header {
+  margin-bottom: 5rem;
+}
+.testimonios .testimonios-header h2 {
   font-size: 3.2rem;
   font-weight: bold;
-  margin-bottom: 1rem;
-}
-.contenedor-testimonio header h3 {
-  font-size: 2rem;
-  font-weight: 500;
   color: #281101;
 }
-.contenedor-testimonio .carousel .carousel-inner .carousel-item .card {
-  border: none;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+.testimonios .testimonios-header p {
+  font-size: 1.6rem;
+  color: #333;
+}
+.testimonios .testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 3rem;
+}
+.testimonios .testimonio {
+  background-color: #ffffff;
   padding: 3rem 2rem;
   border-radius: 1.2rem;
+  box-shadow: 0 6px 20px rgba(51, 51, 51, 0.05);
+  transition: transform 0.3s ease-in-out;
+  animation: fadeIn 1s ease forwards;
 }
-.contenedor-testimonio .carousel .carousel-inner .carousel-item .card:hover {
-  transform: scale(1.02);
+.testimonios .testimonio:hover {
+  transform: translateY(-5px);
 }
-.contenedor-testimonio .carousel .carousel-inner .carousel-item .card img {
-  width: 10rem;
-  height: 10rem;
+.testimonios .testimonio .testimonio-img {
+  width: 8rem;
+  height: 8rem;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 1.5rem;
+  margin: 0 auto 2rem;
 }
-.contenedor-testimonio .carousel .carousel-inner .carousel-item .card h5 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+.testimonios .testimonio blockquote {
+  font-style: italic;
+  font-size: 1.6rem;
+  color: #333;
+  margin: 0 auto;
+}
+.testimonios .testimonio blockquote footer {
+  margin-top: 1.5rem;
+  font-weight: bold;
   color: #281101;
 }
-.contenedor-testimonio .carousel .carousel-inner .carousel-item .card .text-muted {
-  font-size: 1.4rem;
-}
-.contenedor-testimonio .carousel .carousel-inner .carousel-item .card .text-warning i {
-  margin-right: 0.2rem;
-}
-.contenedor-testimonio .carousel .carousel-inner .carousel-item .card blockquote {
-  font-style: italic;
-  font-size: 1.5rem;
-  color: #333;
-  margin-top: 1rem;
-}
-.contenedor-testimonio .carousel .carousel-control-prev-icon,
-.contenedor-testimonio .carousel .carousel-control-next-icon {
-  background-size: 100% 100%;
-}
-.contenedor-testimonio .carousel .carousel-control-prev,
-.contenedor-testimonio .carousel .carousel-control-next {
-  width: 5%;
-}
 
-@media (max-width: 768px) {
-  .contenedor-testimonio header h2 {
-    font-size: 2.6rem;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  .contenedor-testimonio header h3 {
-    font-size: 1.6rem;
-  }
-  .contenedor-testimonio .carousel .carousel-inner .carousel-item .card {
-    padding: 2rem 1.5rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 .contenedor-cta {

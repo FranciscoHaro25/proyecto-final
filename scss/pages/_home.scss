@@ -132,100 +132,107 @@
   }
 }
 
-// ====================================>>>>
-// TESTIMONIOS
+// ===========================================
+// _testimonios.scss: Estilos para testimonios
+// ===========================================
 
-.contenedor-testimonio {
-  margin-top: 6rem;
+.testimonios {
+  padding: 8rem 2rem;
+  background-color: $color-gris-claro;
+  text-align: center;
 
-  header {
+  .testimonios-header {
+    margin-bottom: 5rem;
+
     h2 {
       font-size: 3.2rem;
       font-weight: bold;
-      margin-bottom: 1rem;
+      color: $color-primario;
     }
 
-    h3 {
-      font-size: 2rem;
-      font-weight: 500;
-      color: $color-primario;
+    p {
+      font-size: 1.6rem;
+      color: $color-texto;
     }
   }
 
-  .carousel {
-    .carousel-inner {
-      .carousel-item {
-        .card {
-          border: none;
-          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-          transition: transform 0.3s ease;
-          padding: 3rem 2rem;
-          border-radius: 1.2rem;
+  .testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 3rem;
+  }
 
-          &:hover {
-            transform: scale(1.02);
-          }
+  .testimonio {
+    background-color: $color-blanco;
+    padding: 3rem 2rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 6px 20px rgba($color-negro, 0.05);
+    transition: transform 0.3s ease-in-out;
+    animation: fadeIn 1s ease forwards;
 
-          img {
-            width: 10rem;
-            height: 10rem;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 1.5rem;
-          }
+    &:hover {
+      transform: translateY(-5px);
+    }
 
-          h5 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-            color: $color-primario;
-          }
+    .testimonio-img {
+      width: 8rem;
+      height: 8rem;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 2rem;
+    }
 
-          .text-muted {
-            font-size: 1.4rem;
-          }
+    blockquote {
+      font-style: italic;
+      font-size: 1.6rem;
+      color: $color-texto;
+      margin: 0 auto;
 
-          .text-warning {
-            i {
-              margin-right: 0.2rem;
-            }
-          }
-
-          blockquote {
-            font-style: italic;
-            font-size: 1.5rem;
-            color: $color-texto;
-            margin-top: 1rem;
-          }
-        }
+      footer {
+        margin-top: 1.5rem;
+        font-weight: bold;
+        color: $color-primario;
       }
-    }
-
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      background-size: 100% 100%;
-    }
-
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 5%;
     }
   }
 }
 
-@media (max-width: 768px) {
-  .contenedor-testimonio {
-    header {
-      h2 {
-        font-size: 2.6rem;
-      }
+// -------------------------------------------
+// Animación fadeIn
+// -------------------------------------------
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-      h3 {
-        font-size: 1.6rem;
-      }
+// -------------------------------------------
+// Responsive (Móviles)
+// -------------------------------------------
+@include respond("mobile") {
+  .testimonios {
+    padding: 6rem 1rem;
+
+    .testimonios-header h2 {
+      font-size: 2.6rem;
     }
 
-    .carousel .carousel-inner .carousel-item .card {
-      padding: 2rem 1.5rem;
+    .testimonio {
+      padding: 2.5rem 1.5rem;
+
+      blockquote {
+        font-size: 1.5rem;
+      }
+
+      .testimonio-img {
+        width: 7rem;
+        height: 7rem;
+      }
     }
   }
 }
