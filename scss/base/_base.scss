@@ -68,7 +68,27 @@ p {
 }
 
 // ------------------------------
-// 6. Clases utilitarias comunes
+// 6. Estilos base para listas y enlaces
+// ------------------------------
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $color-secundario;
+  }
+}
+
+// ------------------------------
+// 7. Clases utilitarias comunes
 // ------------------------------
 .text-center {
   text-align: center;
@@ -83,7 +103,7 @@ p {
 }
 
 // ------------------------------
-// 7. Contenedor general
+// 8. Contenedor general
 // ------------------------------
 .contenedor {
   max-width: 120rem;
@@ -92,23 +112,24 @@ p {
 }
 
 // ------------------------------
-// 8. Estilos globales para imágenes
+// 9. Estilos globales para imágenes
 // ------------------------------
 img {
   max-width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
 }
 
 // ------------------------------
-// 9. Estilos para <a> que contiene <img>
+// 10. Estilos para <a> que contiene <img>
 // ------------------------------
 a img {
   transition: all 0.3s ease-in-out;
 }
 
 // ------------------------------
-// 10. Form elements: heredan estilos
+// 11. Elementos de formulario básicos
 // ------------------------------
 button,
 input,
@@ -116,5 +137,14 @@ select,
 textarea {
   font-family: inherit;
   font-size: inherit;
+  line-height: inherit;
   color: inherit;
+}
+
+// ------------------------------
+// 12. Accesibilidad: foco visible
+// ------------------------------
+:focus-visible {
+  outline: 2px solid rgba($color-primario, 0.6);
+  outline-offset: 2px;
 }
