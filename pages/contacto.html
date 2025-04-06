@@ -101,10 +101,10 @@
 
     <!-- CONTACTO -->
     <main>
-      <section>
-        <form class="contact-form">
-          <h2>Contáctanos</h2>
+      <section class="contacto" aria-labelledby="titulo-contacto">
+        <h2 id="titulo-contacto">Formulario de Contacto</h2>
 
+        <form class="contact-form" action="#" method="post">
           <label for="name">Nombre</label>
           <input
             type="text"
@@ -149,7 +149,9 @@
             required
           ></textarea>
 
-          <button type="submit">Enviar Mensaje</button>
+          <button type="submit" aria-label="Enviar el formulario de contacto">
+            Enviar Mensaje
+          </button>
         </form>
       </section>
     </main>
