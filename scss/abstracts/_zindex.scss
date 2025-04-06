@@ -1,4 +1,10 @@
-/* z index */
-
-$z-tooltip: 10;
+// ========================================
+// Z-INDEX: Niveles de apilamiento
+// Usar valores con espacio entre sí permite escalabilidad
+// ========================================
+$z-base: 1;
+$z-dropdown: 10;
+$z-tooltip: 20;
+$z-modal: 50;
 $z-fixed: 100;
+$z-overlay: 200;
