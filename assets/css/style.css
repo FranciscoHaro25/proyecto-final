@@ -994,49 +994,61 @@ button[type=submit]:hover {
   font-size: 1.6rem;
 }
 
+.contacto {
+  padding: 6rem 2rem;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.contacto h2 {
+  text-align: center;
+  font-size: 3.6rem;
+  margin-bottom: 4rem;
+  color: #281101;
+}
+
 .contact-form {
   max-width: 60rem;
-  margin: 5rem auto;
-  padding: 4rem;
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(51, 51, 51, 0.05);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
 }
 .contact-form label {
-  display: block;
-  margin-bottom: 0.8rem;
-  font-weight: 600;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
   color: #281101;
 }
 .contact-form input,
-.contact-form textarea,
-.contact-form select {
-  width: 100%;
+.contact-form textarea {
   padding: 1.2rem;
-  margin-bottom: 2rem;
-  font-size: 1.6rem;
   border: 1px solid #ddd;
   border-radius: 0.5rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.6rem;
+  background-color: #ffffff;
+  color: #333;
+  transition: border-color 0.3s ease-in-out;
 }
 .contact-form input:focus,
-.contact-form textarea:focus,
-.contact-form select:focus {
-  outline: none;
+.contact-form textarea:focus {
   border-color: #ff9900;
-  box-shadow: 0 0 5px rgba(255, 153, 0, 0.3);
+  outline: none;
 }
 .contact-form input.is-invalid,
-.contact-form textarea.is-invalid,
-.contact-form select.is-invalid {
+.contact-form textarea.is-invalid {
   border-color: red;
+}
+.contact-form textarea {
+  resize: vertical;
+  min-height: 10rem;
 }
 .contact-form .error-message {
   color: red;
   font-size: 1.4rem;
-  margin-top: -1rem;
-  margin-bottom: 1.6rem;
+  margin-top: 0.5rem;
+}
+.contact-form .error-message.visually-hidden {
+  display: none;
 }
 .contact-form button[type=submit] {
   display: inline-flex;
@@ -1056,29 +1068,27 @@ button[type=submit]:hover {
   background-color: #ff9900;
   color: #ffffff;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.2s ease;
-  width: 100%;
-  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  width: fit-content;
+  align-self: center;
 }
 .contact-form button[type=submit]:disabled {
   opacity: 0.6;
   cursor: not-allowed;
   pointer-events: none;
 }
-.contact-form button[type=submit]:hover {
-  background-color: rgb(229.5, 137.7, 0);
-}
 
 @media (max-width: 768px) {
   .contact-form {
-    padding: 2.5rem 2rem;
-    font-size: 1.4rem;
+    padding: 2rem;
   }
   .contact-form input,
   .contact-form textarea {
     font-size: 1.4rem;
   }
-  .contact-form button {
-    font-size: 1.6rem;
+  .contact-form button[type=submit] {
+    width: 100%;
   }
 }
 /* CATEGORIA */
