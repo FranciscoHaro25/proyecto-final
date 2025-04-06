@@ -1,85 +1,112 @@
-// _about.scss: Página “Nosotros”.
-@use "../abstracts/mixins" as *;
+// ==========================================
+// _about.scss: Página "Nosotros"
+// ==========================================
+
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 @use "../components/buttons" as *;
 
-/* SOBRE NOSOTROS */
+// ------------------------------
+// 1. Grid de contenido principal
+// ------------------------------
 .sobre-nosotros-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  margin: 5rem auto;
   gap: 5rem;
+  margin: 5rem auto;
+  padding-top: 10rem;
+
+  @include respond("tablet") {
+    grid-template-columns: 1fr;
+  }
 }
 
+// ------------------------------
+// 2. Sección con imagen y botón
+// ------------------------------
 .sobre-nosotros {
   img {
-    height: 60rem;
     width: 100%;
+    height: 60rem;
     object-fit: cover;
   }
 
   a {
-    background-color: #f1f1f1;
+    background-color: $color-gris-claro;
     text-align: center;
     display: block;
     padding: 1.5rem;
     font-size: 2rem;
 
     &:hover {
-      background-color: #ff9900;
-      color: #ffffff;
+      background-color: $color-secundario;
+      color: $color-blanco;
       border-bottom-right-radius: 1rem;
     }
   }
 }
 
+// ------------------------------
+// 3. Valores y Misión/Visión
+// ------------------------------
 .contenedor-grid-valores {
   display: flex;
   gap: 5rem;
 
-  @media (max-width: 768px) {
+  @include respond("tablet") {
     flex-direction: column;
     gap: 2rem;
   }
 }
 
 .contenedor-valores {
-  background-color: #333;
-  color: #ddd;
+  background-color: $color-negro;
+  color: $color-gris-claro;
   padding: 6rem;
   margin: 5rem auto;
   border-radius: 2rem;
 }
 
 .valor {
-  color: #ff9900;
+  color: $color-secundario;
 }
 
-// Animación
+// ------------------------------
+// 4. Animación Fade In
+// ------------------------------
 .fade-in {
   animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(15px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-// Media Queries
+// ------------------------------
+// 5. Otros ajustes de layout global
+// ------------------------------
 @media (max-width: 1024px) {
-  .hero {
-    height: 35rem;
-  }
-
-  .contenedor-cta {
+  .footer-container {
     flex-direction: column;
     align-items: center;
+    text-align: center;
+  }
+  .sobre-nosotros {
+    img {
+      width: 100%;
+      height: 30rem;
+      object-fit: cover;
+    }
+  }
+  .footer-section {
+    width: 100%;
   }
 
   .call-to-action {
@@ -91,38 +118,9 @@
     padding: 2rem;
     text-align: center;
   }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-section {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .listado-categorias {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .catalog-grid,
-  .inspiracion-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .sobre-nosotros-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 480px) {
-  .listado-categorias {
-    grid-template-columns: 1fr;
-  }
-
   .btn,
   .btn-circular {
     width: 100%;
@@ -133,23 +131,28 @@
     display: none;
   }
 
-  .testimonio-img {
-    img {
-      width: 120px;
-      height: 120px;
-    }
+  .testimonio-img img {
+    width: 120px;
+    height: 120px;
   }
 }
 
-@media (min-width: 1024px) {
-  .contenedor-principal {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    text-align: left;
+@media (max-width: 480px) {
+  .sobre-nosotros-grid {
+    gap: 2rem;
+    padding-top: 5rem;
   }
 
-  .hero,
-  .descripcion {
-    flex: 1;
+  .contenedor-valores {
+    padding: 3rem 2rem;
+  }
+
+  .contenedor-valores p {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+
+  .valor {
+    font-size: 1.8rem;
   }
 }

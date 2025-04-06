@@ -995,7 +995,7 @@ button[type=submit]:hover {
 }
 
 .contacto {
-  padding: 6rem 2rem;
+  padding: 14rem 2rem;
   background-color: #ffffff;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -1009,7 +1009,7 @@ button[type=submit]:hover {
 
 .contact-form {
   max-width: 60rem;
-  margin: 0 auto;
+  margin: 5rem auto;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
@@ -1080,6 +1080,9 @@ button[type=submit]:hover {
 }
 
 @media (max-width: 768px) {
+  .contacto {
+    margin-top: 10rem;
+  }
   .contact-form {
     padding: 2rem;
   }
@@ -1164,7 +1167,7 @@ button[type=submit]:hover {
 
 @media (max-width: 768px) {
   .catalogo {
-    padding: 4rem 1.5rem;
+    padding: 8rem 1.5rem;
   }
   .catalogo-header h2 {
     font-size: 2.8rem;
@@ -1193,35 +1196,34 @@ button[type=submit]:hover {
     padding: 1rem 2rem;
   }
 }
-.contenedor-inspitacion {
-  margin: 5rem auto;
-  padding: 2rem;
+.contenedor-inspiracion {
+  padding: 14rem 2rem 4rem;
 }
-.contenedor-inspitacion h2,
-.contenedor-inspitacion p {
+.contenedor-inspiracion h2,
+.contenedor-inspiracion p {
   text-align: center;
   margin-bottom: 2rem;
 }
-.contenedor-inspitacion .inspiracion-grid {
+.contenedor-inspiracion .inspiracion-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 3rem;
 }
-.contenedor-inspitacion .inspiracion-grid .categoria {
+.contenedor-inspiracion .inspiracion-grid .categoria {
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
 }
-.contenedor-inspitacion .inspiracion-grid .categoria:hover {
+.contenedor-inspiracion .inspiracion-grid .categoria:hover {
   transform: scale(1.02);
 }
-.contenedor-inspitacion .inspiracion-grid .categoria img {
+.contenedor-inspiracion .inspiracion-grid .categoria img {
   width: 100%;
   height: 25rem;
   object-fit: cover;
 }
-.contenedor-inspitacion .inspiracion-grid .categoria .nombre-link {
+.contenedor-inspiracion .inspiracion-grid .categoria .nombre-link {
   display: block;
   text-align: center;
   background-color: #f1f1f1;
@@ -1229,43 +1231,48 @@ button[type=submit]:hover {
   padding: 1.5rem;
   transition: background-color 0.3s ease-in-out;
 }
-.contenedor-inspitacion .inspiracion-grid .categoria .nombre-link:hover {
+.contenedor-inspiracion .inspiracion-grid .categoria .nombre-link:hover {
   background-color: #ff9900;
   color: #ffffff;
   border-bottom-right-radius: 1rem;
 }
 @media (max-width: 768px) {
-  .contenedor-inspitacion .inspiracion-grid {
+  .contenedor-inspiracion .inspiracion-grid {
     grid-template-columns: 1fr;
   }
-  .contenedor-inspitacion .categoria img {
+  .contenedor-inspiracion .categoria img {
     height: 20rem;
   }
 }
 @media (max-width: 480px) {
-  .contenedor-inspitacion {
-    padding: 1rem;
+  .contenedor-inspiracion {
+    padding: 6rem 1rem 2rem;
   }
-  .contenedor-inspitacion h2 {
+  .contenedor-inspiracion h2 {
     font-size: 2.2rem;
   }
-  .contenedor-inspitacion .nombre-link {
+  .contenedor-inspiracion .nombre-link {
     font-size: 1.6rem;
     padding: 1.2rem;
   }
 }
 
-/* SOBRE NOSOTROS */
 .sobre-nosotros-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  margin: 5rem auto;
   gap: 5rem;
+  margin: 5rem auto;
+  padding-top: 10rem;
+}
+@media (max-width: 768px) {
+  .sobre-nosotros-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .sobre-nosotros img {
-  height: 60rem;
   width: 100%;
+  height: 60rem;
   object-fit: cover;
 }
 .sobre-nosotros a {
@@ -1294,7 +1301,7 @@ button[type=submit]:hover {
 
 .contenedor-valores {
   background-color: #333;
-  color: #ddd;
+  color: #f1f1f1;
   padding: 6rem;
   margin: 5rem auto;
   border-radius: 2rem;
@@ -1309,22 +1316,28 @@ button[type=submit]:hover {
 }
 
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
     transform: translateY(15px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 @media (max-width: 1024px) {
-  .hero {
-    height: 35rem;
-  }
-  .contenedor-cta {
+  .footer-container {
     flex-direction: column;
     align-items: center;
+    text-align: center;
+  }
+  .sobre-nosotros img {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+  }
+  .footer-section {
+    width: 100%;
   }
   .call-to-action {
     width: 100%;
@@ -1334,31 +1347,8 @@ button[type=submit]:hover {
     padding: 2rem;
     text-align: center;
   }
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .footer-section {
-    width: 100%;
-  }
-}
-@media (max-width: 768px) {
-  .listado-categorias {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .catalog-grid,
-  .inspiracion-grid {
-    grid-template-columns: 1fr;
-  }
-  .sobre-nosotros-grid {
-    grid-template-columns: 1fr;
-  }
 }
 @media (max-width: 480px) {
-  .listado-categorias {
-    grid-template-columns: 1fr;
-  }
   .btn,
   .btn-circular {
     width: 100%;
@@ -1372,15 +1362,20 @@ button[type=submit]:hover {
     height: 120px;
   }
 }
-@media (min-width: 1024px) {
-  .contenedor-principal {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    text-align: left;
+@media (max-width: 480px) {
+  .sobre-nosotros-grid {
+    gap: 2rem;
+    padding-top: 5rem;
   }
-  .hero,
-  .descripcion {
-    flex: 1;
+  .contenedor-valores {
+    padding: 3rem 2rem;
+  }
+  .contenedor-valores p {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+  .valor {
+    font-size: 1.8rem;
   }
 }
 
