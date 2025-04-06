@@ -16,21 +16,20 @@
   }
 }
 
-/* Estilos generales de html */
 html {
   box-sizing: border-box;
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
 
-/* Estilos globales de tipografía */
 body {
   color: #333;
   background-color: #ffffff;
@@ -39,7 +38,6 @@ body {
   line-height: 1.6;
 }
 
-/* 4. Encabezados */
 h1,
 h2,
 h3 {
@@ -60,14 +58,12 @@ h3 {
   font-size: 2.4rem;
 }
 
-/* Parrafos */
 p {
   margin: 0 0 1.6rem 0;
   font-weight: 400;
   color: #555;
 }
 
-/* Clases utilitarias opcionales */
 .text-center {
   text-align: center;
 }
@@ -80,23 +76,29 @@ p {
   font-weight: 700;
 }
 
-/* Contenedor general */
 .contenedor {
   max-width: 120rem;
   width: 90%;
   margin: 0 auto;
 }
 
-/* Estilos de imagenes generales */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
-img a {
-  text-decoration: none;
-  color: inherit;
+
+a img {
   transition: all 0.3s ease-in-out;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
 }
 
 .btn {

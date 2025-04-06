@@ -1,31 +1,43 @@
-// _base.scss: Define estilos generales para body, html, p, h1, etc.
+// =============================================
+// _base.scss: Estilos generales y globales
+// =============================================
 
 @use "../abstracts/variables" as *;
 
-/* Estilos generales de html */
+// ------------------------------
+// 1. Configuración base HTML
+// ------------------------------
 html {
   box-sizing: border-box;
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 62.5%; // 1rem = 10px para facilitar los cálculos
+  scroll-behavior: smooth; // Suaviza el scroll en anclas
 }
 
+// ------------------------------
+// 2. Reset básico y box-sizing universal
+// ------------------------------
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
 
-/* Estilos globales de tipografía */
+// ------------------------------
+// 3. Estilos globales para <body>
+// ------------------------------
 body {
   color: $color-negro;
   background-color: $color-blanco;
   font-family: $fuente-principal;
-  font-size: 1.6rem; // Equivale a 16px si base 10px
+  font-size: 1.6rem; // Equivale a 16px
   line-height: 1.6;
 }
 
-/* 4. Encabezados */
+// ------------------------------
+// 4. Encabezados tipográficos
+// ------------------------------
 h1,
 h2,
 h3 {
@@ -46,14 +58,18 @@ h3 {
   font-size: 2.4rem;
 }
 
-/* Parrafos */
+// ------------------------------
+// 5. Párrafos
+// ------------------------------
 p {
   margin: 0 0 1.6rem 0;
   font-weight: 400;
-  color: $color-gris; // Gris suave
+  color: $color-gris; // Gris suave para buena legibilidad
 }
 
-/* Clases utilitarias opcionales */
+// ------------------------------
+// 6. Clases utilitarias comunes
+// ------------------------------
 .text-center {
   text-align: center;
 }
@@ -66,21 +82,39 @@ p {
   font-weight: 700;
 }
 
-/* Contenedor general */
+// ------------------------------
+// 7. Contenedor general
+// ------------------------------
 .contenedor {
   max-width: 120rem;
   width: 90%;
   margin: 0 auto;
 }
 
-/* Estilos de imagenes generales */
+// ------------------------------
+// 8. Estilos globales para imágenes
+// ------------------------------
 img {
   max-width: 100%;
   height: auto;
   display: block;
-  a {
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease-in-out;
-  }
+}
+
+// ------------------------------
+// 9. Estilos para <a> que contiene <img>
+// ------------------------------
+a img {
+  transition: all 0.3s ease-in-out;
+}
+
+// ------------------------------
+// 10. Form elements: heredan estilos
+// ------------------------------
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
 }
