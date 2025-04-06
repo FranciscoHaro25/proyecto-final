@@ -1,99 +1,176 @@
 // _inspiration: Página "Inspiración"
-@use "../abstracts/mixins" as *;
+
+// _inspiration.scss
 @use "../abstracts/variables" as *;
-@use "../components/buttons" as *;
 
-/* INSPIRACIÓN */
+.contenedor-inspitacion {
+  margin: 5rem auto;
+  padding: 2rem;
 
-.inspiracion-grid {
-  margin: 5rem 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-
-  a {
-    background-color: #f1f1f1;
+  h2,
+  p {
     text-align: center;
-    display: block;
-    padding: 1.5rem;
-    font-size: 2rem;
-  }
-}
-
-.contenedor-inspiracion {
-  margin-top: 5rem;
-}
-
-.inspiracion-producto {
-  img {
-    height: 45rem;
-    width: 100%;
-    object-fit: cover;
+    margin-bottom: 2rem;
   }
 
-  a {
-    background-color: #f1f1f1;
-    text-align: center;
-    display: block;
-    padding: 1.5rem;
-    font-size: 2rem;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      background-color: #ff9900;
-      color: #ffffff;
-      border-bottom-right-radius: 1rem;
-    }
-  }
-}
-
-.catalogo-producto {
-  a:hover {
-    background-color: #ff9900;
-    color: #ffffff;
-    border-bottom-right-radius: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .listado-categorias {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .catalog-grid,
   .inspiracion-grid {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+
+    .categoria {
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+
+      img {
+        width: 100%;
+        height: 25rem;
+        object-fit: cover;
+      }
+
+      .nombre-link {
+        display: block;
+        text-align: center;
+        background-color: #f1f1f1;
+        font-size: 1.8rem;
+        padding: 1.5rem;
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover {
+          background-color: $color-secundario;
+          color: $color-blanco;
+          border-bottom-right-radius: 1rem;
+        }
+      }
+    }
   }
 
-  .sobre-nosotros-grid {
-    grid-template-columns: 1fr;
+  // Responsive
+  @media (max-width: 768px) {
+    .inspiracion-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .categoria img {
+      height: 20rem;
+    }
   }
 
-  .contenedor-grid-valores {
-    flex-direction: column;
-    gap: 2rem;
-  }
-}
+  @media (max-width: 480px) {
+    padding: 1rem;
 
-@media (max-width: 480px) {
-  .listado-categorias {
-    grid-template-columns: 1fr;
-  }
+    h2 {
+      font-size: 2.2rem;
+    }
 
-  .btn,
-  .btn-circular {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .icono-svg {
-    display: none;
-  }
-
-  .testimonio-img {
-    img {
-      width: 120px;
-      height: 120px;
+    .nombre-link {
+      font-size: 1.6rem;
+      padding: 1.2rem;
     }
   }
 }
+
+// @use "../abstracts/mixins" as *;
+// @use "../abstracts/variables" as *;
+// @use "../components/buttons" as *;
+
+// /* INSPIRACIÓN */
+
+// .inspiracion-grid {
+//   margin: 5rem 0;
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   gap: 2rem;
+
+//   a {
+//     background-color: #f1f1f1;
+//     text-align: center;
+//     display: block;
+//     padding: 1.5rem;
+//     font-size: 2rem;
+//   }
+// }
+
+// .contenedor-inspiracion {
+//   margin-top: 5rem;
+// }
+
+// .inspiracion-producto {
+//   img {
+//     height: 45rem;
+//     width: 100%;
+//     object-fit: cover;
+//   }
+
+//   a {
+//     background-color: #f1f1f1;
+//     text-align: center;
+//     display: block;
+//     padding: 1.5rem;
+//     font-size: 2rem;
+//     transition: all 0.3s ease-in-out;
+
+//     &:hover {
+//       background-color: #ff9900;
+//       color: #ffffff;
+//       border-bottom-right-radius: 1rem;
+//     }
+//   }
+// }
+
+// .catalogo-producto {
+//   a:hover {
+//     background-color: #ff9900;
+//     color: #ffffff;
+//     border-bottom-right-radius: 1rem;
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .listado-categorias {
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+
+//   .catalog-grid,
+//   .inspiracion-grid {
+//     grid-template-columns: 1fr;
+//   }
+
+//   .sobre-nosotros-grid {
+//     grid-template-columns: 1fr;
+//   }
+
+//   .contenedor-grid-valores {
+//     flex-direction: column;
+//     gap: 2rem;
+//   }
+// }
+
+// @media (max-width: 480px) {
+//   .listado-categorias {
+//     grid-template-columns: 1fr;
+//   }
+
+//   .btn,
+//   .btn-circular {
+//     width: 100%;
+//     justify-content: center;
+//   }
+
+//   .icono-svg {
+//     display: none;
+//   }
+
+//   .testimonio-img {
+//     img {
+//       width: 120px;
+//       height: 120px;
+//     }
+//   }
+// }
