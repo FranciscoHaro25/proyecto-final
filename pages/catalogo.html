@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Título de la página -->
-    <title>Catalogo</title>
+    <title>Catálogo</title>
+
     <!-- Meta Descripción (SEO) -->
     <meta
       name="description"
@@ -30,28 +31,28 @@
       rel="stylesheet"
     />
 
-    <!-- Cargar Font Awesome 6.4.2 desde CDNJS para utilizar todos los íconos -->
+    <!-- Font Awesome -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
       crossorigin="anonymous"
     ></script>
 
-    <!-- Hojas de Estilo CSS -->
+    <!-- Hojas de Estilo Personalizadas -->
     <link rel="stylesheet" href="../assets/css/normalize.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
+
   <body>
-    <!-- HEADER -->
+    <!-- ========== HEADER ========== -->
     <header class="header" role="banner">
       <nav class="nav" role="navigation" aria-label="Menú principal">
         <div class="contenedor nav__contenedor">
-          <!-- Logo -->
+          <!-- Logo principal -->
           <a href="../index.html" class="nav-logo" aria-label="Inicio CasaForm">
             <img src="../assets/img/logo-original.svg" alt="Logo CasaForm" />
           </a>
 
-          <!-- Botón hamburguesa -->
-          <!-- Botón hamburguesa con 3 barras -->
+          <!-- Botón de menú hamburguesa (responsive) -->
           <button
             class="nav-toggle"
             id="nav__toggle"
@@ -64,7 +65,7 @@
             <span></span>
           </button>
 
-          <!-- Menú de navegación -->
+          <!-- Enlaces de navegación -->
           <ul class="nav-links" id="nav-links">
             <li><a href="../index.html">Inicio</a></li>
             <li>
@@ -75,7 +76,7 @@
             <li><a href="../pages/contacto.html">Contacto</a></li>
           </ul>
 
-          <!-- Redes Sociales -->
+          <!-- Redes sociales accesibles -->
           <div class="contenedor-icons" aria-label="Redes sociales">
             <a
               href="https://www.facebook.com"
@@ -99,33 +100,30 @@
       </nav>
     </header>
 
-    <!-- CATÁLOGO -->
+    <!-- ========== MAIN CONTENT ========== -->
     <main class="contenedor-catalogo contenedor">
+      <!-- Título y descripción -->
       <h2 class="text-center">Catálogo de Productos</h2>
       <p class="text-center">
         Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit
         phasellus mollis sit aliquam sit nullam.
       </p>
-      <div>
-        <!-- <div class="search-container">
-          <input type="text" class="search-input" placeholder="Buscar..." />
-          <button class="search-btn">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div> -->
-        <div class="search-container">
-          <label for="buscar" class="visually-hidden">Buscar productos</label>
-          <input
-            type="text"
-            id="buscar"
-            class="search-input"
-            placeholder="Buscar..."
-          />
-          <button class="search-btn" aria-label="Buscar">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
+
+      <!-- Buscador accesible -->
+      <div class="search-container">
+        <label for="buscar" class="visually-hidden">Buscar productos</label>
+        <input
+          type="text"
+          id="buscar"
+          class="search-input"
+          placeholder="Buscar..."
+        />
+        <button class="search-btn" aria-label="Buscar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
       </div>
+
+      <!-- Productos del catálogo -->
       <div class="catalog-grid">
         <div class="catalogo-producto categoria">
           <img
@@ -144,7 +142,7 @@
         <div class="catalogo-producto categoria">
           <img
             src="../assets/img/imagenes/catalogo-mesa-comedor.jpg"
-            alt="Imagen Mesa Comdor"
+            alt="Imagen Mesa Comedor"
           />
           <a class="nombre-link btn" href="#">Mesa Comedor</a>
         </div>
@@ -214,18 +212,18 @@
       </div>
     </main>
 
-    <!-- FOOTER -->
+    <!-- ========== FOOTER ========== -->
     <footer>
       <div>
         <div class="row justify-content-between contenedor">
-          <!-- Logo -->
+          <!-- Logo del footer -->
           <div class="logo-footer">
             <a href="../index.html" class="logo-footer">
               <img src="../assets/img/logo-amarillo.svg" alt="Logo CasaForm" />
             </a>
           </div>
 
-          <!-- Contacto -->
+          <!-- Información de contacto -->
           <div class="col-md-4 mb-4">
             <h3 class="text-uppercase fw-bold mb-4">Contacto</h3>
             <ul class="list-unstyled">
@@ -259,7 +257,7 @@
             </ul>
           </div>
 
-          <!-- Enlaces Rápidos -->
+          <!-- Enlaces rápidos -->
           <div class="col-md-4 mb-4 enlaces-hover">
             <h3 class="text-uppercase fw-bold mb-4">Enlaces Rápidos</h3>
             <ul>
@@ -301,7 +299,7 @@
             </ul>
           </div>
 
-          <!-- Redes Sociales -->
+          <!-- Redes sociales del footer -->
           <div class="col-md-4 mb-4">
             <h3 class="text-uppercase fw-bold mb-4">Síguenos</h3>
             <div class="d-flex gap-4 fs-4 social">
@@ -324,7 +322,7 @@
           </div>
         </div>
 
-        <!-- Derechos de Autor -->
+        <!-- Derechos de autor -->
         <div class="linea-color text-center mt-4 pt-4">
           <p class="mb-1 texto-footer">
             &copy; 2025 | Todos los Derechos Reservados | CasaForm
@@ -333,6 +331,8 @@
         </div>
       </div>
     </footer>
+
+    <!-- Scripts JS -->
     <script src="../assets/js/script.js"></script>
   </body>
 </html>

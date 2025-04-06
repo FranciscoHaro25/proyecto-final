@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Título de la página -->
     <title>Contacto</title>
+
     <!-- Meta Descripción (SEO) -->
     <meta
       name="description"
@@ -30,13 +31,13 @@
       rel="stylesheet"
     />
 
-    <!-- Cargar Font Awesome 6.4.2 desde CDNJS para utilizar todos los íconos -->
+    <!-- Font Awesome -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
       crossorigin="anonymous"
     ></script>
 
-    <!-- Hojas de Estilo CSS -->
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="../assets/css/normalize.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
@@ -51,7 +52,6 @@
           </a>
 
           <!-- Botón hamburguesa -->
-          <!-- Botón hamburguesa con 3 barras -->
           <button
             class="nav-toggle"
             id="nav__toggle"
@@ -101,10 +101,12 @@
 
     <!-- CONTACTO -->
     <main>
+      <!-- Sección de formulario de contacto -->
       <section class="contacto" aria-labelledby="titulo-contacto">
         <h2 id="titulo-contacto">Formulario de Contacto</h2>
 
         <form class="contact-form" action="#" method="post">
+          <!-- Campo nombre -->
           <label for="name">Nombre</label>
           <input
             type="text"
@@ -114,6 +116,7 @@
             required
           />
 
+          <!-- Campo email -->
           <label for="email">Email</label>
           <input
             type="email"
@@ -123,6 +126,7 @@
             required
           />
 
+          <!-- Campo teléfono -->
           <label for="phone">Teléfono</label>
           <input
             type="tel"
@@ -132,6 +136,7 @@
             required
           />
 
+          <!-- Campo compañía -->
           <label for="company">Compañía</label>
           <input
             type="text"
@@ -140,6 +145,7 @@
             placeholder="Nombre de la empresa"
           />
 
+          <!-- Campo mensaje -->
           <label for="message">Mensaje</label>
           <textarea
             id="message"
@@ -149,6 +155,7 @@
             required
           ></textarea>
 
+          <!-- Botón de envío -->
           <button type="submit" aria-label="Enviar el formulario de contacto">
             Enviar Mensaje
           </button>
@@ -160,14 +167,14 @@
     <footer>
       <div>
         <div class="row justify-content-between contenedor">
-          <!-- Logo -->
+          <!-- Logo en el footer -->
           <div class="logo-footer">
             <a href="../index.html" class="logo-footer">
               <img src="../assets/img/logo-amarillo.svg" alt="Logo CasaForm" />
             </a>
           </div>
 
-          <!-- Contacto -->
+          <!-- Información de contacto -->
           <div class="col-md-4 mb-4">
             <h3 class="text-uppercase fw-bold mb-4">Contacto</h3>
             <ul class="list-unstyled">
@@ -201,7 +208,7 @@
             </ul>
           </div>
 
-          <!-- Enlaces Rápidos -->
+          <!-- Enlaces rápidos -->
           <div class="col-md-4 mb-4 enlaces-hover">
             <h3 class="text-uppercase fw-bold mb-4">Enlaces Rápidos</h3>
             <ul>
@@ -243,7 +250,7 @@
             </ul>
           </div>
 
-          <!-- Redes Sociales -->
+          <!-- Redes Sociales en el footer -->
           <div class="col-md-4 mb-4">
             <h3 class="text-uppercase fw-bold mb-4">Síguenos</h3>
             <div class="d-flex gap-4 fs-4 social">
@@ -266,7 +273,7 @@
           </div>
         </div>
 
-        <!-- Derechos de Autor -->
+        <!-- Derechos de autor -->
         <div class="linea-color text-center mt-4 pt-4">
           <p class="mb-1 texto-footer">
             &copy; 2025 | Todos los Derechos Reservados | CasaForm
@@ -275,6 +282,8 @@
         </div>
       </div>
     </footer>
+
+    <!-- Scripts JS -->
     <script src="../assets/js/script.js"></script>
   </body>
 </html>
