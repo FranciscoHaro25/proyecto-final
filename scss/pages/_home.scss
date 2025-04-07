@@ -136,93 +136,27 @@
 // _testimonios.scss: Estilos para testimonios
 // ===========================================
 
-.testimonios-carrusel {
+.testimonios {
+  @include categoria-card-grid;
   padding: 6rem 2rem;
   background-color: $color-gris-claro;
-  text-align: center;
 
-  .testimonios-header {
-    margin-bottom: 3rem;
-
-    h2 {
-      font-size: 3rem;
-      color: $color-primario;
-    }
-
-    p {
-      font-size: 1.6rem;
-      color: $color-texto;
-    }
+  // Encabezado de la sección
+  &-header {
+    @include testimonios-header;
   }
 
-  .slider {
-    position: relative;
-    overflow: hidden;
-    max-width: 800px;
-    margin: 0 auto;
-    align-items: center;
-
-    .slides {
-      display: flex;
-      transition: transform 0.6s ease-in-out;
-      justify-content: center;
-    }
-
-    .slide {
-      background-color: $color-blanco;
-      min-width: 50%;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      padding: 10rem;
-      border-radius: 3rem;
-
-      &.active {
-        display: flex;
-      }
-
-      img {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-bottom: 1.5rem;
-        border: 2px solid $color-secundario;
-      }
-
-      blockquote {
-        font-size: 1.6rem;
-        font-style: italic;
-        color: $color-primario;
-
-        footer {
-          margin-top: 1rem;
-          font-weight: bold;
-          color: $color-secundario;
-        }
-      }
-    }
+  // Grid de tarjetas de testimonio
+  .testimonios-grid {
+    @include testimonios-grid;
   }
 
-  .slider-controls {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-
-    button {
-      background: none;
-      border: none;
-      font-size: 2.4rem;
-      cursor: pointer;
-      padding: 0 1rem;
-      color: $color-primario;
-
-      &:hover {
-        color: $color-secundario;
-      }
-    }
+  // Tarjeta individual
+  .testimonio {
+    @include testimonio-card;
   }
 }
+
 // <<<<=================================
 
 // ====================================>>>>

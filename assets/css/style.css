@@ -859,78 +859,67 @@ button[type=submit]:hover {
     border-bottom-right-radius: 2rem;
   }
 }
-.testimonios-carrusel {
+.testimonios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
   padding: 6rem 2rem;
   background-color: #f1f1f1;
-  text-align: center;
 }
-.testimonios-carrusel .testimonios-header {
-  margin-bottom: 3rem;
+.testimonios-header {
+  margin-bottom: 4rem;
 }
-.testimonios-carrusel .testimonios-header h2 {
+.testimonios-header h2 {
   font-size: 3rem;
   color: #281101;
 }
-.testimonios-carrusel .testimonios-header p {
+.testimonios-header p {
   font-size: 1.6rem;
   color: #333;
 }
-.testimonios-carrusel .slider {
-  position: relative;
-  overflow: hidden;
-  max-width: 800px;
-  margin: 0 auto;
-  align-items: center;
+@media (max-width: 768px) {
+  .testimonios-header h2 {
+    font-size: 2.4rem;
+  }
 }
-.testimonios-carrusel .slider .slides {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
-  justify-content: center;
+.testimonios .testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 3rem;
 }
-.testimonios-carrusel .slider .slide {
+@media (max-width: 768px) {
+  .testimonios .testimonios-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.testimonios .testimonio {
   background-color: #ffffff;
-  min-width: 50%;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  padding: 10rem;
-  border-radius: 3rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 12px rgba(51, 51, 51, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
 }
-.testimonios-carrusel .slider .slide.active {
-  display: flex;
+.testimonios .testimonio:hover {
+  transform: scale(1.03);
 }
-.testimonios-carrusel .slider .slide img {
+.testimonios .testimonio img {
   width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 1.5rem;
-  border: 2px solid #ff9900;
+  border: 3px solid #ff9900;
 }
-.testimonios-carrusel .slider .slide blockquote {
-  font-size: 1.6rem;
+.testimonios .testimonio blockquote {
   font-style: italic;
+  font-size: 1.6rem;
   color: #281101;
 }
-.testimonios-carrusel .slider .slide blockquote footer {
+.testimonios .testimonio blockquote footer {
   margin-top: 1rem;
   font-weight: bold;
-  color: #ff9900;
-}
-.testimonios-carrusel .slider-controls {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-.testimonios-carrusel .slider-controls button {
-  background: none;
-  border: none;
-  font-size: 2.4rem;
-  cursor: pointer;
-  padding: 0 1rem;
-  color: #281101;
-}
-.testimonios-carrusel .slider-controls button:hover {
   color: #ff9900;
 }
 

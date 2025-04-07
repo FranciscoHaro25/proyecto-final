@@ -182,63 +182,61 @@
         </div>
       </section>
 
-      <!--        TESTIMONIOS CON CARRUSEL JS       -->
-      <section
-        class="testimonios-carrusel"
-        aria-labelledby="testimonios-titulo"
-      >
-        <div class="testimonios-header text-center">
-          <h2 id="testimonios-titulo">Lo que Dicen Nuestros Clientes</h2>
-          <p>Historias reales de quienes confiaron en CasaForm.</p>
-        </div>
+      <!-- === TESTIMONIOS CON CARRUSEL == -->
 
-        <div class="slider">
-          <div class="slides">
-            <article class="slide active">
-              <img
-                src="./assets/img/imagenes/testimonio-4.jpg"
-                alt="Cliente Ana López"
-              />
-              <blockquote>
-                “El sofá modular es espectacular. Atención al cliente 10/10.”
-                <footer>—Carlos Pérez</footer>
-              </blockquote>
-            </article>
+      <section class="testimonios" aria-labelledby="titulo-testimonios">
+        <div class="contenedor">
+          <!-- ✅ Modificado: Se agregó aria-labelledby para accesibilidad -->
+          <header class="testimonios-header text-center">
+            <h2 id="titulo-testimonios">Lo que opinan nuestros clientes</h2>
+            <!-- ✅ Modificado: Título con id para enlazar aria-labelledby -->
+            <p>Experiencias reales de quienes confiaron en CasaForm.</p>
+          </header>
 
-            <article class="slide">
+          <div class="testimonios-grid">
+            <article class="testimonio" data-aos="fade-up">
+              <!-- ✅ Nuevo atributo: alt específico con nombre real -->
               <img
                 src="./assets/img/imagenes/testimonio-2.jpg"
-                alt="Cliente Carlos Pérez"
+                alt="Foto de Ana López"
               />
               <blockquote>
-                “Los muebles llegaron antes de lo esperado. ¡Recomendadísimo!”
-                <footer>—Ana López</footer>
+                <p>
+                  “El sofá modular es espectacular. Atención al cliente 10/10.”
+                </p>
+                <footer>— Ana López</footer>
               </blockquote>
             </article>
 
-            <article class="slide">
+            <article class="testimonio" data-aos="fade-up" data-aos-delay="100">
               <img
-                src="./assets/img/imagenes/testimonio-7.jpg"
-                alt="Cliente Mariana Gutiérrez"
+                src="./assets/img/imagenes/testimonio-1.jpg"
+                alt="Foto de Carlos Pérez"
               />
               <blockquote>
-                “Diseños hermosos y de calidad. ¡Me encantó el comedor!”
+                <p>
+                  “Los muebles llegaron antes de lo esperado. ¡Recomendadísimo!”
+                </p>
+                <footer>— Carlos Pérez</footer>
+              </blockquote>
+            </article>
+
+            <article class="testimonio" data-aos="fade-up" data-aos-delay="200">
+              <img
+                src="./assets/img/imagenes/testimonio-5.jpg"
+                alt="Foto de Mariana Gutiérrez"
+              />
+              <blockquote>
+                <p>“Diseños hermosos y de calidad. ¡Me encantó el comedor!”</p>
                 <footer>— Mariana Gutiérrez</footer>
               </blockquote>
             </article>
           </div>
-
-          <!-- Controles -->
-          <div class="slider-controls">
-            <button class="prev" aria-label="Anterior">&#10094;</button>
-            <button class="next" aria-label="Siguiente">&#10095;</button>
-          </div>
         </div>
       </section>
 
-      <!-- ======================================== -->
-      <!--           LLAMADO A LA ACCIÓN            -->
-      <!-- ======================================== -->
+      <!-- ===  LLAMADO A LA ACCIÓN ==== -->
+
       <section class="contenedor-cta contenedor">
         <div class="cta-grid">
           <!-- Imagen decorativa -->

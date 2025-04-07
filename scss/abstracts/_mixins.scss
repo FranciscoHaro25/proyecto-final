@@ -233,6 +233,83 @@
   }
 }
 
+// =====================================
+// Mixins para sección de Testimonios
+// =====================================
+
+// Mixin para el diseño del encabezado de testimonios
+// Incluye estilos para título (h2) y párrafo descriptivo
+@mixin testimonios-header {
+  margin-bottom: 4rem;
+
+  h2 {
+    font-size: 3rem;
+    color: $color-primario;
+  }
+
+  p {
+    font-size: 1.6rem;
+    color: $color-texto;
+  }
+
+  // Estilos adaptativos en tablet
+  @include respond("tablet") {
+    h2 {
+      font-size: 2.4rem;
+    }
+  }
+}
+
+// Mixin para la cuadrícula que contiene los testimonios
+// Responsive desde desktop hasta mobile (1 columna)
+@mixin testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 3rem;
+
+  @include respond("tablet") {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Mixin para el diseño de cada tarjeta de testimonio
+// Incluye efecto hover y diseño del avatar + texto
+@mixin testimonio-card {
+  background-color: $color-blanco;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 12px rgba($color-negro, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.03); // Efecto de zoom al pasar el mouse
+  }
+
+  // Avatar circular
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    border: 3px solid $color-secundario;
+  }
+
+  // Texto del testimonio
+  blockquote {
+    font-style: italic;
+    font-size: 1.6rem;
+    color: $color-primario;
+
+    footer {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: $color-secundario;
+    }
+  }
+}
+
 // ========================
 // MEDIA QUERIES
 // ========================
