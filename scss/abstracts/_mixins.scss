@@ -151,7 +151,7 @@
 // con imagen, sombra, efecto hover y versión responsive.
 // ==========================================================
 
-@mixin card($img-height: 30rem) {
+@mixin card($img-height-destok: 30rem, $img-height-mobil: 15rem) {
   // Estilo general del contenedor de la tarjeta
   overflow: hidden;
   border-radius: 1rem;
@@ -162,7 +162,7 @@
   // Estilo de la imagen principal de la tarjeta
   img {
     width: 100%;
-    height: $img-height; // Altura personalizable
+    height: $img-height-destok; // Altura personalizable
     object-fit: cover;
     border-bottom: 4px solid transparent;
     transition: transform 0.3s ease, border-color 0.3s ease;
@@ -172,6 +172,12 @@
   &:hover img {
     transform: scale(1.1);
     // border-color: $color-secundario;
+  }
+
+  @include respond("xs") {
+    img {
+      height: $img-height-mobil; // Altura personalizable
+    }
   }
 }
 // Estilo del enlace de texto debajo de la imagen
@@ -246,14 +252,6 @@
   }
 }
 
-@mixin respond($breakpoint) {
-  @if $breakpoint == "tablet" {
-    @media (max-width: 768px) {
-      @content;
-    }
-  }
-}
-
 // =====================================
 // Mixins para sección de Testimonios
 // =====================================
@@ -275,7 +273,7 @@
   }
 
   // Estilos adaptativos en tablet
-  @include respond("tablet") {
+  @include respond("xs") {
     h2 {
       font-size: 2.4rem;
     }
@@ -290,7 +288,7 @@
   grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
   gap: 3rem;
 
-  @include respond("tablet") {
+  @include respond("xs") {
     grid-template-columns: 1fr;
   }
 }
@@ -334,70 +332,6 @@
   }
 }
 
-// // ========================
-// // MEDIA QUERIES
-// // ========================
-
-// // Extra pequeño - móviles
-// @mixin respond-xs {
-//   @media (max-width: $breakpoint-xs) {
-//     @content;
-//   }
-// }
-
-// // Pequeño - tablets pequeñas
-// @mixin respond-sm {
-//   @media (max-width: $breakpoint-sm) {
-//     @content;
-//   }
-// }
-
-// // Mediano - tablets grandes / laptops
-// @mixin respond-md {
-//   @media (max-width: $breakpoint-md) {
-//     @content;
-//   }
-// }
-
-// // Grande - desktops
-// @mixin respond-lg {
-//   @media (max-width: $breakpoint-lg) {
-//     @content;
-//   }
-// }
-
-// // Extra grande - pantallas grandes
-// @mixin respond-xl {
-//   @media (max-width: $breakpoint-xl) {
-//     @content;
-//   }
-// }
-
-// Mixin para media queries
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == sm {
-    @media (max-width: 576px) {
-      @content;
-    }
-  } @else if $breakpoint == md {
-    @media (max-width: 768px) {
-      @content;
-    }
-  } @else if $breakpoint == lg {
-    @media (max-width: 992px) {
-      @content;
-    }
-  } @else if $breakpoint == xl {
-    @media (max-width: 1200px) {
-      @content;
-    }
-  } @else if $breakpoint == xxl {
-    @media (max-width: 1400px) {
-      @content;
-    }
-  }
-}
-
 // ========================
 // MEDIA QUERIES
 // ========================
@@ -427,35 +361,5 @@
     @media (max-width: $breakpoint-xxl) {
       @content;
     }
-  }
-}
-
-// Helpers para visibilidad responsive
-.hide-on-mobile {
-  @include respond-to(sm) {
-    display: none !important;
-  }
-}
-
-.show-on-desktop {
-  display: none;
-
-  @include respond-to(md) {
-    display: block !important;
-  }
-}
-
-// Mixin para grid responsive
-@mixin grid-responsive($columns: 3, $gap: 2rem) {
-  display: grid;
-  gap: $gap;
-  grid-template-columns: repeat($columns, 1fr);
-
-  @include respond-to(md) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include respond-to(sm) {
-    grid-template-columns: 1fr;
   }
 }

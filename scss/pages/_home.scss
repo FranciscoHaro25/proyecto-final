@@ -79,17 +79,18 @@
 
 .contenedor-categoria {
   margin-top: 7rem;
+  border-top: 2px solid $color-gris-claro;
+  border-bottom: 2px solid $color-gris-claro;
   .contenedor-header {
-    background-color: $color-gris-claro;
     padding: 4rem;
   }
   .listado-categorias {
     @include categoria-card-grid(280px, 4rem, 1rem, 1fr, $breakpoint-md);
 
-    margin: 5rem auto;
+    margin: 1rem auto;
 
     .card {
-      @include card(35rem); // Altura por defecto en desktop
+      @include card(35rem, 24rem); // Altura por defecto en desktop
       .link {
         @include link; // Estilo botones card
       }
