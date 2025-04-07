@@ -731,7 +731,6 @@ button[type=submit]:hover {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 4rem;
   margin-top: 1rem;
-  margin: 1rem auto;
 }
 @media (max-width: 768px) {
   .contenedor-categoria .listado-categorias {
@@ -753,29 +752,27 @@ button[type=submit]:hover {
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 .contenedor-categoria .listado-categorias .card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 @media (max-width: 480px) {
   .contenedor-categoria .listado-categorias .card img {
     height: 24rem;
   }
 }
-.contenedor-categoria .listado-categorias .card .link {
+.contenedor-categoria .link {
   display: block;
   text-align: center;
-  padding: 2rem;
+  padding: 2.2rem;
   font-size: 2rem;
   font-weight: bold;
   background-color: #f1f1f1;
   color: #281101;
-  border-top: 1px solid #ddd;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
 }
-.contenedor-categoria .listado-categorias .card .link:hover {
+.contenedor-categoria .link:hover {
   background-color: #ff9900;
   color: #ffffff;
-  border-bottom-right-radius: 2rem;
 }
 
 .testimonios {

@@ -170,8 +170,7 @@
 
   // Efecto hover sobre la imagen (zoom + color de borde)
   &:hover img {
-    transform: scale(1.1);
-    // border-color: $color-secundario;
+    transform: scale(1.05);
   }
 
   @include respond("xs") {
@@ -184,12 +183,12 @@
 @mixin link {
   display: block;
   text-align: center;
-  padding: 2rem;
+  padding: 2.2rem;
   font-size: 2rem;
   font-weight: bold;
   background-color: $color-gris-claro;
   color: $color-primario;
-  border-top: 1px solid #ddd;
+  // border-top: 1rem solid #ddd;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, color 0.3s ease,
     border-radius 0.3s ease;
@@ -198,7 +197,7 @@
   &:hover {
     background-color: $color-secundario;
     color: $color-blanco;
-    border-bottom-right-radius: 2rem;
+    // border-bottom-right-radius: 1rem;
   }
 }
 

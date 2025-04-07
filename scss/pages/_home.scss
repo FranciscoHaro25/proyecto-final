@@ -87,14 +87,12 @@
   .listado-categorias {
     @include categoria-card-grid(280px, 4rem, 1rem, 1fr, $breakpoint-md);
 
-    margin: 1rem auto;
-
     .card {
       @include card(35rem, 24rem); // Altura por defecto en desktop
-      .link {
-        @include link; // Estilo botones card
-      }
     }
+  }
+  .link {
+    @include link; // Estilo botones card
   }
 }
 
