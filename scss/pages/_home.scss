@@ -78,29 +78,21 @@
 // CATEGORÍAS
 
 .contenedor-categoria {
-  h2 {
-    font-size: 3.2rem;
-    margin: 6rem 0 2rem;
+  margin-top: 7rem;
+  .contenedor-header {
+    background-color: $color-gris-claro;
+    padding: 4rem;
   }
-
-  h3 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    font-size: 1.6rem;
-    max-width: 60ch;
-    margin: 0 auto;
-    text-align: center;
-  }
-
   .listado-categorias {
     @include categoria-card-grid(280px, 4rem, 1rem, 1fr, $breakpoint-md);
+
     margin: 5rem auto;
 
     .card {
       @include card(35rem); // Altura por defecto en desktop
+      .link {
+        @include link; // Estilo botones card
+      }
     }
   }
 }

@@ -733,19 +733,12 @@ button[type=submit]:hover {
     font-size: 1.5rem;
   }
 }
-.contenedor-categoria h2 {
-  font-size: 3.2rem;
-  margin: 6rem 0 2rem;
+.contenedor-categoria {
+  margin-top: 7rem;
 }
-.contenedor-categoria h3 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-.contenedor-categoria p {
-  font-size: 1.6rem;
-  max-width: 60ch;
-  margin: 0 auto;
-  text-align: center;
+.contenedor-categoria .contenedor-header {
+  background-color: #f1f1f1;
+  padding: 4rem;
 }
 .contenedor-categoria .listado-categorias {
   display: grid;
@@ -792,15 +785,6 @@ button[type=submit]:hover {
   background-color: #ff9900;
   color: #ffffff;
   border-bottom-right-radius: 2rem;
-}
-@media (max-width: 576px) {
-  .contenedor-categoria .listado-categorias .card img {
-    height: 22rem;
-  }
-  .contenedor-categoria .listado-categorias .card .nombre-link {
-    font-size: 1.6rem;
-    padding: 1.4rem;
-  }
 }
 
 .testimonios {

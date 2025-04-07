@@ -173,41 +173,26 @@
     transform: scale(1.1);
     // border-color: $color-secundario;
   }
+}
+// Estilo del enlace de texto debajo de la imagen
+@mixin link {
+  display: block;
+  text-align: center;
+  padding: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: $color-gris-claro;
+  color: $color-primario;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-radius 0.3s ease;
 
-  // Estilo del enlace de texto debajo de la imagen
-  .link {
-    display: block;
-    text-align: center;
-    padding: 2rem;
-    font-size: 2rem;
-    font-weight: bold;
-    background-color: $color-gris-claro;
-    color: $color-primario;
-    border-top: 1px solid #ddd;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, color 0.3s ease,
-      border-radius 0.3s ease;
-
-    // Efecto hover sobre el nombre del enlace
-    &:hover {
-      background-color: $color-secundario;
-      color: $color-blanco;
-      border-bottom-right-radius: 2rem;
-    }
-  }
-
-  // ================================
-  // Media Query: versión móvil
-  // ================================
-  @include respond-to(sm) {
-    img {
-      height: 22rem; // Reduce altura en pantallas pequeñas
-    }
-
-    .nombre-link {
-      font-size: 1.6rem;
-      padding: 1.4rem;
-    }
+  // Efecto hover sobre el nombre del enlace
+  &:hover {
+    background-color: $color-secundario;
+    color: $color-blanco;
+    border-bottom-right-radius: 2rem;
   }
 }
 
@@ -264,38 +249,6 @@
 @mixin respond($breakpoint) {
   @if $breakpoint == "tablet" {
     @media (max-width: 768px) {
-      @content;
-    }
-  }
-}
-
-// ========================
-// MEDIA QUERIES
-// ========================
-
-@mixin respond($breakpoint) {
-  @if $breakpoint == "xs" {
-    @media (max-width: $breakpoint-xs) {
-      @content;
-    }
-  } @else if $breakpoint == "sm" {
-    @media (max-width: $breakpoint-sm) {
-      @content;
-    }
-  } @else if $breakpoint == "md" {
-    @media (max-width: $breakpoint-md) {
-      @content;
-    }
-  } @else if $breakpoint == "lg" {
-    @media (max-width: $breakpoint-lg) {
-      @content;
-    }
-  } @else if $breakpoint == "xl" {
-    @media (max-width: $breakpoint-xl) {
-      @content;
-    }
-  } @else if $breakpoint == "xxl" {
-    @media (max-width: $breakpoint-xxl) {
       @content;
     }
   }
@@ -420,10 +373,6 @@
 //   }
 // }
 
-// ========================
-// GRID RESPONSIVE O HELPERS
-// ========================
-
 // Mixin para media queries
 @mixin respond-to($breakpoint) {
   @if $breakpoint == sm {
@@ -444,6 +393,38 @@
     }
   } @else if $breakpoint == xxl {
     @media (max-width: 1400px) {
+      @content;
+    }
+  }
+}
+
+// ========================
+// MEDIA QUERIES
+// ========================
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == "xs" {
+    @media (max-width: $breakpoint-xs) {
+      @content;
+    }
+  } @else if $breakpoint == "sm" {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == "md" {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == "lg" {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == "xl" {
+    @media (max-width: $breakpoint-xl) {
+      @content;
+    }
+  } @else if $breakpoint == "xxl" {
+    @media (max-width: $breakpoint-xxl) {
       @content;
     }
   }
