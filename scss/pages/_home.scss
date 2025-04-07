@@ -137,9 +137,14 @@
 // ===========================================
 
 .testimonios {
-  @include categoria-card-grid;
   padding: 6rem 2rem;
   background-color: $color-gris-claro;
+
+  @include categoria-card-grid(
+    320px,
+    4rem,
+    8rem
+  ); // cambia min-width, gap y margin-top
 
   // Encabezado de la sección
   &-header {

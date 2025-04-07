@@ -860,12 +860,12 @@ button[type=submit]:hover {
   }
 }
 .testimonios {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 3rem;
-  margin-top: 3rem;
   padding: 6rem 2rem;
   background-color: #f1f1f1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 4rem;
+  margin-top: 8rem;
 }
 .testimonios-header {
   margin-bottom: 4rem;

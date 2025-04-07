@@ -127,11 +127,12 @@
 // =====================================
 // Grid de Categorías
 // =====================================
-@mixin categoria-card-grid {
+// Mixin flexible para grid de categorías
+@mixin categoria-card-grid($min-width: 280px, $gap: 3rem, $margin-top: 3rem) {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 3rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+  margin-top: $margin-top;
 }
 
 @mixin categoria-card($img-height: 30rem) {
