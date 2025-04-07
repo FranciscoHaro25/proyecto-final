@@ -46,6 +46,9 @@
       rel="stylesheet"
     />
 
+    <!-- AOS CSS para animaciones al hacer scroll (scroll reveal con clases) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <!-- Hojas de estilo personalizadas -->
     <link rel="stylesheet" href="./assets/css/normalize.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -113,7 +116,9 @@
     <main>
       <section class="hero" aria-labelledby="titulo-hero">
         <div class="hero-contenido">
-          <h1 id="titulo-hero">Muebles que transforman tu hogar</h1>
+          <h1 id="titulo-hero" data-aos="fade-up">
+            Muebles que transforman tu hogar
+          </h1>
           <p>
             Descubre el equilibrio perfecto entre diseño, funcionalidad y
             estilo. Tu hogar merece muebles con alma.
@@ -137,7 +142,7 @@
           </p>
         </header>
 
-        <div class="listado-categorias contenedor">
+        <div class="listado-categorias contenedor" data-aos="fade-up">
           <div class="card">
             <img
               src="./assets/img/imagenes/categoria-oficina.jpg"
@@ -229,6 +234,7 @@
         <div class="cta-grid">
           <!-- Imagen decorativa -->
           <figure
+            data-aos="fade-up-right"
             class="call-to-action"
             role="img"
             aria-label="Imagen decorativa de llamada a la acción"
@@ -250,7 +256,11 @@
             </a>
 
             <!-- Formulario de contacto -->
-            <section class="form-contacto" aria-labelledby="contacto-titulo">
+            <section
+              class="form-contacto"
+              aria-labelledby="contacto-titulo"
+              data-aos="fade-up"
+            >
               <h2 class="titulo-contacto" id="contacto-titulo">
                 Envíanos un mensaje ahora
               </h2>
@@ -371,6 +381,14 @@
 
     <!-- JS principal -->
     <script src="./assets/js/script.js"></script>
+
+    <!-- Scripts de librerías (al final del <body>) -->
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      //Inicializar AOS
+      AOS.init();
+    </script>
 
     <!-- JS de animación al hacer scroll -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
