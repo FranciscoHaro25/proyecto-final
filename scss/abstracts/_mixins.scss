@@ -127,35 +127,55 @@
 // =====================================
 // Grid de Categorías
 // =====================================
-// Mixin flexible para grid de categorías
-@mixin categoria-card-grid($min-width: 280px, $gap: 3rem, $margin-top: 3rem) {
+// Mixin flexible para grid
+@mixin categoria-card-grid(
+  $min-width: 280px,
+  $gap: 3rem,
+  $margin-top: 3rem,
+  $responsive-columns: 1fr,
+  // Valor para móviles
+  $breakpoint: $breakpoint-sm // Usa tus variables globales
+) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
   gap: $gap;
   margin-top: $margin-top;
-}
 
-@mixin categoria-card($img-height: 30rem) {
+  @media (max-width: $breakpoint) {
+    grid-template-columns: $responsive-columns;
+  }
+}
+// ==========================================================
+// Mixin: Card
+// Descripción: Estilos base para cada tarjeta de categoría
+// con imagen, sombra, efecto hover y versión responsive.
+// ==========================================================
+
+@mixin card($img-height: 30rem) {
+  // Estilo general del contenedor de la tarjeta
   overflow: hidden;
   border-radius: 1rem;
   background-color: #fff;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
+  // Estilo de la imagen principal de la tarjeta
   img {
     width: 100%;
-    height: $img-height;
+    height: $img-height; // Altura personalizable
     object-fit: cover;
     border-bottom: 4px solid transparent;
-    transition: transform 0.4s ease, border-color 0.4s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
   }
 
+  // Efecto hover sobre la imagen (zoom + color de borde)
   &:hover img {
     transform: scale(1.1);
-    border-color: $color-secundario;
+    // border-color: $color-secundario;
   }
 
-  .nombre-link {
+  // Estilo del enlace de texto debajo de la imagen
+  .link {
     display: block;
     text-align: center;
     padding: 2rem;
@@ -168,10 +188,25 @@
     transition: background-color 0.3s ease, color 0.3s ease,
       border-radius 0.3s ease;
 
+    // Efecto hover sobre el nombre del enlace
     &:hover {
       background-color: $color-secundario;
       color: $color-blanco;
       border-bottom-right-radius: 2rem;
+    }
+  }
+
+  // ================================
+  // Media Query: versión móvil
+  // ================================
+  @include respond-to(sm) {
+    img {
+      height: 22rem; // Reduce altura en pantallas pequeñas
+    }
+
+    .nombre-link {
+      font-size: 1.6rem;
+      padding: 1.4rem;
     }
   }
 }
@@ -234,12 +269,45 @@
   }
 }
 
+// ========================
+// MEDIA QUERIES
+// ========================
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == "xs" {
+    @media (max-width: $breakpoint-xs) {
+      @content;
+    }
+  } @else if $breakpoint == "sm" {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == "md" {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == "lg" {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == "xl" {
+    @media (max-width: $breakpoint-xl) {
+      @content;
+    }
+  } @else if $breakpoint == "xxl" {
+    @media (max-width: $breakpoint-xxl) {
+      @content;
+    }
+  }
+}
+
 // =====================================
 // Mixins para sección de Testimonios
 // =====================================
 
 // Mixin para el diseño del encabezado de testimonios
 // Incluye estilos para título (h2) y párrafo descriptivo
+
 @mixin testimonios-header {
   margin-bottom: 4rem;
 
@@ -263,6 +331,7 @@
 
 // Mixin para la cuadrícula que contiene los testimonios
 // Responsive desde desktop hasta mobile (1 columna)
+
 @mixin testimonios-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
@@ -275,6 +344,7 @@
 
 // Mixin para el diseño de cada tarjeta de testimonio
 // Incluye efecto hover y diseño del avatar + texto
+
 @mixin testimonio-card {
   background-color: $color-blanco;
   padding: 2rem;
@@ -311,44 +381,44 @@
   }
 }
 
-// ========================
-// MEDIA QUERIES
-// ========================
+// // ========================
+// // MEDIA QUERIES
+// // ========================
 
-// Extra pequeño - móviles
-@mixin respond-xs {
-  @media (max-width: $breakpoint-xs) {
-    @content;
-  }
-}
+// // Extra pequeño - móviles
+// @mixin respond-xs {
+//   @media (max-width: $breakpoint-xs) {
+//     @content;
+//   }
+// }
 
-// Pequeño - tablets pequeñas
-@mixin respond-sm {
-  @media (max-width: $breakpoint-sm) {
-    @content;
-  }
-}
+// // Pequeño - tablets pequeñas
+// @mixin respond-sm {
+//   @media (max-width: $breakpoint-sm) {
+//     @content;
+//   }
+// }
 
-// Mediano - tablets grandes / laptops
-@mixin respond-md {
-  @media (max-width: $breakpoint-md) {
-    @content;
-  }
-}
+// // Mediano - tablets grandes / laptops
+// @mixin respond-md {
+//   @media (max-width: $breakpoint-md) {
+//     @content;
+//   }
+// }
 
-// Grande - desktops
-@mixin respond-lg {
-  @media (max-width: $breakpoint-lg) {
-    @content;
-  }
-}
+// // Grande - desktops
+// @mixin respond-lg {
+//   @media (max-width: $breakpoint-lg) {
+//     @content;
+//   }
+// }
 
-// Extra grande - pantallas grandes
-@mixin respond-xl {
-  @media (max-width: $breakpoint-xl) {
-    @content;
-  }
-}
+// // Extra grande - pantallas grandes
+// @mixin respond-xl {
+//   @media (max-width: $breakpoint-xl) {
+//     @content;
+//   }
+// }
 
 // ========================
 // GRID RESPONSIVE O HELPERS

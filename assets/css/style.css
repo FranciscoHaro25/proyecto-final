@@ -680,26 +680,6 @@ button[type=submit]:hover {
   margin-bottom: 1rem;
 }
 
-@media (max-width: 768px) {
-  .form-contacto,
-  .contact-form {
-    padding: 2.5rem 2rem;
-    font-size: 1.4rem;
-  }
-  .form-contacto input,
-  .form-contacto textarea,
-  .form-contacto select,
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form select {
-    font-size: 1.4rem;
-  }
-  .form-contacto button[type=submit],
-  .contact-form button[type=submit] {
-    width: 100%;
-    text-align: center;
-  }
-}
 .hero {
   position: relative;
   height: 75rem;
@@ -770,28 +750,33 @@ button[type=submit]:hover {
 .contenedor-categoria .listado-categorias {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 3rem;
-  margin-top: 3rem;
+  gap: 4rem;
+  margin-top: 1rem;
+  margin: 5rem auto;
 }
-.contenedor-categoria .listado-categorias .categoria {
+@media (max-width: 768px) {
+  .contenedor-categoria .listado-categorias {
+    grid-template-columns: 1fr;
+  }
+}
+.contenedor-categoria .listado-categorias .card {
   overflow: hidden;
   border-radius: 1rem;
   background-color: #fff;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-.contenedor-categoria .listado-categorias .categoria img {
+.contenedor-categoria .listado-categorias .card img {
   width: 100%;
-  height: 32rem;
+  height: 35rem;
   object-fit: cover;
   border-bottom: 4px solid transparent;
-  transition: transform 0.4s ease, border-color 0.4s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
-.contenedor-categoria .listado-categorias .categoria:hover img {
+.contenedor-categoria .listado-categorias .card:hover img {
   transform: scale(1.1);
-  border-color: #ff9900;
 }
-.contenedor-categoria .listado-categorias .categoria .nombre-link {
+.contenedor-categoria .listado-categorias .card .link {
   display: block;
   text-align: center;
   padding: 2rem;
@@ -803,62 +788,21 @@ button[type=submit]:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
 }
-.contenedor-categoria .listado-categorias .categoria .nombre-link:hover {
+.contenedor-categoria .listado-categorias .card .link:hover {
   background-color: #ff9900;
   color: #ffffff;
   border-bottom-right-radius: 2rem;
 }
-
-@media (max-width: 768px) {
-  .contenedor-categoria h2 {
-    font-size: 2.8rem;
-    margin: 3rem 0;
+@media (max-width: 576px) {
+  .contenedor-categoria .listado-categorias .card img {
+    height: 22rem;
   }
-  .contenedor-categoria h3 {
-    font-size: 1.8rem;
-  }
-  .contenedor-categoria p {
-    font-size: 1.4rem;
-  }
-  .contenedor-categoria .listado-categorias {
-    gap: 2rem;
-  }
-  .contenedor-categoria .listado-categorias .categoria {
-    overflow: hidden;
-    border-radius: 1rem;
-    background-color: #fff;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  .contenedor-categoria .listado-categorias .categoria img {
-    width: 100%;
-    height: 25rem;
-    object-fit: cover;
-    border-bottom: 4px solid transparent;
-    transition: transform 0.4s ease, border-color 0.4s ease;
-  }
-  .contenedor-categoria .listado-categorias .categoria:hover img {
-    transform: scale(1.1);
-    border-color: #ff9900;
-  }
-  .contenedor-categoria .listado-categorias .categoria .nombre-link {
-    display: block;
-    text-align: center;
-    padding: 2rem;
-    font-size: 2rem;
-    font-weight: bold;
-    background-color: #f1f1f1;
-    color: #281101;
-    border-top: 1px solid #ddd;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
-  }
-  .contenedor-categoria .listado-categorias .categoria .nombre-link:hover {
-    background-color: #ff9900;
-    color: #ffffff;
-    border-bottom-right-radius: 2rem;
+  .contenedor-categoria .listado-categorias .card .nombre-link {
+    font-size: 1.6rem;
+    padding: 1.4rem;
   }
 }
+
 .testimonios {
   padding: 6rem 2rem;
   background-color: #f1f1f1;
@@ -866,6 +810,11 @@ button[type=submit]:hover {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 4rem;
   margin-top: 8rem;
+}
+@media (max-width: 576px) {
+  .testimonios {
+    grid-template-columns: 1fr;
+  }
 }
 .testimonios-header {
   margin-bottom: 4rem;
@@ -878,20 +827,10 @@ button[type=submit]:hover {
   font-size: 1.6rem;
   color: #333;
 }
-@media (max-width: 768px) {
-  .testimonios-header h2 {
-    font-size: 2.4rem;
-  }
-}
 .testimonios .testimonios-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
   gap: 3rem;
-}
-@media (max-width: 768px) {
-  .testimonios .testimonios-grid {
-    grid-template-columns: 1fr;
-  }
 }
 .testimonios .testimonio {
   background-color: #ffffff;
@@ -1077,21 +1016,6 @@ button[type=submit]:hover {
   pointer-events: none;
 }
 
-@media (max-width: 768px) {
-  .contacto {
-    margin-top: 10rem;
-  }
-  .contact-form {
-    padding: 2rem;
-  }
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 1.4rem;
-  }
-  .contact-form button[type=submit] {
-    width: 100%;
-  }
-}
 .catalogo {
   padding: 8rem 0 6rem;
   margin-top: 6rem;
@@ -1163,37 +1087,6 @@ button[type=submit]:hover {
   transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-  .catalogo {
-    padding: 8rem 1.5rem;
-  }
-  .catalogo-header h2 {
-    font-size: 2.8rem;
-  }
-  .catalogo-header p {
-    font-size: 1.4rem;
-  }
-  .catalogo-grid {
-    gap: 2rem;
-  }
-  .catalogo-grid .catalogo-producto img {
-    height: 20rem;
-  }
-  .contacto.contacto--alt-bg {
-    padding: 4rem 2rem;
-  }
-  .contacto.contacto--alt-bg .contact-form {
-    gap: 1.5rem;
-  }
-  .contacto.contacto--alt-bg .contact-form input,
-  .contacto.contacto--alt-bg .contact-form textarea {
-    font-size: 1.4rem;
-  }
-  .contacto.contacto--alt-bg .contact-form button {
-    font-size: 1.4rem;
-    padding: 1rem 2rem;
-  }
-}
 .contenedor-inspiracion {
   padding: 2rem 2rem 4rem;
   margin-top: 14rem;
@@ -1269,11 +1162,6 @@ button[type=submit]:hover {
 .sobre-nosotros-grid .encabezado h2 {
   text-align: center;
 }
-@media (max-width: 768px) {
-  .sobre-nosotros-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 .sobre-nosotros img {
   width: 100%;
@@ -1296,12 +1184,6 @@ button[type=submit]:hover {
 .contenedor-grid-valores {
   display: flex;
   gap: 5rem;
-}
-@media (max-width: 768px) {
-  .contenedor-grid-valores {
-    flex-direction: column;
-    gap: 2rem;
-  }
 }
 
 .contenedor-valores {
