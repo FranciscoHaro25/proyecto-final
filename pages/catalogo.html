@@ -225,41 +225,47 @@
       <p class="text-center">
         Envíanos un mensaje y te asesoramos personalmente.
       </p>
-      <form class="contact-form" novalidate>
-        <div>
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" required />
-          <p class="error-message visually-hidden">
-            Por favor, introduce tu nombre.
-          </p>
-        </div>
-        <div>
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" name="email" required />
-          <p class="error-message visually-hidden">
-            El correo ingresado no es válido.
-          </p>
-        </div>
-        <div>
-          <label for="producto">Producto de interés</label>
-          <input
-            type="text"
-            id="producto"
-            name="producto"
-            placeholder="Ej: Sofá Modular"
-          />
-        </div>
-        <div>
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-          <p class="error-message visually-hidden">
-            Este campo es obligatorio.
-          </p>
-        </div>
-        <button type="submit" aria-label="Enviar formulario de contacto">
-          Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
-        </button>
-      </form>
+      <div class="gsap-scroll">
+        <form class="contact-form" gsap-scroll novalidate>
+          <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required />
+            <p class="error-message visually-hidden">
+              Por favor, introduce tu nombre.
+            </p>
+          </div>
+          <div>
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required />
+            <p class="error-message visually-hidden">
+              El correo ingresado no es válido.
+            </p>
+          </div>
+          <div>
+            <label for="producto">Producto de interés</label>
+            <input
+              type="text"
+              id="producto"
+              name="producto"
+              placeholder="Ej: Sofá Modular"
+            />
+          </div>
+          <div>
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            <p class="error-message visually-hidden">
+              Este campo es obligatorio.
+            </p>
+          </div>
+          <button
+            type="submit"
+            aria-label="Enviar formulario de contacto"
+            class="button-gsap"
+          >
+            Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
     </section>
 
     <!-- ======================================== -->
@@ -361,6 +367,36 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+
+    <!-- GSAP y ScrollTrigger -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script>
+      // 🔄 Inicializar ScrollTrigger con animación para .gsap-scroll
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".gsap-scroll", {
+        scrollTrigger: ".gsap-scroll",
+        y: 100,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+      });
+    </script>
+
+    <!-- GSAP para botones dinámicos -->
+    <script>
+      // 🎯 Animaciones con GSAP en botón (hover dinámico)
+      const btnGSAP = document.querySelector(".button-gsap");
+
+      btnGSAP.addEventListener("mouseenter", () => {
+        gsap.to(btnGSAP, { scale: 1.1, duration: 0.2 });
+      });
+
+      btnGSAP.addEventListener("mouseleave", () => {
+        gsap.to(btnGSAP, { scale: 1.0, duration: 0.2 });
+      });
     </script>
   </body>
 </html>
