@@ -4,6 +4,7 @@
 
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
+@use "../components/buttons" as *;
 
 // ---------------------------------------------
 // Contenedor principal del formulario de contacto
@@ -72,22 +73,29 @@
       display: none;
     }
   }
-
-  button[type="submit"] {
-    @include button-base($color-secundario, $color-blanco);
-    font-weight: 600;
-    text-align: center;
-    width: fit-content;
-    align-self: center;
+  .btn-contacto {
+    @include boton-variantes(
+      $color-secundario,
+      $color-gris-claro,
+      none,
+      $color-secundario,
+      $color-blanco,
+      $color-secundario,
+      $color-secundario,
+      $color-gris-claro,
+      none,
+      none
+    );
+    width: 100%;
   }
 }
 
 // ---------------------------------------------
 // Responsive para pantallas pequeñas
 // ---------------------------------------------
-@include respond("tablet") {
+@include respond("sm") {
   .contacto {
-    margin-top: 10rem;
+    margin-top: 5rem;
   }
   .contact-form {
     padding: 2rem;

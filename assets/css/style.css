@@ -1122,7 +1122,7 @@ button[type=submit]:hover {
 .contact-form .error-message.visually-hidden {
   display: none;
 }
-.contact-form button[type=submit] {
+.contact-form .btn-contacto {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1134,23 +1134,64 @@ button[type=submit]:hover {
   cursor: pointer;
   text-decoration: none;
   line-height: 1.2;
-  gap: 1rem;
+  gap: 2rem;
   position: relative;
   overflow: hidden;
   background-color: #ff9900;
-  color: #ffffff;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.2s ease;
-  font-weight: 600;
-  text-align: center;
-  width: fit-content;
-  align-self: center;
+  color: #f1f1f1;
+  box-shadow: #ff9900;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.2s ease, border 0.3s ease;
+  width: 100%;
 }
-.contact-form button[type=submit]:disabled {
+.contact-form .btn-contacto i,
+.contact-form .btn-contacto svg {
+  font-size: 1.8rem;
+  pointer-events: none;
+  vertical-align: middle;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #f1f1f1;
+}
+.contact-form .btn-contacto:hover {
+  background-color: #ff9900;
+  color: #ffffff;
+  border: none;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: #ff9900;
+}
+.contact-form .btn-contacto:hover i,
+.contact-form .btn-contacto:hover svg {
+  transform: rotate(-10deg) scale(1.2);
+  color: none;
+}
+.contact-form .btn-contacto.icon-left i,
+.contact-form .btn-contacto.icon-left svg {
+  margin-right: 0.8rem;
+}
+.contact-form .btn-contacto.icon-right i,
+.contact-form .btn-contacto.icon-right svg {
+  margin-left: 0.8rem;
+}
+.contact-form .btn-contacto:disabled {
   opacity: 0.6;
   cursor: not-allowed;
   pointer-events: none;
 }
 
+@media (max-width: 576px) {
+  .contacto {
+    margin-top: 5rem;
+  }
+  .contact-form {
+    padding: 2rem;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1.4rem;
+  }
+  .contact-form button[type=submit] {
+    width: 100%;
+  }
+}
 .catalogo {
   padding: 8rem 0 6rem;
   margin-top: 6rem;
