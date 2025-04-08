@@ -27,13 +27,17 @@
   align-items: center;
   margin-bottom: 4rem;
 
-  .search-input {
+  input {
     padding: 1rem 2rem;
     font-size: 1.6rem;
     border: 2px solid $color-borde;
     border-radius: 2.5rem 0 0 2.5rem;
-    width: 100%;
+
     max-width: 40rem;
+    &:focus {
+      border-color: $color-secundario;
+      outline: none;
+    }
   }
 
   .search-btn {

@@ -234,6 +234,14 @@
             border-radius: 0.5rem;
             font-size: 1.6rem;
             width: 100%;
+            &:focus {
+              border-color: $color-secundario;
+              outline: none;
+            }
+
+            &.is-invalid {
+              border-color: red;
+            }
           }
         }
         // Botón outlined

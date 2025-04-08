@@ -976,6 +976,15 @@ button[type=submit]:hover {
   font-size: 1.6rem;
   width: 100%;
 }
+.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .form-grupo input:focus,
+.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .form-grupo textarea:focus {
+  border-color: #ff9900;
+  outline: none;
+}
+.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .form-grupo input.is-invalid,
+.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .form-grupo textarea.is-invalid {
+  border-color: red;
+}
 .contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn-enviar {
   display: inline-flex;
   align-items: center;
@@ -1156,13 +1165,16 @@ button[type=submit]:hover {
   align-items: center;
   margin-bottom: 4rem;
 }
-.catalogo-buscador .search-input {
+.catalogo-buscador input {
   padding: 1rem 2rem;
   font-size: 1.6rem;
   border: 2px solid #ddd;
   border-radius: 2.5rem 0 0 2.5rem;
-  width: 100%;
   max-width: 40rem;
+}
+.catalogo-buscador input:focus {
+  border-color: #ff9900;
+  outline: none;
 }
 .catalogo-buscador .search-btn {
   padding: 1rem 2rem;
