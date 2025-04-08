@@ -1067,7 +1067,7 @@ button[type=submit]:hover {
 }
 
 .contacto {
-  padding: 14rem 2rem;
+  padding: 14rem 2rem 0 0;
   background-color: #ffffff;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -1179,7 +1179,7 @@ button[type=submit]:hover {
 
 @media (max-width: 576px) {
   .contacto {
-    margin-top: 5rem;
+    margin-top: 1rem;
   }
   .contact-form {
     padding: 2rem;
