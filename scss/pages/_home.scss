@@ -78,9 +78,10 @@
 // CATEGORÍAS
 
 .contenedor-categoria {
-  margin-top: 7rem;
-  border-top: 2px solid $color-gris-claro;
-  border-bottom: 2px solid $color-gris-claro;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  border-top: 2px solid $color-secundario;
+  // width: 100%;
   .contenedor-header {
     padding: 4rem;
   }
@@ -102,7 +103,9 @@
 
 .testimonios {
   padding: 6rem 2rem;
+  margin-top: 10px;
   background-color: $color-gris-claro;
+  border-top: 2px solid $color-secundario;
 
   @include categoria-card-grid(
     320px,

@@ -719,9 +719,9 @@ button[type=submit]:hover {
   }
 }
 .contenedor-categoria {
-  margin-top: 7rem;
-  border-top: 2px solid #f1f1f1;
-  border-bottom: 2px solid #f1f1f1;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  border-top: 2px solid #ff9900;
 }
 .contenedor-categoria .contenedor-header {
   padding: 4rem;
@@ -777,7 +777,9 @@ button[type=submit]:hover {
 
 .testimonios {
   padding: 6rem 2rem;
+  margin-top: 10px;
   background-color: #f1f1f1;
+  border-top: 2px solid #ff9900;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 4rem;
