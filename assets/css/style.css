@@ -896,13 +896,13 @@ button[type=submit]:hover {
   cursor: pointer;
   text-decoration: none;
   line-height: 1.2;
-  gap: 1rem;
+  gap: 2rem;
   position: relative;
   overflow: hidden;
   background-color: #ff9900;
   color: #f1f1f1;
   box-shadow: #ff9900;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.2s ease, border 0.3s ease;
   width: 100%;
 }
 .contenedor-cta .cta-grid .contenido-cta .encabezado-cta .btn--whatsapp i,
@@ -916,6 +916,7 @@ button[type=submit]:hover {
 .contenedor-cta .cta-grid .contenido-cta .encabezado-cta .btn--whatsapp:hover {
   background-color: #ff9900;
   color: #ffffff;
+  border: 2px solid #281101;
   transform: translateY(-3px) scale(1.03);
   box-shadow: #ff9900;
 }
@@ -973,7 +974,7 @@ button[type=submit]:hover {
   font-size: 1.6rem;
   width: 100%;
 }
-.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn--outlined-2 {
+.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn-enviar {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -985,42 +986,43 @@ button[type=submit]:hover {
   cursor: pointer;
   text-decoration: none;
   line-height: 1.2;
-  gap: 1rem;
+  gap: 2rem;
   position: relative;
   overflow: hidden;
   background-color: transparent;
   color: #281101;
   box-shadow: #ff9900;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.2s ease, border 0.3s ease;
 }
-.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn--outlined-2 i,
-.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn--outlined-2 svg {
+.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn-enviar i,
+.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn-enviar svg {
   font-size: 1.8rem;
   pointer-events: none;
   vertical-align: middle;
   transition: transform 0.3s ease, color 0.3s ease;
   color: #281101;
 }
-.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn--outlined-2:hover {
+.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn-enviar:hover {
   background-color: #ff9900;
   color: #ffffff;
+  border: none;
   transform: translateY(-3px) scale(1.03);
   box-shadow: #ff9900;
 }
-.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn--outlined-2:hover i,
-.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn--outlined-2:hover svg {
+.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn-enviar:hover i,
+.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn-enviar:hover svg {
   transform: rotate(-10deg) scale(1.2);
   color: #f1f1f1;
 }
-.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn--outlined-2.icon-left i,
-.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn--outlined-2.icon-left svg {
+.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn-enviar.icon-left i,
+.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn-enviar.icon-left svg {
   margin-right: 0.8rem;
 }
-.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn--outlined-2.icon-right i,
-.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn--outlined-2.icon-right svg {
+.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn-enviar.icon-right i,
+.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn-enviar.icon-right svg {
   margin-left: 0.8rem;
 }
-.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn--outlined-2:disabled {
+.contenedor-cta .cta-grid .contenido-cta .formulario-contacto .btn-enviar:disabled {
   opacity: 0.6;
   cursor: not-allowed;
   pointer-events: none;

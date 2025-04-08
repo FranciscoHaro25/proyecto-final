@@ -158,22 +158,24 @@
   }
 }
 
-/// =====================================
-/// Mixin: boton-variantes
-/// -------------------------------------
-/// Genera un botón estilizado y reutilizable con múltiples parámetros.
-/// Controla color de fondo, texto, borde, hover, sombras e íconos personalizados.
-///
-/// @param $bg-color           Color de fondo base del botón.
-/// @param $text-color         Color de texto base del botón.
-/// @param $border             Borde del botón (opcional).
-/// @param $hover-bg           Fondo al hacer hover (opcional).
-/// @param $hover-text         Color de texto al hacer hover (opcional).
-/// @param $shadow             Sombra normal (opcional).
-/// @param $hover-shadow       Sombra al hacer hover (opcional).
-/// @param $icon-color         Color del ícono base (opcional).
-/// @param $icon-hover-color   Color del ícono al hacer hover (opcional).
-/// =====================================
+// =====================================
+// Mixin: boton-variantes
+// -------------------------------------
+// Genera un botón estilizado y reutilizable con múltiples parámetros.
+// Controla color de fondo, texto, borde, hover, sombras e íconos personalizados.
+//
+// @param $bg-color           Color de fondo base del botón.
+// @param $text-color         Color de texto base del botón.
+// @param $border             Borde del botón (opcional).
+// @param $hover-bg           Fondo al hacer hover (opcional).
+// @param $hover-text         Color de texto al hacer hover (opcional).
+// @param $shadow             Sombra normal (opcional).
+// @param $hover-shadow       Sombra al hacer hover (opcional).
+// @param $icon-color         Color del ícono base (opcional).
+// @param $icon-hover-color   Color del ícono al hacer hover (opcional).
+// @param $hover-border       Borde del botón al hacer hover (opcional).
+// =====================================
+
 @mixin boton-variantes(
   $bg-color,
   $text-color,
@@ -183,7 +185,8 @@
   $shadow: null,
   $hover-shadow: null,
   $icon-color: null,
-  $icon-hover-color: null
+  $icon-hover-color: null,
+  $hover-border: null
 ) {
   display: inline-flex;
   align-items: center;
@@ -196,14 +199,14 @@
   cursor: pointer;
   text-decoration: none;
   line-height: 1.2;
-  gap: 1rem;
+  gap: 2rem;
   position: relative;
   overflow: hidden;
   background-color: $bg-color;
   color: $text-color;
   box-shadow: if($shadow != null, $shadow, none);
   transition: background-color 0.3s ease, transform 0.3s ease,
-    box-shadow 0.3s ease, color 0.2s ease;
+    box-shadow 0.3s ease, color 0.2s ease, border 0.3s ease;
 
   // Íconos dentro del botón
   i,
@@ -219,6 +222,7 @@
   &:hover {
     background-color: if($hover-bg != null, $hover-bg, $bg-color);
     color: if($hover-text != null, $hover-text, $text-color);
+    border: if($hover-border != null, $hover-border, $border);
     transform: translateY(-3px) scale(1.03);
     box-shadow: if($hover-shadow != null, $hover-shadow, $shadow);
 

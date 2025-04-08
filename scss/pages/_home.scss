@@ -199,20 +199,6 @@
         background-color: $color-gris-claro;
         padding: 3rem;
         border-radius: 1rem;
-
-        // // Botón outlined
-        // .btn--outlined-2 {
-        //   @include boton-variantes(
-        //     transparent,
-        //     $color-primario,
-        //     2px solid $color-primario,
-        //     $color-secundario,
-        //     $color-blanco,
-        //     $color-secundario,
-        //     $color-secundario,
-        //     $color-primario,
-        //     $color-gris-claro
-        //   );
       }
 
       // Title for contact form
@@ -248,7 +234,7 @@
           }
         }
         // Botón outlined
-        .btn--outlined-2 {
+        .btn-enviar {
           @include boton-variantes(
             transparent,
             $color-primario,
@@ -258,7 +244,8 @@
             $color-secundario,
             $color-secundario,
             $color-primario,
-            $color-gris-claro
+            $color-gris-claro,
+            none
           );
         }
 

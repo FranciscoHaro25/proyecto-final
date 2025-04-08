@@ -7,7 +7,7 @@ gsap.from(".gsap-scroll", {
   scrollTrigger: ".gsap-scroll", // Activa al entrar en el viewport
   y: 100, // Empieza desplazado 100px hacia abajo
   opacity: 0, // Empieza invisible
-  duration: 1.5, // Dura 1.5 segundos
+  duration: 1.2, // Dura 1.5 segundos
   ease: "power3.out", // Curva de salida suave
 });
 
