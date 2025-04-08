@@ -1,7 +1,8 @@
-// ✅ Registro del plugin ScrollTrigger
+// ========== REGISTRO DEL PLUGIN SCROLLTRIGGER ==========
 gsap.registerPlugin(ScrollTrigger);
 
-// ✅ Animación al hacer scroll para el elemento con clase .gsap-scroll
+// ========== ANIMACIÓN SCROLL  ==========
+// Animación al hacer scroll para el elemento con clase .gsap-scroll
 gsap.from(".gsap-scroll", {
   scrollTrigger: ".gsap-scroll", // Activa al entrar en el viewport
   y: 100, // Empieza desplazado 100px hacia abajo
@@ -10,7 +11,8 @@ gsap.from(".gsap-scroll", {
   ease: "power3.out", // Curva de salida suave
 });
 
-// ✅ Animación para botón con clase .button-gsap (hover dinámico)
+// ========== ANIMACIÓN BOTON  ==========
+// Animación para botón con clase .button-gsap (hover dinámico)
 const btnGSAP = document.querySelector(".button-gsap");
 
 if (btnGSAP) {
