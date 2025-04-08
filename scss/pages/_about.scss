@@ -9,49 +9,44 @@
 // ------------------------------
 // 1. Grid de contenido principal
 // ------------------------------
+
+.sobre-nosotros {
+  img {
+    width: 100%;
+    height: 70rem;
+    object-fit: cover;
+  }
+}
+
 .sobre-nosotros-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 5rem;
   margin: 5rem auto;
   padding-top: 10rem;
-
-  .encabezado {
-    margin-top: 4rem;
-    h2 {
-      text-align: center;
-    }
-  }
-
-  @include respond("tablet") {
-    grid-template-columns: 1fr;
-  }
+  // @include respond("tablet") {
+  //   grid-template-columns: 1fr;
+  // }
 }
+
+// .sobre-nosotros-grid {
+//   display: grid;
+//   grid-template-columns: 1fr 2fr;
+//   gap: 5rem;
+//   margin: 5rem auto;
+//   padding-top: 10rem;
+
+//   .encabezado {
+//     margin-top: 4rem;
+//     h2 {
+//       text-align: center;
+//     }
+//   }
+// }
 
 // ------------------------------
 // 2. Sección con imagen y botón
 // ------------------------------
-.sobre-nosotros {
-  img {
-    width: 100%;
-    height: 60rem;
-    object-fit: cover;
-  }
-
-  a {
-    background-color: $color-gris-claro;
-    text-align: center;
-    display: block;
-    padding: 1.5rem;
-    font-size: 2rem;
-
-    &:hover {
-      background-color: $color-secundario;
-      color: $color-blanco;
-      border-bottom-right-radius: 1rem;
-    }
-  }
-}
 
 // ------------------------------
 // 3. Valores y Misión/Visión
@@ -83,85 +78,85 @@
 // ------------------------------
 // 4. Animación Fade In
 // ------------------------------
-.fade-in {
-  animation: fadeIn 1s ease-in-out;
-}
+// .fade-in {
+//   animation: fadeIn 1s ease-in-out;
+// }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//     transform: translateY(15px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
 
 // ------------------------------
 // 5. Otros ajustes de layout global
 // ------------------------------
-@media (max-width: 1024px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .sobre-nosotros {
-    img {
-      width: 100%;
-      height: 30rem;
-      object-fit: cover;
-    }
-  }
-  .footer-section {
-    width: 100%;
-  }
+// @media (max-width: 1024px) {
+//   .footer-container {
+//     flex-direction: column;
+//     align-items: center;
+//     text-align: center;
+//   }
+//   .sobre-nosotros {
+//     img {
+//       width: 100%;
+//       height: 30rem;
+//       object-fit: cover;
+//     }
+//   }
+//   .footer-section {
+//     width: 100%;
+//   }
 
-  .call-to-action {
-    width: 100%;
-    height: 30rem;
-  }
+//   .call-to-action {
+//     width: 100%;
+//     height: 30rem;
+//   }
 
-  .contenido-cta {
-    padding: 2rem;
-    text-align: center;
-  }
-}
+//   .contenido-cta {
+//     padding: 2rem;
+//     text-align: center;
+//   }
+// }
 
-@media (max-width: 480px) {
-  .btn,
-  .btn-circular {
-    width: 100%;
-    justify-content: center;
-  }
+// @media (max-width: 480px) {
+//   .btn,
+//   .btn-circular {
+//     width: 100%;
+//     justify-content: center;
+//   }
 
-  .icono-svg {
-    display: none;
-  }
+//   .icono-svg {
+//     display: none;
+//   }
 
-  .testimonio-img img {
-    width: 120px;
-    height: 120px;
-  }
-}
+//   .testimonio-img img {
+//     width: 120px;
+//     height: 120px;
+//   }
+// }
 
-@media (max-width: 480px) {
-  .sobre-nosotros-grid {
-    gap: 2rem;
-    padding-top: 5rem;
-  }
+// @include respond("sm") {
+//   .sobre-nosotros-grid {
+//     gap: 2rem;
+//     padding-top: 5rem;
+//   }
 
-  .contenedor-valores {
-    padding: 3rem 2rem;
-  }
+//   .contenedor-valores {
+//     padding: 3rem 2rem;
+//   }
 
-  .contenedor-valores p {
-    font-size: 1.4rem;
-    line-height: 1.5;
-  }
+//   .contenedor-valores p {
+//     font-size: 1.4rem;
+//     line-height: 1.5;
+//   }
 
-  .valor {
-    font-size: 1.8rem;
-  }
-}
+//   .valor {
+//     font-size: 1.8rem;
+//   }
+// }
