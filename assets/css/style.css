@@ -1840,71 +1840,6 @@ button[type=submit]:hover {
   }
 }
 
-.mision-vision {
-  padding: 4rem 2rem;
-  background-color: #fff;
-  text-align: center;
-}
-.mision-vision .bloque-mv {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-@media (min-width: 768px) {
-  .mision-vision .bloque-mv {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-.mision-vision .bloque-mv .mision,
-.mision-vision .bloque-mv .vision {
-  flex: 1;
-  padding: 1rem;
-}
-.mision-vision .bloque-mv .mision h3,
-.mision-vision .bloque-mv .vision h3 {
-  color: #ff5421;
-  margin-bottom: 0.5rem;
-}
-.mision-vision .bloque-mv .mision p,
-.mision-vision .bloque-mv .vision p {
-  color: #444;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.galeria-taller {
-  padding: 4rem 2rem;
-  background-color: #fdf8f6;
-  text-align: center;
-}
-.galeria-taller h3 {
-  font-size: 2rem;
-  color: #ff5421;
-  margin-bottom: 1rem;
-}
-.galeria-taller p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 2rem;
-}
-.galeria-taller .galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-.galeria-taller .galeria-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 1rem;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-.galeria-taller .galeria-grid img:hover {
-  transform: scale(1.03);
-}
-
 .our-workshop {
   padding: 6rem 2rem;
   background-color: #281101;
@@ -1914,20 +1849,20 @@ button[type=submit]:hover {
 }
 .our-workshop .quote-mark {
   position: absolute;
-  font-size: 12rem;
-  color: rgba(255, 255, 255, 0.08);
+  font-size: 15rem;
+  color: rgba(255, 255, 255, 0.2);
   font-weight: bold;
   font-family: serif;
   z-index: 0;
   user-select: none;
 }
 .our-workshop .quote-mark.top-left {
-  top: 1rem;
-  left: 1.5rem;
+  top: -1.8rem;
+  left: 30rem;
 }
 .our-workshop .quote-mark.bottom-right {
-  bottom: 1rem;
-  right: 1.5rem;
+  bottom: -10rem;
+  right: 30rem;
 }
 .our-workshop h3 {
   font-size: 3rem;
@@ -1947,7 +1882,15 @@ button[type=submit]:hover {
 }
 @media (max-width: 768px) {
   .our-workshop .quote-mark {
-    font-size: 8rem;
+    font-size: 12rem;
+  }
+  .our-workshop .quote-mark.top-left {
+    top: -3rem;
+    left: 2rem;
+  }
+  .our-workshop .quote-mark.bottom-right {
+    bottom: -8rem;
+    right: 3rem;
   }
   .our-workshop h3 {
     font-size: 2rem;
@@ -1958,7 +1901,15 @@ button[type=submit]:hover {
 }
 @media (max-width: 480px) {
   .our-workshop .quote-mark {
-    font-size: 5rem;
+    font-size: 8rem;
+  }
+  .our-workshop .quote-mark.top-left {
+    top: -1rem;
+    left: 1.5rem;
+  }
+  .our-workshop .quote-mark.bottom-right {
+    bottom: -3rem;
+    right: 1.5rem;
   }
   .our-workshop p {
     font-size: 1rem;
@@ -1967,7 +1918,7 @@ button[type=submit]:hover {
 
 .mision-vision {
   padding: 4rem 2rem;
-  background-color: #fff;
+  background-color: #f1f1f1;
   text-align: center;
 }
 .mision-vision .bloque-mv {
@@ -1979,6 +1930,7 @@ button[type=submit]:hover {
   .mision-vision .bloque-mv {
     flex-direction: row;
     justify-content: space-between;
+    align-items: stretch;
   }
 }
 .mision-vision .bloque-mv .mision,
@@ -1988,46 +1940,115 @@ button[type=submit]:hover {
 }
 .mision-vision .bloque-mv .mision h3,
 .mision-vision .bloque-mv .vision h3 {
-  color: #ff5421;
-  margin-bottom: 0.5rem;
+  color: #ff9900;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
 }
 .mision-vision .bloque-mv .mision p,
 .mision-vision .bloque-mv .vision p {
-  color: #444;
-  font-size: 1rem;
-  line-height: 1.6;
+  color: #281101;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+@media (max-width: 480px) {
+  .mision-vision .mision h3,
+  .mision-vision .vision h3 {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+  .mision-vision .mision p,
+  .mision-vision .vision p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 1rem;
+  }
 }
 
 .galeria-taller {
   padding: 4rem 2rem;
-  background-color: #fdf8f6;
+  background-color: #ffffff;
   text-align: center;
 }
 .galeria-taller h3 {
-  font-size: 2rem;
-  color: #ff5421;
+  font-size: 4rem;
+  color: #ff9900;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 .galeria-taller p {
-  font-size: 1rem;
+  font-size: 2rem;
   color: #555;
   margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 .galeria-taller .galeria-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
 }
-.galeria-taller .galeria-grid img {
-  width: 100%;
-  height: auto;
+.galeria-taller .galeria-grid .galeria-item {
+  width: 320px;
+  height: 220px;
+  margin: 0 auto;
+  overflow: hidden;
   border-radius: 1rem;
-  object-fit: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.galeria-taller .galeria-grid .galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   transition: transform 0.3s ease;
 }
-.galeria-taller .galeria-grid img:hover {
+.galeria-taller .galeria-grid .galeria-item img:hover {
   transform: scale(1.03);
+}
+@media (max-width: 768px) {
+  .galeria-taller h3 {
+    font-size: 1.7rem;
+  }
+  .galeria-taller p {
+    font-size: 0.95rem;
+  }
+  .galeria-taller .galeria-grid {
+    gap: 1rem;
+  }
+  .galeria-taller .galeria-item {
+    width: 100%;
+    max-width: 320px;
+    height: 200px;
+  }
+}
+@media (max-width: 480px) {
+  .galeria-taller h3 {
+    font-size: 1.5rem;
+  }
+  .galeria-taller p {
+    font-size: 0.9rem;
+  }
+  .galeria-taller .galeria-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .galeria-taller .galeria-item {
+    width: 100%;
+    height: 180px;
+  }
+  .galeria-taller .galeria-item img {
+    border-radius: 0.75rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
