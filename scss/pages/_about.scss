@@ -127,137 +127,66 @@
 // ======================================
 //  BLOQUE SOBRE NOSOTROS
 // ======================================
-.sobre-nosotros-bloques {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); // 3 columnas iguales
-  gap: 7rem;
-  padding: 10rem 0;
-
-  .bloque {
-    display: flex;
-    flex-direction: column;
-    background-color: $color-gris-claro; // Puedes cambiarlo por blanco si prefieres
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    justify-content: center;
-    gap: 1rem;
-  }
-  h2 {
-    font-size: 4rem;
-    .destacada {
-      color: $color-secundario;
+.nosotros {
+  .bloque-nosotros {
+    .etiqueta span {
+      display: inline-block;
+      padding: 0.6rem 1.6rem;
+      background-color: $color-secundario;
+      color: $color-gris-claro;
+      font-weight: 600;
+      font-size: 1.4rem;
+      border-radius: 2rem;
+      text-transform: uppercase;
+      margin: 5rem auto 1rem;
     }
-  }
-  h3 {
-    font-size: 2rem;
-    color: $color-primario;
-    margin-bottom: 1rem;
-    font-size: 2.8rem;
-    .destacada {
-      color: $color-secundario;
-    }
-  }
+    .sobre-nosotros-bloques {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); // 3 columnas iguales
+      gap: 7rem;
+      padding: 1rem 0;
 
-  p {
-    font-size: 1.6rem;
-    color: $color-primario;
-    line-height: 1.6;
-  }
-
-  // ===========================
-  // Responsive para tablet y móvil
-  // ===========================
-  @media (max-width: 992px) {
-    grid-template-columns: 1fr 1fr; // 2 columnas en tablets
-  }
-
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr; // 1 columna en móviles
-  }
-}
-
-// ------------------------------
-// VALORES CORPORATIVOS
-
-.contenedor-grid-valores {
-  display: flex;
-  gap: 5rem;
-
-  @include respond("tablet") {
-    flex-direction: column;
-    gap: 2rem;
-  }
-}
-
-.contenedor-valores {
-  background-color: $color-primario;
-  // color: $color-gris-claro;
-  padding: 6rem;
-  margin: 5rem auto;
-  border-radius: 2rem;
-  .valor {
-    color: $color-secundario;
-  }
-  p {
-    color: $color-gris-claro;
-  }
-}
-
-//-----------------------------------------------------------
-// AQUI EL NUEVO CODIGO
-// ==========================================
-// Sección "Sobre Nosotros" estilo agencia
-// ==========================================
-.seccion-nosotros {
-  padding: 6rem 2rem;
-  background-color: #fff;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  // ----------------------------
-  // Etiqueta "About Us"
-  // ----------------------------
-  .etiqueta span {
-    display: inline-block;
-    padding: 0.6rem 1.6rem;
-    background-color: rgba(#ff5630, 0.1);
-    color: #ff5630;
-    font-weight: 600;
-    font-size: 1.4rem;
-    border-radius: 2rem;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-  }
-
-  // ----------------------------
-  // Título y texto principal
-  // ----------------------------
-  .titulo-nosotros {
-    text-align: left;
-    margin-bottom: 4rem;
-
-    h2 {
-      font-size: 4rem;
-      line-height: 1.2;
-      font-weight: 800;
-
-      .resaltado {
-        color: #ff5630;
+      .bloque {
+        display: flex;
+        flex-direction: column;
+        // background-color: $color-gris-claro;
+        padding: 2rem;
+        border-radius: 1rem;
+        // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        justify-content: center;
+        gap: 1rem;
       }
-    }
-
-    .descripcion {
-      margin-top: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
+      h2 {
+        font-size: 4rem;
+        .destacada {
+          color: $color-secundario;
+        }
+      }
+      h3 {
+        font-size: 2rem;
+        color: $color-primario;
+        margin-bottom: 1rem;
+        font-size: 2.8rem;
+        .destacada {
+          color: $color-secundario;
+        }
+      }
 
       p {
-        flex: 1 1 45%;
         font-size: 1.6rem;
-        color: #5a5a5a;
+        color: $color-primario;
         line-height: 1.6;
+      }
+
+      // ===========================
+      // Responsive para tablet y móvil
+      // ===========================
+      @media (max-width: 992px) {
+        grid-template-columns: 1fr 1fr; // 2 columnas en tablets
+      }
+
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr; // 1 columna en móviles
       }
     }
   }
@@ -272,10 +201,10 @@
     margin-top: 4rem;
 
     .beneficio {
-      background-color: #fff;
+      background-color: $color-blanco;
       padding: 2.4rem;
       border-radius: 1.6rem;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 6px 20px rgba(198, 198, 198, 0.6);
       display: flex;
       align-items: flex-start;
       gap: 1.6rem;
@@ -283,7 +212,7 @@
 
       &:hover {
         transform: translateY(-6px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 12px 24px rgba($color-secundario, 0.2);
       }
 
       .icono {
@@ -299,11 +228,11 @@
       }
 
       .icono-rojo {
-        background-color: #ff5630;
+        background-color: $color-secundario;
       }
 
       .icono-negro {
-        background-color: #111;
+        background-color: $color-primario;
       }
 
       .contenido {
@@ -356,5 +285,32 @@
         font-size: 2.4rem;
       }
     }
+  }
+}
+
+// ------------------------------
+// VALORES CORPORATIVOS
+
+.contenedor-grid-valores {
+  display: flex;
+  gap: 1rem;
+
+  @include respond("md") {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.contenedor-valores {
+  background-color: $color-primario;
+  // color: $color-gris-claro;
+  padding: 6rem;
+  margin: 5rem auto;
+  border-radius: 2rem;
+  .valor {
+    color: $color-secundario;
+  }
+  p {
+    color: $color-gris-claro;
   }
 }

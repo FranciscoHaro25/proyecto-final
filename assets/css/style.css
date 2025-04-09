@@ -1453,56 +1453,141 @@ button[type=submit]:hover {
   }
 }
 
-.sobre-nosotros-bloques {
+.nosotros .bloque-nosotros .etiqueta span {
+  display: inline-block;
+  padding: 0.6rem 1.6rem;
+  background-color: #ff9900;
+  color: #f1f1f1;
+  font-weight: 600;
+  font-size: 1.4rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  margin: 5rem auto 1rem;
+}
+.nosotros .bloque-nosotros .sobre-nosotros-bloques {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 7rem;
-  padding: 10rem 0;
+  padding: 1rem 0;
 }
-.sobre-nosotros-bloques .bloque {
+.nosotros .bloque-nosotros .sobre-nosotros-bloques .bloque {
   display: flex;
   flex-direction: column;
-  background-color: #f1f1f1;
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   justify-content: center;
   gap: 1rem;
 }
-.sobre-nosotros-bloques h2 {
+.nosotros .bloque-nosotros .sobre-nosotros-bloques h2 {
   font-size: 4rem;
 }
-.sobre-nosotros-bloques h2 .destacada {
+.nosotros .bloque-nosotros .sobre-nosotros-bloques h2 .destacada {
   color: #ff9900;
 }
-.sobre-nosotros-bloques h3 {
+.nosotros .bloque-nosotros .sobre-nosotros-bloques h3 {
   font-size: 2rem;
   color: #281101;
   margin-bottom: 1rem;
   font-size: 2.8rem;
 }
-.sobre-nosotros-bloques h3 .destacada {
+.nosotros .bloque-nosotros .sobre-nosotros-bloques h3 .destacada {
   color: #ff9900;
 }
-.sobre-nosotros-bloques p {
+.nosotros .bloque-nosotros .sobre-nosotros-bloques p {
   font-size: 1.6rem;
   color: #281101;
   line-height: 1.6;
 }
 @media (max-width: 992px) {
-  .sobre-nosotros-bloques {
+  .nosotros .bloque-nosotros .sobre-nosotros-bloques {
     grid-template-columns: 1fr 1fr;
   }
 }
 @media (max-width: 600px) {
-  .sobre-nosotros-bloques {
+  .nosotros .bloque-nosotros .sobre-nosotros-bloques {
     grid-template-columns: 1fr;
+  }
+}
+.nosotros .beneficios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+.nosotros .beneficios .beneficio {
+  background-color: #ffffff;
+  padding: 2.4rem;
+  border-radius: 1.6rem;
+  box-shadow: 0 6px 20px rgba(198, 198, 198, 0.6);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.nosotros .beneficios .beneficio:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(255, 153, 0, 0.2);
+}
+.nosotros .beneficios .beneficio .icono {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+.nosotros .beneficios .beneficio .icono-rojo {
+  background-color: #ff9900;
+}
+.nosotros .beneficios .beneficio .icono-negro {
+  background-color: #281101;
+}
+.nosotros .beneficios .beneficio .contenido h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #111;
+}
+.nosotros .beneficios .beneficio .contenido p {
+  font-size: 1.5rem;
+  color: #666;
+  line-height: 1.5;
+}
+@media (max-width: 992px) {
+  .nosotros .beneficios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nosotros .titulo-nosotros h2 {
+    font-size: 3rem;
+  }
+  .nosotros .titulo-nosotros .descripcion {
+    flex-direction: column;
+  }
+  .nosotros .titulo-nosotros .descripcion p {
+    flex: 1 1 100%;
+  }
+}
+@media (max-width: 600px) {
+  .nosotros .beneficios {
+    grid-template-columns: 1fr;
+  }
+  .nosotros .titulo-nosotros h2 {
+    font-size: 2.4rem;
   }
 }
 
 .contenedor-grid-valores {
   display: flex;
-  gap: 5rem;
+  gap: 1rem;
+}
+@media (max-width: 768px) {
+  .contenedor-grid-valores {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 
 .contenedor-valores {
@@ -1516,118 +1601,6 @@ button[type=submit]:hover {
 }
 .contenedor-valores p {
   color: #f1f1f1;
-}
-
-.seccion-nosotros {
-  padding: 6rem 2rem;
-  background-color: #fff;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.seccion-nosotros .etiqueta span {
-  display: inline-block;
-  padding: 0.6rem 1.6rem;
-  background-color: rgba(255, 86, 48, 0.1);
-  color: #ff5630;
-  font-weight: 600;
-  font-size: 1.4rem;
-  border-radius: 2rem;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-}
-.seccion-nosotros .titulo-nosotros {
-  text-align: left;
-  margin-bottom: 4rem;
-}
-.seccion-nosotros .titulo-nosotros h2 {
-  font-size: 4rem;
-  line-height: 1.2;
-  font-weight: 800;
-}
-.seccion-nosotros .titulo-nosotros h2 .resaltado {
-  color: #ff5630;
-}
-.seccion-nosotros .titulo-nosotros .descripcion {
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-.seccion-nosotros .titulo-nosotros .descripcion p {
-  flex: 1 1 45%;
-  font-size: 1.6rem;
-  color: #5a5a5a;
-  line-height: 1.6;
-}
-.seccion-nosotros .beneficios {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 4rem;
-}
-.seccion-nosotros .beneficios .beneficio {
-  background-color: #fff;
-  padding: 2.4rem;
-  border-radius: 1.6rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  display: flex;
-  align-items: flex-start;
-  gap: 1.6rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.seccion-nosotros .beneficios .beneficio:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-}
-.seccion-nosotros .beneficios .beneficio .icono {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.4rem;
-  color: #fff;
-  flex-shrink: 0;
-}
-.seccion-nosotros .beneficios .beneficio .icono-rojo {
-  background-color: #ff5630;
-}
-.seccion-nosotros .beneficios .beneficio .icono-negro {
-  background-color: #111;
-}
-.seccion-nosotros .beneficios .beneficio .contenido h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 0.8rem;
-  color: #111;
-}
-.seccion-nosotros .beneficios .beneficio .contenido p {
-  font-size: 1.5rem;
-  color: #666;
-  line-height: 1.5;
-}
-@media (max-width: 992px) {
-  .seccion-nosotros .beneficios {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .seccion-nosotros .titulo-nosotros h2 {
-    font-size: 3rem;
-  }
-  .seccion-nosotros .titulo-nosotros .descripcion {
-    flex-direction: column;
-  }
-  .seccion-nosotros .titulo-nosotros .descripcion p {
-    flex: 1 1 100%;
-  }
-}
-@media (max-width: 600px) {
-  .seccion-nosotros .beneficios {
-    grid-template-columns: 1fr;
-  }
-  .seccion-nosotros .titulo-nosotros h2 {
-    font-size: 2.4rem;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
