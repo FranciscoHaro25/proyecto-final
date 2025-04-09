@@ -18,7 +18,7 @@
   padding: 4rem;
   text-align: center;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
-    url("../img/imagenes/imagen-principal.jpg") no-repeat center/cover;
+    url("../img/imagenes/imagen-principal-3.jpg") no-repeat center/cover;
   color: $color-blanco;
 
   .hero-contenido {
@@ -144,7 +144,7 @@
 
     // Left side: Call-to-action image
     .call-to-action {
-      background-image: url("../img/imagenes/call-to-action.jpg");
+      background-image: url("../img/imagenes/call-to-action-2.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;

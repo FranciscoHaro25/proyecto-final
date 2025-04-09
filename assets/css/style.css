@@ -673,7 +673,7 @@ button[type=submit]:hover {
   justify-content: center;
   padding: 4rem;
   text-align: center;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url("../img/imagenes/imagen-principal.jpg") no-repeat center/cover;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url("../img/imagenes/imagen-principal-3.jpg") no-repeat center/cover;
   color: #ffffff;
 }
 .hero .hero-contenido {
@@ -856,7 +856,7 @@ button[type=submit]:hover {
   gap: 4rem;
 }
 .contenedor-cta .cta-grid .call-to-action {
-  background-image: url("../img/imagenes/call-to-action.jpg");
+  background-image: url("../img/imagenes/call-to-action-2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
