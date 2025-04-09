@@ -6,51 +6,180 @@
 @use "../abstracts/mixins" as *;
 @use "../components/buttons" as *;
 
-// ------------------------------
-// 1. Grid de contenido principal
-// ------------------------------
+// =====================================
+// Hero Sobre Nosotros
+// =====================================
 
-.sobre-nosotros {
-  img {
+.hero-sobre-nosotros {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 70rem;
+  overflow: hidden;
+  color: $color-blanco;
+
+  // Imagen de fondo con degradado superpuesto
+  .hero-imagen {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 70rem;
-    object-fit: cover;
+    height: 100%;
+
+    // Degradado oscuro encima de la imagen
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.7)
+      );
+      z-index: 1;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  // Contenido que se posiciona sobre la imagen y el degradado
+  .hero-contenido {
+    position: relative;
+    z-index: 2; // Se asegura que esté encima del degradado
+    max-width: 800px;
+    padding: 0 2rem;
+    margin-top: 15rem;
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: $color-gris-claro;
+    }
+
+    .btn-nosotros {
+      @include boton-variantes(
+        $color-secundario,
+        $color-gris-claro,
+        none,
+        $color-secundario,
+        $color-blanco,
+        $color-secundario,
+        $color-secundario,
+        $color-gris-claro,
+        none,
+        none
+      );
+    }
+  }
+
+  // ================================
+  // Responsive para tablets y móviles
+  // ================================
+  @media (max-width: 768px) {
+    .hero-sobre-nosotros {
+      .hero-contenido {
+        h1 {
+          font-size: 3rem;
+        }
+
+        p {
+          font-size: 1.6rem;
+        }
+
+        .btn {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    height: 40rem;
+
+    .hero-contenido {
+      h1 {
+        font-size: 2.4rem;
+      }
+
+      p {
+        font-size: 1.4rem;
+      }
+
+      .btn {
+        font-size: 1.4rem;
+      }
+    }
   }
 }
 
-.sobre-nosotros-grid {
+// ======================================
+//  BLOQUE SOBRE NOSOTROS
+// ======================================
+.sobre-nosotros-bloques {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 5rem;
-  margin: 5rem auto;
-  padding-top: 10rem;
-  // @include respond("tablet") {
-  //   grid-template-columns: 1fr;
-  // }
+  grid-template-columns: repeat(2, 1fr); // 3 columnas iguales
+  gap: 7rem;
+  padding: 10rem 0;
+
+  .bloque {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-gris-claro; // Puedes cambiarlo por blanco si prefieres
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    justify-content: center;
+    gap: 1rem;
+  }
+  h2 {
+    font-size: 4rem;
+    .destacada {
+      color: $color-secundario;
+    }
+  }
+  h3 {
+    font-size: 2rem;
+    color: $color-primario;
+    margin-bottom: 1rem;
+    font-size: 2.8rem;
+    .destacada {
+      color: $color-secundario;
+    }
+  }
+
+  p {
+    font-size: 1.6rem;
+    color: $color-primario;
+    line-height: 1.6;
+  }
+
+  // ===========================
+  // Responsive para tablet y móvil
+  // ===========================
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr 1fr; // 2 columnas en tablets
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr; // 1 columna en móviles
+  }
 }
 
-// .sobre-nosotros-grid {
-//   display: grid;
-//   grid-template-columns: 1fr 2fr;
-//   gap: 5rem;
-//   margin: 5rem auto;
-//   padding-top: 10rem;
+// ------------------------------
+// VALORES CORPORATIVOS
 
-//   .encabezado {
-//     margin-top: 4rem;
-//     h2 {
-//       text-align: center;
-//     }
-//   }
-// }
-
-// ------------------------------
-// 2. Sección con imagen y botón
-// ------------------------------
-
-// ------------------------------
-// 3. Valores y Misión/Visión
-// ------------------------------
 .contenedor-grid-valores {
   display: flex;
   gap: 5rem;
@@ -75,88 +204,157 @@
   }
 }
 
-// ------------------------------
-// 4. Animación Fade In
-// ------------------------------
-// .fade-in {
-//   animation: fadeIn 1s ease-in-out;
-// }
+//-----------------------------------------------------------
+// AQUI EL NUEVO CODIGO
+// ==========================================
+// Sección "Sobre Nosotros" estilo agencia
+// ==========================================
+.seccion-nosotros {
+  padding: 6rem 2rem;
+  background-color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
 
-// @keyframes fadeIn {
-//   from {
-//     opacity: 0;
-//     transform: translateY(15px);
-//   }
-//   to {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// }
+  // ----------------------------
+  // Etiqueta "About Us"
+  // ----------------------------
+  .etiqueta span {
+    display: inline-block;
+    padding: 0.6rem 1.6rem;
+    background-color: rgba(#ff5630, 0.1);
+    color: #ff5630;
+    font-weight: 600;
+    font-size: 1.4rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
 
-// ------------------------------
-// 5. Otros ajustes de layout global
-// ------------------------------
-// @media (max-width: 1024px) {
-//   .footer-container {
-//     flex-direction: column;
-//     align-items: center;
-//     text-align: center;
-//   }
-//   .sobre-nosotros {
-//     img {
-//       width: 100%;
-//       height: 30rem;
-//       object-fit: cover;
-//     }
-//   }
-//   .footer-section {
-//     width: 100%;
-//   }
+  // ----------------------------
+  // Título y texto principal
+  // ----------------------------
+  .titulo-nosotros {
+    text-align: left;
+    margin-bottom: 4rem;
 
-//   .call-to-action {
-//     width: 100%;
-//     height: 30rem;
-//   }
+    h2 {
+      font-size: 4rem;
+      line-height: 1.2;
+      font-weight: 800;
 
-//   .contenido-cta {
-//     padding: 2rem;
-//     text-align: center;
-//   }
-// }
+      .resaltado {
+        color: #ff5630;
+      }
+    }
 
-// @media (max-width: 480px) {
-//   .btn,
-//   .btn-circular {
-//     width: 100%;
-//     justify-content: center;
-//   }
+    .descripcion {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
 
-//   .icono-svg {
-//     display: none;
-//   }
+      p {
+        flex: 1 1 45%;
+        font-size: 1.6rem;
+        color: #5a5a5a;
+        line-height: 1.6;
+      }
+    }
+  }
 
-//   .testimonio-img img {
-//     width: 120px;
-//     height: 120px;
-//   }
-// }
+  // ----------------------------
+  // Tarjetas de beneficios
+  // ----------------------------
+  .beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
 
-// @include respond("sm") {
-//   .sobre-nosotros-grid {
-//     gap: 2rem;
-//     padding-top: 5rem;
-//   }
+    .beneficio {
+      background-color: #fff;
+      padding: 2.4rem;
+      border-radius: 1.6rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: flex-start;
+      gap: 1.6rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-//   .contenedor-valores {
-//     padding: 3rem 2rem;
-//   }
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+      }
 
-//   .contenedor-valores p {
-//     font-size: 1.4rem;
-//     line-height: 1.5;
-//   }
+      .icono {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.4rem;
+        color: #fff;
+        flex-shrink: 0;
+      }
 
-//   .valor {
-//     font-size: 1.8rem;
-//   }
-// }
+      .icono-rojo {
+        background-color: #ff5630;
+      }
+
+      .icono-negro {
+        background-color: #111;
+      }
+
+      .contenido {
+        h3 {
+          font-size: 1.8rem;
+          font-weight: 700;
+          margin-bottom: 0.8rem;
+          color: #111;
+        }
+
+        p {
+          font-size: 1.5rem;
+          color: #666;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  // ----------------------------
+  // Responsive
+  // ----------------------------
+  @media (max-width: 992px) {
+    .beneficios {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .titulo-nosotros {
+      h2 {
+        font-size: 3rem;
+      }
+
+      .descripcion {
+        flex-direction: column;
+
+        p {
+          flex: 1 1 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .beneficios {
+      grid-template-columns: 1fr;
+    }
+
+    .titulo-nosotros {
+      h2 {
+        font-size: 2.4rem;
+      }
+    }
+  }
+}
