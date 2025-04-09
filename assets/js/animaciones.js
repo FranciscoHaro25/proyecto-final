@@ -24,3 +24,19 @@ if (btnGSAP) {
     gsap.to(btnGSAP, { scale: 1.0, duration: 0.2 });
   });
 }
+
+// ========== ANIMACIÓN SCROLL PARA CADA TARJETA ==========
+gsap.utils.toArray(".gsap-scroll-tarjetas").forEach((el, i) => {
+  gsap.from(el, {
+    scrollTrigger: {
+      trigger: el,
+      start: "top 80%", // cuando el 20% del elemento entra en el viewport
+      toggleActions: "play none none none",
+    },
+    y: 80,
+    opacity: 0,
+    duration: 1.2,
+    delay: i * 0.1, // efecto tipo "stagger" entre tarjetas
+    ease: "power3.out",
+  });
+});

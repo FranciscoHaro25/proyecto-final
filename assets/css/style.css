@@ -1686,6 +1686,135 @@ button[type=submit]:hover {
   }
 }
 
+.team-section {
+  padding: 4rem 2rem;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+.team-section .section-header {
+  margin-bottom: 3rem;
+}
+.team-section .section-header .section-tag {
+  display: inline-block;
+  background-color: #fff;
+  color: #ff5421;
+  font-weight: 600;
+  padding: 0.4rem 1.2rem;
+  border-radius: 1.5rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.team-section .section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.team-section .section-header h2 .text-primary {
+  color: #ff5421;
+  font-weight: 700;
+}
+.team-section .section-header h2 .text-secondary {
+  color: #1d1d1d;
+  font-weight: 700;
+}
+.team-section .section-header p {
+  color: #777;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.team-section .team-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+.team-section .team-card {
+  background-color: #fff;
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+.team-section .team-card:hover {
+  transform: translateY(-10px);
+}
+.team-section .team-card .team-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+.team-section .team-card .team-info {
+  background-color: #ff5421;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.team-section .team-card .team-info h3 {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 700;
+}
+.team-section .team-card .team-info p {
+  font-size: 0.9rem;
+  margin: 0.2rem 0 0;
+}
+.team-section .team-card .team-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.team-section .team-card .team-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: #1d1d1d;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.team-section .team-card .team-socials a:hover {
+  background-color: #ff5421;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .team-section .section-header h2 {
+    font-size: 2rem;
+  }
+  .team-section .section-header p {
+    font-size: 0.95rem;
+  }
+  .team-section .team-card {
+    padding: 1.5rem 1rem;
+  }
+  .team-section .team-card .team-info h3 {
+    font-size: 1.1rem;
+  }
+  .team-section .team-card .team-info p {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 480px) {
+  .team-section .team-section {
+    padding: 2rem 1rem;
+  }
+  .team-section .section-header h2 {
+    font-size: 1.7rem;
+  }
+  .team-section .team-socials a {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+}
+
 .seccion-valores {
   display: flex;
   flex-direction: column;
