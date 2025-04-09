@@ -426,46 +426,47 @@
 // =====================================
 
 .team-section {
-  padding: 4rem 2rem;
+  padding: 3rem 0 5ch;
   background-color: $color-gris-claro;
   text-align: center;
 
   // ---------- Encabezado de la sección ----------
   .section-header {
-    margin-bottom: 3rem;
+    margin: 2rem auto 4rem;
 
     .section-tag {
       display: inline-block;
-      background-color: #fff;
-      color: #ff5421;
+      background-color: $color-secundario;
+      color: $color-blanco;
       font-weight: 600;
-      padding: 0.4rem 1.2rem;
+      padding: 0.4rem 1.8rem;
       border-radius: 1.5rem;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      margin-bottom: 3rem;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      text-transform: uppercase;
     }
 
     h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-
-      .text-primary {
-        color: #ff5421;
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      // ---------- Estilos globales para los span ----------
+      .txt-primary {
+        color: $color-primario;
         font-weight: 700;
       }
 
-      .text-secondary {
-        color: #1d1d1d;
+      .txt-secondary {
+        color: $color-secundario;
         font-weight: 700;
       }
     }
 
     p {
-      color: #777;
-      max-width: 600px;
+      color: $color-primario;
+      max-width: 75%;
       margin: 0 auto;
-      font-size: 1rem;
+      font-size: 1.8rem;
       line-height: 1.6;
     }
   }
@@ -480,7 +481,7 @@
 
   // ---------- Tarjeta individual de miembro del equipo ----------
   .team-card {
-    background-color: #fff;
+    background-color: $color-blanco;
     border-radius: 1.5rem;
     padding: 2rem 1.5rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -491,35 +492,56 @@
       transform: translateY(-10px);
     }
 
-    // ---------- Imagen del miembro ----------
     .team-photo {
       width: 100%;
-      height: auto;
+      height: 220px;
       border-radius: 1rem;
       margin-bottom: 1rem;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
     }
 
-    // ---------- Información (nombre y cargo) ----------
     .team-info {
-      background-color: #ff5421;
+      background-color: $color-secundario;
       border-radius: 1rem;
       padding: 1rem;
       margin-bottom: 1rem;
-      color: #fff;
+      color: $color-gris-claro;
 
       h3 {
-        font-size: 1.25rem;
-        margin: 0;
+        font-size: 1.9rem;
+        margin: 0.5rem 0 1rem;
         font-weight: 700;
       }
 
       p {
-        font-size: 0.9rem;
-        margin: 0.2rem 0 0;
+        background-color: rgba($color-gris-claro, 0.3);
+        font-size: 1.2rem;
+        border-radius: 1rem;
+        padding: 0.5rem 0;
+        font-weight: 600;
+
+        .puesto {
+          margin: 0.2rem 0 0;
+          color: $color-primario;
+        }
+      }
+
+      small {
+        display: block;
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+        line-height: 1.4;
+        color: $color-gris-claro;
       }
     }
 
-    // ---------- Iconos de redes sociales ----------
     .team-socials {
       display: flex;
       justify-content: center;
@@ -529,27 +551,27 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #f4f4f4;
+        background-color: $color-gris-claro;
         width: 35px;
         height: 35px;
         border-radius: 50%;
-        color: #1d1d1d;
+        color: $color-primario;
         font-size: 1rem;
         transition: background-color 0.3s ease, color 0.3s ease;
 
         &:hover {
-          background-color: #ff5421;
-          color: #fff;
+          background-color: $color-secundario;
+          color: $color-blanco;
         }
       }
     }
   }
 
-  // ---------- Responsive: ajustes para pantallas pequeñas ----------
+  // ---------- Responsive: tablets ----------
   @media (max-width: 768px) {
     .section-header {
       h2 {
-        font-size: 2rem;
+        font-size: 4rem;
       }
 
       p {
@@ -570,13 +592,14 @@
     }
   }
 
+  // ---------- Responsive: móviles ----------
   @media (max-width: 480px) {
-    .team-section {
-      padding: 2rem 1rem;
+    .team-photo {
+      height: 180px;
     }
 
     .section-header h2 {
-      font-size: 1.7rem;
+      font-size: 3rem;
     }
 
     .team-socials a {
@@ -584,62 +607,282 @@
       height: 30px;
       font-size: 0.9rem;
     }
+
+    .team-section {
+      padding: 2rem 1rem; // Solo si está fuera del scope; si no, eliminar
+    }
   }
 }
 
-// =====================================
-// Sección: Valores Corporativos
-// =====================================
-.seccion-valores {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem auto 5rem;
-  gap: 3rem;
+.mision-vision {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  text-align: center;
 
-  // ----------------------------
-  // Contenedor tipo Grid/Flex
-  // ----------------------------
-  .contenedor-grid-valores {
+  .bloque-mv {
     display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
+    flex-direction: column;
+    gap: 2rem;
 
-    // Responsive: en tablets o menores, columna
-    @media (max-width: 768px) {
-      flex-direction: column;
-      gap: 2rem;
-      .seccion-valores {
-        margin: 1rem auto;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .mision,
+    .vision {
+      flex: 1;
+      padding: 1rem;
+
+      h3 {
+        color: #ff5421;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        color: #444;
+        font-size: 1rem;
+        line-height: 1.6;
       }
     }
   }
+}
 
-  // ----------------------------
-  // Cada bloque de valor
-  // ----------------------------
-  .contenedor-valores {
-    flex: 1 1 30rem;
-    background-color: $color-primario;
-    padding: 4rem;
-    border-radius: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+.galeria-taller {
+  padding: 4rem 2rem;
+  background-color: #fdf8f6;
+  text-align: center;
 
-    &:hover {
-      transform: translateY(-4px);
-    }
+  h3 {
+    font-size: 2rem;
+    color: #ff5421;
+    margin-bottom: 1rem;
+  }
 
-    .valor {
-      font-size: 2rem;
-      font-weight: 700;
-      color: $color-secundario;
-      margin-bottom: 1rem;
-    }
+  p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
 
-    p {
-      color: $color-gris-claro;
-      font-size: 1.6rem;
-      line-height: 1.5;
+  .galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.03);
+      }
     }
   }
 }
+// =====================================
+// Sección: Nuestro Taller (our-workshop)
+// =====================================
+
+.our-workshop {
+  padding: 6rem 2rem;
+  background-color: $color-primario;
+  text-align: center;
+  position: relative;
+  overflow: hidden; // Evita que las comillas se salgan visualmente
+
+  // Comillas decorativas posicionadas
+  .quote-mark {
+    position: absolute;
+    font-size: 12rem;
+    color: rgba(255, 255, 255, 0.08); // Opacidad baja
+    font-weight: bold;
+    font-family: serif;
+    z-index: 0;
+    user-select: none;
+
+    &.top-left {
+      top: 1rem;
+      left: 1.5rem;
+    }
+
+    &.bottom-right {
+      bottom: 1rem;
+      right: 1.5rem;
+    }
+  }
+
+  h3 {
+    font-size: 3rem;
+    color: $color-secundario;
+    position: relative;
+    z-index: 1; // Que esté encima de las comillas
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: $color-gris-claro;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    .quote-mark {
+      font-size: 8rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .quote-mark {
+      font-size: 5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+.mision-vision {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  text-align: center;
+
+  .bloque-mv {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .mision,
+    .vision {
+      flex: 1;
+      padding: 1rem;
+
+      h3 {
+        color: #ff5421;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        color: #444;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+.galeria-taller {
+  padding: 4rem 2rem;
+  background-color: #fdf8f6;
+  text-align: center;
+
+  h3 {
+    font-size: 2rem;
+    color: #ff5421;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+
+  .galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+  }
+}
+// // =====================================
+// // Sección: Valores Corporativos
+// // =====================================
+// .seccion-valores {
+//   display: flex;
+//   flex-direction: column;
+//   margin: 1rem auto 5rem;
+//   gap: 3rem;
+
+//   // ----------------------------
+//   // Contenedor tipo Grid/Flex
+//   // ----------------------------
+//   .contenedor-grid-valores {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 3rem;
+
+//     // Responsive: en tablets o menores, columna
+//     @media (max-width: 768px) {
+//       flex-direction: column;
+//       gap: 2rem;
+//       .seccion-valores {
+//         margin: 1rem auto;
+//       }
+//     }
+//   }
+
+//   // ----------------------------
+//   // Cada bloque de valor
+//   // ----------------------------
+//   .contenedor-valores {
+//     flex: 1 1 30rem;
+//     background-color: $color-primario;
+//     padding: 4rem;
+//     border-radius: 2rem;
+//     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+//     transition: transform 0.3s ease;
+
+//     &:hover {
+//       transform: translateY(-4px);
+//     }
+
+//     .valor {
+//       font-size: 2rem;
+//       font-weight: 700;
+//       color: $color-secundario;
+//       margin-bottom: 1rem;
+//     }
+
+//     p {
+//       color: $color-gris-claro;
+//       font-size: 1.6rem;
+//       line-height: 1.5;
+//     }
+//   }
+// }

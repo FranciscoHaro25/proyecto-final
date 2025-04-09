@@ -44,6 +44,11 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Scripts externos de GSAP y ScrollTrigger -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
     <!-- Estilos propios -->
     <link rel="stylesheet" href="../assets/css/normalize.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
@@ -229,22 +234,31 @@
 
       <!-- SECCIÓN TEAMS -->
       <section class="team-section">
-        <div class="section-header contenedor">
-          <span class="section-tag">Our Team</span>
-          <h2><span class="text-primary">Team</span> <span class="text-secondary">Members</span></h2>
-          <p>
-            Sint nascetur facere, delectus conubia consequuntur, nonummy distinctio! 
-            Non officiis, id natus non nisl provident justo.
-          </p>
+        <div class="contenedor">
+          <div class="section-header">
+            <span class="section-tag">Nuestro equipo</span>
+            <h2>
+              <span class="txt-primary">Que hace</span> 
+              <span class="txt-secondary">nuestro equipo</span>
+            </h2>
+            <p>
+              Cada día en el taller comienza con madera en las manos y ganas de crear algo especial. No hacemos muebles en serie, hacemos piezas con alma. Diseñamos y construimos con cariño, cuidando cada detalle, para que lo que llega a tu casa no sea solo funcional, sino parte de tu historia.
+            </p>
+          </div>
         </div>
 
+        <!-- Tarjetas de los miembros -->
         <div class="team-members contenedor">
+
           <!-- Miembro 1 -->
           <div class="team-card gsap-scroll-tarjetas">
-            <img src="ruta/sony-madison.jpg" alt="Sony Madison" class="team-photo">
+            <img src="../assets/img/imagenes/Teams-maestro-carpintero.jpg" alt="Pedro Gálvez" class="team-photo">
             <div class="team-info">
-              <h3>Sony Madison</h3>
-              <p>CEO, Director</p>
+              <h3>Pedro Gálvez</h3>
+              <p class="puesto">Fundador & Maestro Carpintero</p>
+              <small>
+                Pedro crea con alma y tradición. Sus manos, guiadas por años de oficio, dan vida a muebles que llevan historia, cariño y el arte de lo hecho a mano.
+              </small>
             </div>
             <div class="team-socials">
               <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -256,10 +270,13 @@
 
           <!-- Miembro 2 -->
           <div class="team-card gsap-scroll-tarjetas">
-            <img src="ruta/hary-warth.jpg" alt="Hary Warth" class="team-photo">
+            <img src="../assets/img/imagenes/Teams-dibujante.jpg" alt="Andrea López" class="team-photo">
             <div class="team-info">
-              <h3>Hary Warth</h3>
-              <p>Head Manager</p>
+              <h3>Andrea López</h3>
+              <p>Diseñadora de Mobiliario</p>
+              <small>
+                Andrea convierte ideas en diseños que abrazan. Cada mueble que crea nace para compartir en familia y llevar la calidez del hogar ecuatoriano a cada rincón.
+              </small>
             </div>
             <div class="team-socials">
               <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -271,10 +288,13 @@
 
           <!-- Miembro 3 -->
           <div class="team-card gsap-scroll-tarjetas">
-            <img src="ruta/jenny-hobb.jpg" alt="Jenny Hobb" class="team-photo">
+            <img src="../assets/img/imagenes/Teams-supervisor.jpg" alt="David Alarcón" class="team-photo">
             <div class="team-info">
-              <h3>Jenny Hobb</h3>
-              <p>Branch Manager</p>
+              <h3>David Alarcón</h3>
+              <p>Gestor de Producción y Calidad</p>
+              <small>
+                David cuida cada detalle con paciencia y compromiso. Su mirada garantiza que cada mueble salga del taller con orgullo, listo para formar parte de tu hogar.
+              </small>
             </div>
             <div class="team-socials">
               <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -286,10 +306,13 @@
 
           <!-- Miembro 4 -->
           <div class="team-card gsap-scroll-tarjetas">
-            <img src="ruta/johny-smith.jpg" alt="Johny Smith" class="team-photo">
+            <img src="../assets/img/imagenes/Teams-acabados.jpg" alt="Karla Ramírez" class="team-photo">
             <div class="team-info">
-              <h3>Johny Smith</h3>
-              <p>Supervisor</p>
+              <h3>Karla Ramírez</h3>
+              <p>Especialista en Acabados & Tapicería</p>
+              <small>
+                Karla convierte lo simple en arte. Sus manos dan suavidad, color y vida a cada pieza. Su toque final transforma un mueble en algo único y lleno de alma.
+              </small>
             </div>
             <div class="team-socials">
               <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -301,10 +324,55 @@
         </div>
       </section>
 
+      <section class="our-workshop gsap-scroll-taller">
+        <div class="contenedor">
+          <span class="quote-mark top-left">“</span>
+      
+          <h3>Hecho a mano con alma</h3>
+          <p>
+            Nuestro taller es un espacio donde la tradición y la creatividad se encuentran. Aquí, cada mueble nace del trabajo en equipo,
+            el respeto por los materiales y el deseo de crear algo único para tu hogar.
+          </p>
+      
+          <span class="quote-mark bottom-right">”</span>
+        </div>
+      </section>
+
     </main>   
 
+    <section class="mision-vision contenedor gsap-scroll-tarjetas">
+      <div class="bloque-mv">
+        <div class="mision">
+          <h3>Misión</h3>
+          <p>
+            Crear muebles con alma, hechos a mano con madera de la más alta calidad, que acompañen la vida de las familias ecuatorianas con belleza, funcionalidad y calidez. Nuestro compromiso es con lo auténtico, lo duradero y lo que nace del corazón del taller.
+          </p>
+        </div>
+        <div class="vision">
+          <h3>Visión</h3>
+          <p>
+            Ser reconocidos como un referente nacional en diseño y fabricación artesanal de mobiliario, preservando las tradiciones de la carpintería y evolucionando hacia hogares más humanos, estéticos y sostenibles.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="galeria-taller contenedor gsap-scroll-tarjetas">
+      <h3>Nuestro Taller & Creaciones</h3>
+      <p>Así nace cada pieza, desde el corazón de nuestro equipo para llenar de vida tu hogar.</p>
+    
+      <div class="galeria-grid">
+        <img src="img/taller-1.jpg" alt="Pedro trabajando en un cabecero artesanal">
+        <img src="img/taller-2.jpg" alt="Detalle de una silla con acabado fino">
+        <img src="img/producto-1.jpg" alt="Comedor de madera maciza">
+        <img src="img/producto-2.jpg" alt="Sofá tapizado hecho a mano">
+        <img src="img/producto-3.jpg" alt="Cama estilo rústico moderno">
+        <img src="img/taller-3.jpg" alt="Equipo ensamblando muebles en el taller">
+      </div>
+    </section>
+
     <!-- SECTION MISIÓN / VISIÓN -->
-    <section class="contenedor" aria-labelledby="titulo-valores">
+    <!-- <section class="contenedor" aria-labelledby="titulo-valores">
       <div class="seccion-valores"> 
         <header class="text-center">
           <h2 id="titulo-valores">Valores Corporativos</h2>
@@ -331,7 +399,7 @@
           </article>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- FOOTER -->
     <footer>
@@ -442,5 +510,9 @@
       </div>
     </footer>
     <script src="../assets/js/script.js"></script>
+
+    <!-- JS GSAP personalizado-->
+    <script src="../assets/js/animaciones.js"></script>
+
   </body>
 </html>

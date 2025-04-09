@@ -40,3 +40,32 @@ gsap.utils.toArray(".gsap-scroll-tarjetas").forEach((el, i) => {
     ease: "power3.out",
   });
 });
+
+// Registrar el plugin ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// Animar comillas decorativas de forma independiente
+gsap.from(".quote-mark", {
+  scrollTrigger: {
+    trigger: ".our-workshop",
+    start: "top 80%",
+  },
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  ease: "power3.out",
+  stagger: 0.2,
+});
+
+// Animar título y párrafo suavemente
+gsap.from(".gsap-fade", {
+  scrollTrigger: {
+    trigger: ".our-workshop",
+    start: "top 80%",
+  },
+  opacity: 0,
+  y: 30,
+  duration: 1,
+  ease: "power2.out",
+  stagger: 0.3,
+});
