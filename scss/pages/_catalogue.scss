@@ -58,131 +58,203 @@
 // ------------------------------
 // 3. Grid de productos del catálogo
 // ------------------------------
-.catalogo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
-  gap: 3rem;
-}
+// .catalogo-grid {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+//   gap: 3rem;
+// }
 
-.catalogo-producto {
-  background-color: $color-blanco;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 6px 12px rgba($color-negro, 0.05);
-  text-align: center;
+// .catalogo-producto {
+//   background-color: $color-blanco;
+//   border-radius: 1rem;
+//   overflow: hidden;
+//   box-shadow: 0 6px 12px rgba($color-negro, 0.05);
+//   text-align: center;
 
-  img {
-    width: 100%;
-    height: 24rem;
-    object-fit: cover;
-    border-bottom: 3px solid transparent;
-    transition: transform 0.3s ease-in-out;
-  }
+//   img {
+//     width: 100%;
+//     height: 24rem;
+//     object-fit: cover;
+//     border-bottom: 3px solid transparent;
+//     transition: transform 0.3s ease-in-out;
+//   }
 
-  .nombre-link {
-    display: block;
-    padding: 1.5rem;
-    font-weight: bold;
-    background-color: $color-gris-claro;
-    color: $color-primario;
-    transition: background-color 0.3s ease, color 0.3s ease;
+//   .nombre-link {
+//     display: block;
+//     padding: 1.5rem;
+//     font-weight: bold;
+//     background-color: $color-gris-claro;
+//     color: $color-primario;
+//     transition: background-color 0.3s ease, color 0.3s ease;
 
-    &:hover {
-      background-color: $color-secundario;
-      color: $color-blanco;
-    }
-  }
+//     &:hover {
+//       background-color: $color-secundario;
+//       color: $color-blanco;
+//     }
+//   }
 
-  &:hover img {
-    transform: scale(1.05);
-  }
-}
+//   &:hover img {
+//     transform: scale(1.05);
+//   }
+// }
 
 // ------------------------------
 // 4. Responsive con media queries (tablet y móvil)
 // ------------------------------
 
-@include respond("tablet") {
-  .catalogo {
-    padding: 8rem 1.5rem;
-  }
+// @include respond("tablet") {
+//   .catalogo {
+//     padding: 8rem 1.5rem;
+//   }
 
-  .catalogo-header {
-    h2 {
-      font-size: 2.8rem;
-    }
+//   .catalogo-header {
+//     h2 {
+//       font-size: 2.8rem;
+//     }
 
-    p {
-      font-size: 1.4rem;
-    }
-  }
+//     p {
+//       font-size: 1.4rem;
+//     }
+//   }
 
-  .catalogo-grid {
-    gap: 2rem;
+//   .catalogo-grid {
+//     gap: 2rem;
 
-    .catalogo-producto img {
-      height: 20rem;
-    }
-  }
+//     .catalogo-producto img {
+//       height: 20rem;
+//     }
+//   }
 
-  .contacto.contacto--alt-bg {
-    padding: 4rem 2rem;
+//   .contacto.contacto--alt-bg {
+//     padding: 4rem 2rem;
 
-    .contact-form {
-      gap: 1.5rem;
+//     .contact-form {
+//       gap: 1.5rem;
 
-      input,
-      textarea {
-        font-size: 1.4rem;
-      }
+//       input,
+//       textarea {
+//         font-size: 1.4rem;
+//       }
 
-      button {
-        font-size: 1.4rem;
-        padding: 1rem 2rem;
+//       button {
+//         font-size: 1.4rem;
+//         padding: 1rem 2rem;
+//       }
+//     }
+//   }
+// }
+
+// @include respond("mobile") {
+//   .catalogo-buscador {
+//     flex-direction: column;
+//     align-items: stretch;
+//     gap: 1rem;
+
+//     .search-input,
+//     .search-btn {
+//       width: 100%;
+//       border-radius: 0;
+//     }
+
+//     .search-input {
+//       border-radius: 0.8rem 0.8rem 0 0;
+//     }
+
+//     .search-btn {
+//       border-radius: 0 0 0.8rem 0.8rem;
+//     }
+//   }
+
+//   .catalogo-producto .nombre-link {
+//     font-size: 1.4rem;
+//     padding: 1rem;
+//   }
+
+//   .contacto.contacto--alt-bg {
+//     .contact-form {
+//       padding: 2rem 1.5rem;
+
+//       input,
+//       textarea {
+//         font-size: 1.3rem;
+//       }
+
+//       button {
+//         font-size: 1.4rem;
+//         width: 100%;
+//       }
+//     }
+//   }
+// }
+
+// ==============================
+// CATÁLOGO DE PRODUCTOS (Bootstrap)
+// ==============================
+
+.container {
+  margin-top: 4rem;
+
+  .row {
+    .col {
+      .card {
+        border: none;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-top {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+        }
+
+        .card-body {
+          padding: 2rem 1rem;
+          text-align: center;
+
+          .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: $color-primario;
+          }
+
+          .btn {
+            font-weight: 600;
+            padding: 0.8rem 2.9rem;
+            background-color: $color-secundario;
+            border: none;
+
+            &:hover {
+              background-color: color.adjust(
+                $color-secundario,
+                $lightness: -10%
+              );
+            }
+          }
+        }
       }
     }
   }
 }
 
-@include respond("mobile") {
-  .catalogo-buscador {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
+// ==============================
+// RESPONSIVE
+// ==============================
 
-    .search-input,
-    .search-btn {
-      width: 100%;
-      border-radius: 0;
-    }
-
-    .search-input {
-      border-radius: 0.8rem 0.8rem 0 0;
-    }
-
-    .search-btn {
-      border-radius: 0 0 0.8rem 0.8rem;
-    }
+@media (max-width: 768px) {
+  .card-img-top {
+    height: 200px;
   }
 
-  .catalogo-producto .nombre-link {
-    font-size: 1.4rem;
-    padding: 1rem;
-  }
-
-  .contacto.contacto--alt-bg {
-    .contact-form {
-      padding: 2rem 1.5rem;
-
-      input,
-      textarea {
-        font-size: 1.3rem;
-      }
-
-      button {
-        font-size: 1.4rem;
-        width: 100%;
-      }
-    }
+  .card-title {
+    font-size: 1rem;
   }
 }
