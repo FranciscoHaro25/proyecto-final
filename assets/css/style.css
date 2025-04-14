@@ -1231,7 +1231,7 @@ button[type=submit]:hover {
 }
 
 .container {
-  margin-top: 4rem;
+  margin: 4rem auto;
 }
 .container .row .col .card {
   border: none;
@@ -1278,6 +1278,68 @@ button[type=submit]:hover {
     font-size: 1rem;
   }
 }
+.seccion-contenido {
+  background-color: #f9f9f9;
+  border-radius: 1rem;
+  margin-bottom: 8rem;
+}
+.seccion-contenido .titulo-seccion {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #281101;
+  margin-bottom: 2rem;
+}
+.seccion-contenido .texto-seccion {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 5rem;
+  line-height: 1.6;
+}
+.seccion-contenido .formulario-contacto {
+  max-width: 620px;
+  margin-inline: auto;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem 4rem 4rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+}
+.seccion-contenido .formulario-contacto .form-label {
+  font-weight: 600;
+  color: #281101;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+.seccion-contenido .formulario-contacto .form-control {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  font-size: 1.5rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.seccion-contenido .formulario-contacto .form-control:focus {
+  border-color: #ff9900;
+  box-shadow: 0 0 0 0.2rem rgba(255, 153, 0, 0.2);
+}
+.seccion-contenido .formulario-contacto textarea.form-control {
+  resize: vertical;
+}
+.seccion-contenido .formulario-contacto .invalid-feedback {
+  font-size: 0.875rem;
+  color: #d9534f;
+  margin-top: 0.25rem;
+}
+.seccion-contenido .formulario-contacto .btn-seccion {
+  background-color: #ff9900;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.seccion-contenido .formulario-contacto .btn-seccion:hover {
+  background-color: rgb(204, 122.4, 0);
+}
+
 .contenedor-inspiracion {
   padding: 2rem 2rem 4rem;
   margin-top: 14rem;

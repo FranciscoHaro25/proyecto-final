@@ -321,106 +321,90 @@
           </div>
         </div>
       </div>
-
-      <!-- Modal de ejemplo (Sofá Modular)
-      <div
-        class="modal fade"
-        id="modalSofaModular"
-        tabindex="-1"
-        aria-labelledby="modalSofaModularLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalSofaModularLabel">
-                Sofá Modular
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Cerrar"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <img
-                src="../assets/img/imagenes/catalogo-sofa-modular.jpg"
-                class="img-fluid mb-3"
-                alt="Sofá Modular"
-              />
-              <p>
-                Este sofá modular se adapta a tu espacio y estilo. Tapizado
-                premium, diseño moderno y opciones personalizables.
-              </p>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Cerrar
-              </button>
-              <a href="../pages/contacto.html" class="btn btn-primary"
-                >Lo quiero</a
-              >
-            </div>
-          </div>
-        </div>
-      </div> -->
     </main>
 
     <!-- FORMULARIO DE CONTACTO -->
     <section
-      class="contacto contacto--alt-bg"
+      class="seccion-contenido contacto--alt-bg py-3"
       aria-labelledby="formulario-catalogo"
     >
-      <h2 id="formulario-catalogo" class="text-center">
-        ¿Te interesa algún producto?
-      </h2>
-      <p class="text-center">
-        Envíanos un mensaje y te asesoramos personalmente.
-      </p>
-      <div class="gsap-scroll">
-        <form class="contact-form" gsap-scroll novalidate>
-          <div>
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required />
-            <p class="error-message visually-hidden">
-              Por favor, introduce tu nombre.
+      <div class="contenedor container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8 text-center">
+            <h2 id="formulario-catalogo" class="titulo-seccion">
+              ¿Te interesa algún producto de <br />CasaForm?
+            </h2>
+            <p class="texto-seccion">
+              Envíanos un mensaje y te asesoramos personalmente.
             </p>
           </div>
-          <div>
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" required />
-            <p class="error-message visually-hidden">
-              El correo ingresado no es válido.
-            </p>
-          </div>
-          <div>
-            <label for="producto">Producto de interés</label>
+        </div>
+
+        <form class="row g-4 needs-validation formulario-contacto" novalidate>
+          <!-- Nombre -->
+          <div class="col-md-6">
+            <label for="nombre" class="form-label">Nombre</label>
             <input
               type="text"
+              class="form-control"
+              id="nombre"
+              name="nombre"
+              placeholder="Nombres / Apellidos"
+              required
+              autocomplete="name"
+            />
+            <div class="invalid-feedback">Por favor, introduce tu nombre.</div>
+          </div>
+
+          <!-- Email -->
+          <div class="col-md-6">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Ej: ventas@casaform.com"
+              required
+              autocomplete="email"
+            />
+            <div class="invalid-feedback">
+              El correo ingresado no es válido.
+            </div>
+          </div>
+
+          <!-- Producto -->
+          <div class="col-12">
+            <label for="producto" class="form-label">Producto de interés</label>
+            <input
+              type="text"
+              class="form-control"
               id="producto"
               name="producto"
               placeholder="Ej: Sofá Modular"
+              autocomplete="off"
             />
           </div>
-          <div>
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-            <p class="error-message visually-hidden">
-              Este campo es obligatorio.
-            </p>
+
+          <!-- Mensaje -->
+          <div class="col-12">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea
+              class="form-control"
+              id="mensaje"
+              name="mensaje"
+              rows="4"
+              required
+            ></textarea>
+            <div class="invalid-feedback">Este campo es obligatorio.</div>
           </div>
-          <button
-            type="submit"
-            aria-label="Enviar formulario de contacto"
-            class="button-gsap"
-          >
-            Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
-          </button>
+
+          <!-- Botón -->
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-seccion px-8 py-4">
+              Enviar Mensaje <i class="fa-solid fa-paper-plane ms-2"></i>
+            </button>
+          </div>
         </form>
       </div>
     </section>

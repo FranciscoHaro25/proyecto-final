@@ -192,7 +192,7 @@
 // ==============================
 
 .container {
-  margin-top: 4rem;
+  margin: 4rem auto;
 
   .row {
     .col {
@@ -256,5 +256,85 @@
 
   .card-title {
     font-size: 1rem;
+  }
+}
+
+// ===================================
+// FORMULARIO DE CONTACTO
+// ===================================
+
+.seccion-contenido {
+  background-color: #f9f9f9; // Fondo general claro
+  border-radius: 1rem;
+  margin-bottom: 8rem;
+
+  // Título del formulario
+  .titulo-seccion {
+    font-size: 3rem;
+    font-weight: 700;
+    color: $color-primario;
+    margin-bottom: 2rem;
+  }
+
+  // Párrafo introductorio
+  .texto-seccion {
+    font-size: 1.5rem;
+    color: $color-texto;
+    margin-bottom: 5rem;
+    line-height: 1.6;
+  }
+
+  // FORMULARIO completo con clase directa
+  .formulario-contacto {
+    max-width: 620px; // Ancho máximo
+    margin-inline: auto; // Centrado horizontal
+    background-color: #ffffff; // Fondo blanco
+    border-radius: 1rem;
+    padding: 1rem 4rem 4rem;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.05); // Sombra suave
+
+    .form-label {
+      font-weight: 600;
+      color: $color-primario;
+      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+    }
+
+    .form-control {
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ccc;
+      font-size: 1.5rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:focus {
+        border-color: $color-secundario;
+        box-shadow: 0 0 0 0.2rem rgba($color-secundario, 0.2);
+      }
+    }
+
+    textarea.form-control {
+      resize: vertical;
+    }
+
+    .invalid-feedback {
+      font-size: 0.875rem;
+      color: #d9534f;
+      margin-top: 0.25rem;
+    }
+
+    .btn-seccion {
+      background-color: $color-secundario;
+      color: #fff;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      // 👉 Aquí se define la transición suave
+      transition: transform 0.3s ease, background-color 0.3s ease;
+
+      &:hover {
+        background-color: color.adjust($color-secundario, $lightness: -10%);
+      }
+    }
   }
 }
