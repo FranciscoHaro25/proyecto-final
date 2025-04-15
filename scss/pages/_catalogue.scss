@@ -180,6 +180,10 @@
         box-shadow: 0 0 0 0.2rem rgba($color-secundario, 0.2);
       }
     }
+    input::placeholder {
+      color: rgba($color-gris, 0.4);
+      font-style: italic;
+    }
 
     textarea.form-control {
       resize: vertical;

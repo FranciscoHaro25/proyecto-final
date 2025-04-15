@@ -1423,6 +1423,10 @@ button[type=submit]:hover {
   border-color: #ff9900;
   box-shadow: 0 0 0 0.2rem rgba(255, 153, 0, 0.2);
 }
+.seccion-contenido .formulario-contacto input::placeholder {
+  color: rgba(85, 85, 85, 0.4);
+  font-style: italic;
+}
 .seccion-contenido .formulario-contacto textarea.form-control {
   resize: vertical;
 }
