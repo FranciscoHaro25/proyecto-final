@@ -4,22 +4,23 @@
 @use "../abstracts/mixins" as *;
 @use "../components/buttons" as *;
 
-// =================================>>>>
-// SECCIÓN HERO (principal de inicio)
-
-// _home.scss (dentro de la sección HERO)
+// =====================
+// HERO PRINCIPAL
+// =====================
 
 .hero {
-  position: relative;
-  height: 75rem; // Más altura para mayor visibilidad
+  @include hero-bg(
+    "../img/imagenes/imagen-principal-3.jpg",
+    80rem
+  ); // Fondo con degradado
+
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4rem;
   text-align: center;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
-    url("../img/imagenes/imagen-principal-3.jpg") no-repeat center/cover;
   color: $color-blanco;
+  position: relative;
 
   .hero-contenido {
     position: relative;
@@ -31,7 +32,7 @@
       font-size: 5.2rem;
       font-weight: bold;
       margin-bottom: 2rem;
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); // Mejora legibilidad
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
     }
 
     p {
@@ -42,17 +43,68 @@
       color: #919191;
     }
 
-    .btn {
-      font-size: 1.6rem;
+    .btn-hero {
+      @include boton-variantes(
+        transparent,
+        $color-gris-claro,
+        2px solid $color-blanco,
+        $color-secundario,
+        $color-blanco,
+        $color-secundario,
+        $color-secundario,
+        $color-gris-claro,
+        none,
+        none // 2px solid $color-blanco
+        // También lo puedes repetir para hover si quieres
+      );
     }
   }
 
+  // Degradado adicional encima del fondo (opcional)
   &::after {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
     z-index: 1;
+  }
+
+  // =====================
+  // RESPONSIVE
+  // =====================
+  @include respond("md") {
+    height: 55rem;
+    padding: 2rem;
+
+    .hero-contenido {
+      padding-top: 15rem;
+
+      h1 {
+        font-size: 3.2rem;
+      }
+
+      p {
+        font-size: 1.6rem;
+      }
+
+      .btn {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  @include respond("xs") {
+    .hero-contenido {
+      padding-top: 10rem;
+
+      h1 {
+        font-size: 2.6rem;
+      }
+
+      p {
+        font-size: 1.4rem;
+      }
+    }
   }
 }
 

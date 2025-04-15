@@ -3,21 +3,47 @@
 // _mixins.scss: Mixins reutilizables para botones, imágenes de fondo, íconos, grid y buscador
 @use "../abstracts/variables" as *;
 @use "sass:color";
-@use "variables" as *;
 
-// =====================================
-// Hero Background
-// =====================================
-@mixin hero-bg($img-path, $height: 50rem) {
+// ==========================================
+// Mixin: Hero Background con degradado opcional
+// ==========================================
+@mixin hero-bg(
+  $img-path,
+  $height: 50rem,
+  $gradient: true,
+  $direction: to top,
+  $from-color: rgba(0, 0, 0, 0.6),
+  $to-color: rgba(0, 0, 0, 0.1)
+) {
+  position: relative;
+  width: 100%;
+  height: $height;
+
   background: {
-    image: url(#{$img-path});
-    repeat: no-repeat;
+    image: if(
+        $gradient,
+        linear-gradient(#{$direction}, #{$from-color}, #{$to-color}),
+        none
+      ),
+      url(#{$img-path});
     size: cover;
+    repeat: no-repeat;
     position: center center;
   }
-  height: $height;
-  width: 100%;
 }
+// // =====================================
+// // Hero Background
+// // =====================================
+// @mixin hero-bg($img-path, $height: 50rem) {
+//   background: {
+//     image: url(#{$img-path});
+//     repeat: no-repeat;
+//     size: cover;
+//     position: center center;
+//   }
+//   height: $height;
+//   width: 100%;
+// }
 
 // =====================================
 // Botones
@@ -151,7 +177,7 @@
 // con imagen, sombra, efecto hover y versión responsive.
 // ==========================================================
 
-@mixin card($img-height-destok: 30rem, $img-height-mobil: 15rem) {
+@mixin card($img-height-desktop: 30rem, $img-height-mobil: 15rem) {
   // Estilo general del contenedor de la tarjeta
   overflow: hidden;
   border-radius: 1rem;
@@ -162,7 +188,7 @@
   // Estilo de la imagen principal de la tarjeta
   img {
     width: 100%;
-    height: $img-height-destok; // Altura personalizable
+    height: $img-height-desktop; // Altura personalizable
     object-fit: cover;
     border-bottom: 4px solid transparent;
     transition: transform 0.3s ease, border-color 0.3s ease;
@@ -360,5 +386,11 @@
     @media (max-width: $breakpoint-xxl) {
       @content;
     }
+  } @else if $breakpoint == "tablet" {
+    @media (max-width: $breakpoint-tablet) {
+      @content;
+    }
+  } @else {
+    @warn "El breakpoint #{$breakpoint} no está definido en respond()";
   }
 }

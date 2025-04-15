@@ -215,7 +215,7 @@
     pointer-events: none;
     vertical-align: middle;
     transition: transform 0.3s ease, color 0.3s ease;
-    color: if($icon-color != null, $icon-color, $text-color);
+    color: $icon-color or $text-color;
   }
 
   // Hover general del botón
@@ -229,11 +229,7 @@
     i,
     svg {
       transform: rotate(-10deg) scale(1.2);
-      color: if(
-        $icon-hover-color != null,
-        $icon-hover-color,
-        if($icon-color != null, $icon-color, $text-color)
-      );
+      color: $icon-hover-color or $icon-color or $text-color;
     }
   }
 

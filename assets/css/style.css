@@ -665,16 +665,41 @@ button[type=submit]:hover {
   margin-bottom: 1rem;
 }
 
+@media (max-width: 768px) {
+  .form-contacto,
+  .contact-form {
+    padding: 2.5rem 2rem;
+    font-size: 1.4rem;
+  }
+  .form-contacto input,
+  .form-contacto textarea,
+  .form-contacto select,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    font-size: 1.4rem;
+  }
+  .form-contacto button[type=submit],
+  .contact-form button[type=submit] {
+    width: 100%;
+    text-align: center;
+  }
+}
 .hero {
   position: relative;
-  height: 75rem;
+  width: 100%;
+  height: 80rem;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(../img/imagenes/imagen-principal-3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4rem;
   text-align: center;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url("../img/imagenes/imagen-principal-3.jpg") no-repeat center/cover;
   color: #ffffff;
+  position: relative;
 }
 .hero .hero-contenido {
   position: relative;
@@ -695,8 +720,58 @@ button[type=submit]:hover {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   color: #919191;
 }
-.hero .hero-contenido .btn {
+.hero .hero-contenido .btn-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1.2rem 2.4rem;
+  border: 2px solid #ffffff;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.2;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  color: #f1f1f1;
+  box-shadow: #ff9900;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.2s ease, border 0.3s ease;
+}
+.hero .hero-contenido .btn-hero i,
+.hero .hero-contenido .btn-hero svg {
+  font-size: 1.8rem;
+  pointer-events: none;
+  vertical-align: middle;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #f1f1f1;
+}
+.hero .hero-contenido .btn-hero:hover {
+  background-color: #ff9900;
+  color: #ffffff;
+  border: none;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: #ff9900;
+}
+.hero .hero-contenido .btn-hero:hover i,
+.hero .hero-contenido .btn-hero:hover svg {
+  transform: rotate(-10deg) scale(1.2);
+  color: none;
+}
+.hero .hero-contenido .btn-hero.icon-left i,
+.hero .hero-contenido .btn-hero.icon-left svg {
+  margin-right: 0.8rem;
+}
+.hero .hero-contenido .btn-hero.icon-right i,
+.hero .hero-contenido .btn-hero.icon-right svg {
+  margin-left: 0.8rem;
+}
+.hero .hero-contenido .btn-hero:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 .hero::after {
   content: "";
@@ -704,6 +779,35 @@ button[type=submit]:hover {
   inset: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
   z-index: 1;
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 55rem;
+    padding: 2rem;
+  }
+  .hero .hero-contenido {
+    padding-top: 15rem;
+  }
+  .hero .hero-contenido h1 {
+    font-size: 3.2rem;
+  }
+  .hero .hero-contenido p {
+    font-size: 1.6rem;
+  }
+  .hero .hero-contenido .btn {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 480px) {
+  .hero .hero-contenido {
+    padding-top: 10rem;
+  }
+  .hero .hero-contenido h1 {
+    font-size: 2.6rem;
+  }
+  .hero .hero-contenido p {
+    font-size: 1.4rem;
+  }
 }
 
 @media (max-width: 768px) {
