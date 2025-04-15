@@ -1202,7 +1202,6 @@ button[type=submit]:hover {
   border-radius: 0.5rem;
   font-size: 1.6rem;
   background-color: #ffffff;
-  color: #333;
   transition: border-color 0.3s ease-in-out;
 }
 .contact-form input:focus,
@@ -1217,6 +1216,10 @@ button[type=submit]:hover {
 .contact-form textarea {
   resize: vertical;
   min-height: 10rem;
+}
+.contact-form input::placeholder {
+  color: rgba(85, 85, 85, 0.5);
+  font-style: italic;
 }
 .contact-form .error-message {
   color: red;

@@ -46,7 +46,7 @@
     border-radius: 0.5rem;
     font-size: 1.6rem;
     background-color: $color-blanco;
-    color: $color-texto;
+    // color: $color-texto;
     transition: border-color 0.3s ease-in-out;
 
     &:focus {
@@ -62,6 +62,11 @@
   textarea {
     resize: vertical;
     min-height: 10rem;
+  }
+
+  input::placeholder {
+    color: rgba($color-gris, 0.5);
+    font-style: italic;
   }
 
   .error-message {
