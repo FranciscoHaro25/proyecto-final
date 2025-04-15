@@ -1384,7 +1384,6 @@ button[type=submit]:hover {
 }
 .seccion-contenido {
   background-color: #f9f9f9;
-  border-radius: 1rem;
   margin-bottom: 8rem;
 }
 .seccion-contenido .titulo-seccion {

@@ -55,138 +55,6 @@
   }
 }
 
-// ------------------------------
-// 3. Grid de productos del catálogo
-// ------------------------------
-// .catalogo-grid {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
-//   gap: 3rem;
-// }
-
-// .catalogo-producto {
-//   background-color: $color-blanco;
-//   border-radius: 1rem;
-//   overflow: hidden;
-//   box-shadow: 0 6px 12px rgba($color-negro, 0.05);
-//   text-align: center;
-
-//   img {
-//     width: 100%;
-//     height: 24rem;
-//     object-fit: cover;
-//     border-bottom: 3px solid transparent;
-//     transition: transform 0.3s ease-in-out;
-//   }
-
-//   .nombre-link {
-//     display: block;
-//     padding: 1.5rem;
-//     font-weight: bold;
-//     background-color: $color-gris-claro;
-//     color: $color-primario;
-//     transition: background-color 0.3s ease, color 0.3s ease;
-
-//     &:hover {
-//       background-color: $color-secundario;
-//       color: $color-blanco;
-//     }
-//   }
-
-//   &:hover img {
-//     transform: scale(1.05);
-//   }
-// }
-
-// ------------------------------
-// 4. Responsive con media queries (tablet y móvil)
-// ------------------------------
-
-// @include respond("tablet") {
-//   .catalogo {
-//     padding: 8rem 1.5rem;
-//   }
-
-//   .catalogo-header {
-//     h2 {
-//       font-size: 2.8rem;
-//     }
-
-//     p {
-//       font-size: 1.4rem;
-//     }
-//   }
-
-//   .catalogo-grid {
-//     gap: 2rem;
-
-//     .catalogo-producto img {
-//       height: 20rem;
-//     }
-//   }
-
-//   .contacto.contacto--alt-bg {
-//     padding: 4rem 2rem;
-
-//     .contact-form {
-//       gap: 1.5rem;
-
-//       input,
-//       textarea {
-//         font-size: 1.4rem;
-//       }
-
-//       button {
-//         font-size: 1.4rem;
-//         padding: 1rem 2rem;
-//       }
-//     }
-//   }
-// }
-
-// @include respond("mobile") {
-//   .catalogo-buscador {
-//     flex-direction: column;
-//     align-items: stretch;
-//     gap: 1rem;
-
-//     .search-input,
-//     .search-btn {
-//       width: 100%;
-//       border-radius: 0;
-//     }
-
-//     .search-input {
-//       border-radius: 0.8rem 0.8rem 0 0;
-//     }
-
-//     .search-btn {
-//       border-radius: 0 0 0.8rem 0.8rem;
-//     }
-//   }
-
-//   .catalogo-producto .nombre-link {
-//     font-size: 1.4rem;
-//     padding: 1rem;
-//   }
-
-//   .contacto.contacto--alt-bg {
-//     .contact-form {
-//       padding: 2rem 1.5rem;
-
-//       input,
-//       textarea {
-//         font-size: 1.3rem;
-//       }
-
-//       button {
-//         font-size: 1.4rem;
-//         width: 100%;
-//       }
-//     }
-//   }
-// }
-
 // ==============================
 // CATÁLOGO DE PRODUCTOS (Bootstrap)
 // ==============================
@@ -260,12 +128,12 @@
 }
 
 // ===================================
-// FORMULARIO DE CONTACTO
+// SECCIÓN FORMULARIO DE CONTACTO
 // ===================================
 
 .seccion-contenido {
   background-color: #f9f9f9; // Fondo general claro
-  border-radius: 1rem;
+  // border-radius: 1rem;
   margin-bottom: 8rem;
 
   // Título del formulario
