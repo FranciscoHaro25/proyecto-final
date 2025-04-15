@@ -7,86 +7,6 @@
 @use "sass:color"; // ✅ Importar módulo Sass nativo
 
 // ------------------------------
-// Estilo base para todos los botones
-// ------------------------------
-.btn {
-  @include button-base($color-secundario, $color-blanco);
-  box-shadow: 0 6px 12px rgba($color-secundario, 0.2);
-
-  &:hover {
-    background-color: color.adjust($color-gris-claro, $lightness: -8%);
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 10px 16px rgba($color-secundario, 0.3);
-  }
-
-  &::after {
-    // Efecto ripple
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    animation: ripple 0.6s linear;
-    pointer-events: none;
-  }
-
-  i,
-  svg {
-    font-size: 1.8rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-    pointer-events: none;
-    vertical-align: middle;
-  }
-
-  &.icon-left {
-    @include icon-spacing(left);
-  }
-
-  &.icon-right {
-    @include icon-spacing(right);
-  }
-
-  &:hover i,
-  &:hover svg {
-    transform: rotate(-10deg) scale(1.2); // ✅ Ajuste: solo una transformación válida
-  }
-}
-
-// ------------------------------
-// Botón secundario
-// ------------------------------
-.btn--secundario {
-  @include button-base($color-gris-claro, $color-primario);
-  box-shadow: 0 6px 12px rgba($color-gris-claro, 0.2);
-
-  &:hover {
-    background-color: color.adjust($color-gris-claro, $lightness: -8%);
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 10px 16px rgba($color-gris-claro, 0.3);
-  }
-}
-
-// ------------------------------
-// Botón delineado (outlined)
-// ------------------------------
-.btn--outlined {
-  @include button-base(transparent, $color-secundario);
-  border: 2px solid $color-gris-claro;
-  background-color: transparent;
-  box-shadow: none;
-
-  &:hover {
-    background-color: $color-secundario;
-    color: $color-blanco;
-    transform: translateY(-3px) scale(1.03);
-  }
-}
-
-// ------------------------------
 // Botón solo con ícono
 // ------------------------------
 .btn--icon-only {
@@ -115,53 +35,19 @@
 }
 
 // ------------------------------
-// Botón estilo ghost
-// ------------------------------
-.btn--ghost {
-  @include button-base(transparent, $color-primario);
-  border: 2px solid $color-primario;
-  background-color: transparent;
-  box-shadow: none;
-
-  &:hover {
-    background-color: rgba($color-primario, 0.05);
-    transform: scale(1.02);
-  }
-}
-
-// ------------------------------
-// Botón con fondo gradiente para CTA
-// ------------------------------
-.btn--gradient {
-  @include button-base(transparent, $color-blanco);
-  background-image: linear-gradient(
-    135deg,
-    $color-primario 0%,
-    $color-secundario 100%
-  );
-  border: none;
-  box-shadow: 0 6px 14px rgba($color-primario, 0.3);
-
-  &:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 12px 20px rgba($color-secundario, 0.4);
-  }
-}
-
-// ------------------------------
 // Animación ripple
 // ------------------------------
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
+// @keyframes ripple {
+//   to {
+//     transform: scale(4);
+//     opacity: 0;
+//   }
+// }
 
 // =====================================
 // Mixin: boton-variantes
 // -------------------------------------
-// Genera un botón estilizado y reutilizable con múltiples parámetros.
+// Botón estilizado y reutilizable con múltiples parámetros.
 // Controla color de fondo, texto, borde, hover, sombras e íconos personalizados.
 //
 // @param $bg-color           Color de fondo base del botón.

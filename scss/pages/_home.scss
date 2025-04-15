@@ -8,11 +8,8 @@
 // HERO PRINCIPAL
 // =====================
 
-.hero {
-  @include hero-bg(
-    "../img/imagenes/imagen-principal-3.jpg",
-    80rem
-  ); // Fondo con degradado
+.hero-home {
+  @include hero-bg("../img/imagenes/imagen-principal-3.jpg", 80rem);
 
   display: flex;
   align-items: center;
@@ -59,18 +56,6 @@
     }
   }
 
-  // Degradado adicional encima del fondo (opcional)
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-    z-index: 1;
-  }
-
-  // =====================
-  // RESPONSIVE
-  // =====================
   @include respond("md") {
     height: 55rem;
     padding: 2rem;
@@ -86,13 +71,15 @@
         font-size: 1.6rem;
       }
 
-      .btn {
+      .btn-hero {
         font-size: 1.4rem;
       }
     }
   }
 
   @include respond("xs") {
+    height: 55rem;
+
     .hero-contenido {
       padding-top: 10rem;
 
@@ -107,24 +94,6 @@
   }
 }
 
-// Responsive
-@media (max-width: 768px) {
-  .hero {
-    height: 55rem;
-    padding-top: 0;
-
-    .hero-contenido {
-      h1 {
-        font-size: 3.4rem;
-      }
-
-      p {
-        font-size: 1.5rem;
-      }
-    }
-  }
-}
-
 // ====================================>>>>
 // CATEGORÍAS
 
@@ -132,25 +101,26 @@
   margin-top: 10rem;
   margin-bottom: 10rem;
   border-top: 2px solid $color-secundario;
-  // width: 100%;
+
   .contenedor-header {
     padding: 4rem;
   }
+
   .listado-categorias {
     @include categoria-card-grid(280px, 4rem, 1rem, 1fr, $breakpoint-md);
 
     .card {
-      @include card(35rem, 24rem); // Altura por defecto en desktop
+      @include card(35rem, 24rem);
     }
   }
+
   .link {
-    @include link; // Estilo botones card
+    @include link;
   }
 }
 
 // ===========================================
-// _testimonios.scss: Estilos para testimonios
-// ===========================================
+// TESTIMONIOS
 
 .testimonios {
   padding: 6rem 2rem;
@@ -158,23 +128,16 @@
   background-color: $color-gris-claro;
   border-top: 2px solid $color-secundario;
 
-  @include categoria-card-grid(
-    320px,
-    4rem,
-    8rem
-  ); // cambia min-width, gap y margin-top
+  @include categoria-card-grid(320px, 4rem, 8rem);
 
-  // Encabezado de la sección
   &-header {
     @include testimonios-header;
   }
 
-  // Grid de tarjetas de testimonio
   .testimonios-grid {
     @include testimonios-grid;
   }
 
-  // Tarjeta individual
   .testimonio {
     @include testimonio-card;
   }
@@ -186,14 +149,12 @@
 .contenedor-cta {
   margin: 8rem auto;
 
-  // Grid container for CTA content
   .cta-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-items: center;
     gap: 4rem;
 
-    // Left side: Call-to-action image
     .call-to-action {
       background-image: url("../img/imagenes/call-to-action-2.jpg");
       background-repeat: no-repeat;
@@ -204,7 +165,6 @@
       border-radius: 1rem;
     }
 
-    // Right side: CTA content and contact form
     .contenido-cta {
       background-color: $color-primario;
       padding: 3rem;
@@ -214,7 +174,6 @@
       flex-direction: column;
       gap: 1.5rem;
 
-      // Header content within CTA
       h2,
       h3 {
         margin: 0;
@@ -223,11 +182,13 @@
       p {
         margin-bottom: 2rem;
       }
+
       .encabezado-cta {
         display: flex;
         flex-direction: column;
         width: 100%;
         gap: 1rem;
+
         .btn--whatsapp {
           @include boton-variantes(
             $color-secundario,
@@ -244,7 +205,6 @@
         }
       }
 
-      /// Contact form block
       .form-contacto {
         display: flex;
         flex-direction: column;
@@ -255,14 +215,12 @@
         border-radius: 1rem;
       }
 
-      // Title for contact form
       .titulo-contacto {
         font-size: 2.4rem;
         font-weight: bold;
         color: $color-primario;
       }
 
-      // Form fields group
       .formulario-contacto {
         display: flex;
         flex-direction: column;
@@ -285,6 +243,7 @@
             border-radius: 0.5rem;
             font-size: 1.6rem;
             width: 100%;
+
             &:focus {
               border-color: $color-secundario;
               outline: none;
@@ -295,7 +254,7 @@
             }
           }
         }
-        // Botón outlined
+
         .btn-enviar {
           @include boton-variantes(
             transparent,
@@ -311,7 +270,6 @@
           );
         }
 
-        // Media query para pantallas pequeñas
         @media (max-width: 480px) {
           padding: 2rem;
 
@@ -331,16 +289,12 @@
           }
         }
 
-        // Media query para pantallas grandes
         @media (min-width: 768px) {
           .formulario-contacto {
             flex-direction: column;
             flex-wrap: wrap;
 
-            .form-grupo {
-              width: 100%;
-            }
-
+            .form-grupo,
             .form-grupo.full-width {
               width: 100%;
             }
@@ -350,4 +304,3 @@
     }
   }
 }
-// <<<<=================================

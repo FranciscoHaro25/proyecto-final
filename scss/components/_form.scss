@@ -54,20 +54,6 @@ label {
 }
 
 // ------------------------------
-// Botón de envío
-// ------------------------------
-button[type="submit"] {
-  @include button-base($color-secundario, $color-blanco);
-  width: fit-content;
-  align-self: flex-start;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: color.adjust($color-secundario, $lightness: -5%);
-  }
-}
-
-// ------------------------------
 // Estados de validación
 // ------------------------------
 .is-invalid {

@@ -45,9 +45,12 @@
       rel="stylesheet"
     />
 
-    <!-- Scripts externos de GSAP y ScrollTrigger -->
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+      <!-- Scripts externos de GSAP y ScrollTrigger -->
+      <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+      <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  
+      <!-- AOS CSS para animaciones al hacer scroll (scroll reveal con clases) -->
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!-- Estilos propios -->
     <link rel="stylesheet" href="../assets/css/normalize.css" />
@@ -115,15 +118,9 @@
       aria-labelledby="titulo-nosotros"
     >
       <!-- Seccion hero -->
-      <section class="hero-sobre-nosotros">
-        <figure class="hero-imagen">
-          <img
-            src="../assets/img/imagenes/Nosotros-hero.jpg"
-            alt="Imagen de nuestro equipo de trabajo"
-          />
-        </figure>
+      <section class="hero-nosotros">       
         <div class="hero-contenido">
-          <h1>Sobre Nosotros</h1>
+          <h1 id="titulo-hero" data-aos="fade-up">Sobre Nosotros</h1>
           <p>Conoce al equipo que impulsa nuestra visión con creatividad y compromiso.</p>
           <a href="#equipo" class="btn-nosotros">Conoce al equipo
             <svg
@@ -545,6 +542,13 @@
 
     <!-- JS GSAP personalizado-->
     <script src="../assets/js/animaciones.js"></script>
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      //Inicializar AOS
+      AOS.init();
+    </script>
 
   </body>
 </html>
