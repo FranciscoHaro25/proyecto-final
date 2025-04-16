@@ -67,25 +67,3 @@ label {
   margin-top: -1rem;
   margin-bottom: 1rem;
 }
-
-// ------------------------------
-// Responsive: Tablet hacia abajo
-// ------------------------------
-@include respond("tablet") {
-  .form-contacto,
-  .contact-form {
-    padding: 2.5rem 2rem;
-    font-size: 1.4rem;
-
-    input,
-    textarea,
-    select {
-      font-size: 1.4rem;
-    }
-
-    button[type="submit"] {
-      width: 100%;
-      text-align: center;
-    }
-  }
-}

@@ -6,60 +6,27 @@
 @use "../abstracts/mixins" as *;
 @use "sass:color"; // ✅ Importar módulo Sass nativo
 
-// ------------------------------
-// Botón solo con ícono
-// ------------------------------
-.btn--icon-only {
-  @include button-icon-only();
-  @include icono-btn-estilos();
-
-  i,
-  svg {
-    font-size: 1.8rem;
-    transition: color 0.15s ease, transform 0.2s ease;
-    pointer-events: none;
-    vertical-align: middle;
-  }
-
-  &:hover {
-    i,
-    svg {
-      transform: rotate(15deg) scale(1.2);
-    }
-  }
-
-  &:focus-visible {
-    outline: 2px solid rgba($color-primario, 0.5);
-    outline-offset: 4px;
-  }
-}
-
-// ------------------------------
-// Animación ripple
-// ------------------------------
-// @keyframes ripple {
-//   to {
-//     transform: scale(4);
-//     opacity: 0;
-//   }
-// }
-
 // =====================================
 // Mixin: boton-variantes
 // -------------------------------------
-// Botón estilizado y reutilizable con múltiples parámetros.
-// Controla color de fondo, texto, borde, hover, sombras e íconos personalizados.
+// Estiliza un botón con parámetros flexibles para:
+// - color de fondo y texto
+// - borde y sombra
+// - comportamiento hover
+// - personalización de íconos y espaciado
 //
-// @param $bg-color           Color de fondo base del botón.
-// @param $text-color         Color de texto base del botón.
-// @param $border             Borde del botón (opcional).
-// @param $hover-bg           Fondo al hacer hover (opcional).
-// @param $hover-text         Color de texto al hacer hover (opcional).
-// @param $shadow             Sombra normal (opcional).
-// @param $hover-shadow       Sombra al hacer hover (opcional).
-// @param $icon-color         Color del ícono base (opcional).
-// @param $icon-hover-color   Color del ícono al hacer hover (opcional).
-// @param $hover-border       Borde del botón al hacer hover (opcional).
+// Parámetros:
+// $bg-color: color de fondo base del botón
+// $text-color: color del texto base
+// $border: borde del botón (por defecto: none)
+// $hover-bg: color de fondo al hacer hover
+// $hover-text: color de texto al hacer hover
+// $shadow: sombra normal
+// $hover-shadow: sombra al hacer hover
+// $icon-color: color del ícono normal
+// $icon-hover-color: color del ícono en hover
+// $hover-border: borde al hacer hover
+// $icon-gap: espacio entre texto e ícono
 // =====================================
 
 @mixin boton-variantes(
@@ -72,8 +39,10 @@
   $hover-shadow: null,
   $icon-color: null,
   $icon-hover-color: null,
-  $hover-border: null
+  $hover-border: null,
+  $icon-gap: 1rem
 ) {
+  // Estilos base del botón
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -85,26 +54,27 @@
   cursor: pointer;
   text-decoration: none;
   line-height: 1.2;
-  gap: 2rem;
   position: relative;
   overflow: hidden;
   background-color: $bg-color;
   color: $text-color;
   box-shadow: if($shadow != null, $shadow, none);
+  gap: $icon-gap; // Espaciado entre texto e ícono
+
   transition: background-color 0.3s ease, transform 0.3s ease,
     box-shadow 0.3s ease, color 0.2s ease, border 0.3s ease;
 
-  // Íconos dentro del botón
+  // Íconos dentro del botón (FontAwesome, RemixIcon, SVG, etc.)
   i,
   svg {
     font-size: 1.8rem;
     pointer-events: none;
     vertical-align: middle;
+    color: if($icon-color != null, $icon-color, $text-color);
     transition: transform 0.3s ease, color 0.3s ease;
-    color: $icon-color or $text-color;
   }
 
-  // Hover general del botón
+  // Estado hover
   &:hover {
     background-color: if($hover-bg != null, $hover-bg, $bg-color);
     color: if($hover-text != null, $hover-text, $text-color);
@@ -115,18 +85,15 @@
     i,
     svg {
       transform: rotate(-10deg) scale(1.2);
-      color: $icon-hover-color or $icon-color or $text-color;
+      color: if(
+        $icon-hover-color != null,
+        $icon-hover-color,
+        if($icon-color != null, $icon-color, $text-color)
+      );
     }
   }
 
-  &.icon-left {
-    @include icon-spacing(left);
-  }
-
-  &.icon-right {
-    @include icon-spacing(right);
-  }
-
+  // Estado deshabilitado
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
